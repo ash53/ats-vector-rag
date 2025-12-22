@@ -1,0 +1,91 @@
+python
+java
+c++
+c#
+javascript
+typescript
+html
+css
+sql
+nosql
+mysql
+postgresql
+mongodb
+redis
+
+machine learning
+deep learning
+data science
+data analysis
+data engineering
+artificial intelligence
+nlp
+natural language processing
+computer vision
+statistics
+probability
+linear algebra
+
+pytorch
+tensorflow
+keras
+scikit-learn
+xgboost
+lightgbm
+pandas
+numpy
+scipy
+
+power bi
+tableau
+excel
+data visualization
+dashboarding
+
+cloud computing
+aws
+amazon web services
+azure
+google cloud
+gcp
+
+docker
+kubernetes
+ci/cd
+devops
+linux
+git
+github
+
+system design
+software architecture
+microservices
+rest api
+graphql
+
+backend
+frontend
+full stack
+web development
+mobile development
+
+react
+angular
+vue
+node.js
+express
+django
+flask
+spring
+spring boot
+
+agile
+scrum
+jira
+project management
+product management
+stakeholder management
+
+unit testing
+integration testing
+test automation

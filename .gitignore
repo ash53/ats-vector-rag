@@ -1,0 +1,22 @@
+# Python
+__pycache__/
+*.pyc
+
+# Environments
+venv/
+.env/
+.conda/
+
+# macOS
+.DS_Store
+
+# Data
+data/raw/
+data/processed/faiss_index.bin
+data/processed/faiss_metadata.json
+
+# Jupyter
+.ipynb_checkpoints/
+
+# Logs
+*.log
