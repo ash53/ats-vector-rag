@@ -12,8 +12,7 @@ venv/
 
 # Data
 data/raw/
-data/processed/faiss_index.bin
-data/processed/faiss_metadata.json
+data/processed/
 
 # Jupyter
 .ipynb_checkpoints/
