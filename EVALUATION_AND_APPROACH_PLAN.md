@@ -182,7 +182,7 @@ Report all four. Layer 1 is label-free; Layers 2–3 are the answer to "somethin
 
 Counterfactual machinery from 2.3 gives this nearly free, and the dataset has a `Name` column.
 
-- **Name-swap matched pairs**: hold the CV constant, swap for gendered / ethnically-marked name variants. Any decision change is pure bias.
+- **Name-swap matched pairs**: hold the CV constant, swap for gendered / ethnically-marked name variants. Any decision change is pure bias, since the qualifications are identical. This is the matched-pair audit design of Bertrand & Mullainathan (2004), *"Are Emily and Greg More Employable than Lakisha and Jamal?"* — worth citing in the report, as it is the standard method for exactly this question.
 - Report **flip rate per group**, **selection-rate parity**, the **80% rule**, and whether the *reasoning text* changes tone across variants.
 - Run on every approach — "which retrieval method is least biased?" is a genuine contribution.
 
