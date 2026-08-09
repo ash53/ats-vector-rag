@@ -1,0 +1,757 @@
+{
+  "config": {
+    "n_cases": 40,
+    "seed": 42,
+    "model": "llama3.1:8b",
+    "retrieval": "faiss_two_view_mpnet",
+    "max_per_class": 5,
+    "index_leak_fixed": true
+  },
+  "metrics": {
+    "accuracy": 0.45,
+    "precision": 0.4706,
+    "recall": 0.8,
+    "f1": 0.5926,
+    "pred_select_rate": 0.85,
+    "confusion_matrix": {
+      "TP (pred select, actual select)": 16,
+      "FP (pred select, actual reject)": 18,
+      "FN (pred reject, actual select)": 4,
+      "TN (pred reject, actual reject)": 2
+    },
+    "total_cases": 40
+  },
+  "n_dropped": 0,
+  "n_parse_errors": 0,
+  "avg_time_s": 12.8,
+  "results": [
+    {
+      "case_id": "case_03582",
+      "role": "data engineer",
+      "ground_truth": "select",
+      "prediction": "select",
+      "confidence": "high",
+      "correct": true,
+      "elapsed_s": 21.3,
+      "key_strengths": [
+        "Excellent technical skills in data engineering, with 8+ years of experience designing and developing large-scale data processing systems.",
+        "Strong expertise in Spark, Data Warehousing, and Cloud-based Data Platforms, including AWS, GCP, and Azure.",
+        "Proven track record of delivering scalable, reliable, and efficient data solutions that drive business insights and growth."
+      ],
+      "key_gaps": [],
+      "reasoning": "This candidate's profile is highly similar to Historical Case 1 (SELECT) with a similarity score of 1.908, indicating a strong match for the role. The lack of skill gaps or required skills not mentioned in the historical cases supports this decision.",
+      "parse_error": false
+    },
+    {
+      "case_id": "case_03805",
+      "role": "game developer",
+      "ground_truth": "select",
+      "prediction": "select",
+      "confidence": "high",
+      "correct": true,
+      "elapsed_s": 11.1,
+      "key_strengths": [
+        "Strong technical skills in game development using Unity and Unreal Engine",
+        "Proven track record of successfully collaborating with cross-functional teams",
+        "Mentored junior developers and provided guidance on best practices"
+      ],
+      "key_gaps": [],
+      "reasoning": "The candidate's skills and experience align closely with the job description, particularly in game development using Unity and Unreal Engine. They have a strong track record of collaboration and mentoring, which are essential for success in this role. Compared to the historical cases, this candidate has more relevant technical skills and experience, making them a good fit for the position.",
+      "parse_error": false
+    },
+    {
+      "case_id": "case_01605",
+      "role": "game developer",
+      "ground_truth": "select",
+      "prediction": "reject",
+      "confidence": "high",
+      "correct": false,
+      "elapsed_s": 12.3,
+      "key_strengths": [],
+      "key_gaps": [
+        "agile",
+        "aws",
+        "git",
+        "google cloud",
+        "machine learning",
+        "python",
+        "software architecture"
+      ],
+      "reasoning": "The candidate lacks experience in key areas required for the role, such as agile development, AWS, Git, Google Cloud, machine learning, Python, and software architecture. This is evident from the historical cases where candidates with similar skill gaps were rejected.",
+      "parse_error": false
+    },
+    {
+      "case_id": "case_01877",
+      "role": "data scientist",
+      "ground_truth": "select",
+      "prediction": "reject",
+      "confidence": "high",
+      "correct": false,
+      "elapsed_s": 12.3,
+      "key_strengths": [],
+      "key_gaps": [
+        "Excessive experience (5 years) exceeds the expected experience range of 0-2 years.",
+        "Skills and qualifications are more advanced than required for the role, indicating potential overqualification.",
+        "The candidate's profile suggests a focus on senior roles or leadership positions, which may not align with the data scientist position."
+      ],
+      "reasoning": "This candidate's profile is similar to Historical Case 6 (REJECT), where they had strong technical knowledge but lacked the required experience and problem-solving abilities for the role. Additionally, their excessive experience and overqualified skills suggest a mismatch with the job requirements.",
+      "parse_error": false
+    },
+    {
+      "case_id": "case_02500",
+      "role": "database administrator",
+      "ground_truth": "reject",
+      "prediction": "select",
+      "confidence": "high",
+      "correct": false,
+      "elapsed_s": 10.7,
+      "key_strengths": [
+        "Excellent experience with designing and implementing large-scale databases (Historical Case 1)",
+        "Proven track record of improving database performance and ensuring high availability",
+        "Strong technical skills, including proficiency in SQL, backup and recovery, and database security"
+      ],
+      "key_gaps": [],
+      "reasoning": "The candidate's experience and skills align closely with the requirements of the job description, and they have a proven track record of success in similar roles. Compared to Historical Case 6, this candidate has more relevant system design expertise for a senior role.",
+      "parse_error": false
+    },
+    {
+      "case_id": "case_00539",
+      "role": "ui engineer",
+      "ground_truth": "select",
+      "prediction": "select",
+      "confidence": "high",
+      "correct": true,
+      "elapsed_s": 11.2,
+      "key_strengths": [
+        "Excellent UI/UX design skills with 5+ years of experience",
+        "Proficient in wireframing, prototyping, and collaborating with cross-functional teams",
+        "Strong technical skills in CSS, JavaScript, HTML, React, Angular, and Git"
+      ],
+      "key_gaps": [],
+      "reasoning": "The candidate's profile matches closely with Historical Case 1 (similarity: 1.908), which was also a SELECT decision based on business acumen. The candidate has a stronger UI/UX design background compared to the historical cases that were rejected, and no significant skill gaps are identified.",
+      "parse_error": false
+    },
+    {
+      "case_id": "case_00091",
+      "role": "robotics engineer",
+      "ground_truth": "reject",
+      "prediction": "select",
+      "confidence": "high",
+      "correct": false,
+      "elapsed_s": 10.8,
+      "key_strengths": [
+        "5+ years of experience in designing and developing robotic systems using ROS, control systems, and mechatronics",
+        "Proven track record of delivering projects on time and exceeding performance expectations",
+        "Skilled in path planning, MATLAB, and CNC programming"
+      ],
+      "key_gaps": [],
+      "reasoning": "This candidate's skills and experience align closely with the job description, particularly in control systems, mechatronics, and path planning. Their proven track record of delivering projects on time and exceeding performance expectations also demonstrates their ability to work efficiently and effectively in a fast-growing team.",
+      "parse_error": false
+    },
+    {
+      "case_id": "case_01498",
+      "role": "ui designer",
+      "ground_truth": "select",
+      "prediction": "reject",
+      "confidence": "high",
+      "correct": false,
+      "elapsed_s": 10.9,
+      "key_strengths": [],
+      "key_gaps": [
+        "insufficient experience (2+ years) in the field for a senior ui designer role with at least 8 years of experience required",
+        "lack of skills and expertise in key areas such as color theory, user flows, and design systems"
+      ],
+      "reasoning": "The candidate's profile does not match the job description's requirements of having at least 8 years of experience. The historical cases show that candidates with similar skill gaps were rejected for the same role.",
+      "parse_error": false
+    },
+    {
+      "case_id": "case_09607",
+      "role": "product manager",
+      "ground_truth": "reject",
+      "prediction": "select",
+      "confidence": "high",
+      "correct": false,
+      "elapsed_s": 11.6,
+      "key_strengths": [
+        "Strong experience in agile methodologies, data analysis, and stakeholder management, which align with the job requirements.",
+        "Excellent track record of delivering high-quality products on time and exceeding customer expectations.",
+        "Proven ability to drive business growth through innovative product development."
+      ],
+      "key_gaps": [],
+      "reasoning": "The candidate's profile closely matches those of successful candidates in Historical Case 1-4, with a strong focus on business acumen, technical knowledge, and cultural fit. Their skills and experience align well with the job requirements, making them an ideal candidate for this role.",
+      "parse_error": false
+    },
+    {
+      "case_id": "case_05599",
+      "role": "ar/vr developer",
+      "ground_truth": "reject",
+      "prediction": "select",
+      "confidence": "high",
+      "correct": false,
+      "elapsed_s": 11.1,
+      "key_strengths": [
+        "Profound understanding of user experience design principles and a passion for innovation.",
+        "Strong technical skills in Unity, 3D modeling, and Oculus SDK with spatial computing expertise.",
+        "5+ years of experience as an AR/VR developer with various industry experience"
+      ],
+      "key_gaps": [],
+      "reasoning": "This candidate's profile aligns closely with the historical cases that resulted in a SELECT outcome. They possess strong technical skills, experience in AR/VR development, and a deep understanding of user experience design principles. In contrast to rejected candidates, this individual lacks no major leadership or back-end development experience.",
+      "parse_error": false
+    },
+    {
+      "case_id": "case_04548",
+      "role": "qa engineer",
+      "ground_truth": "reject",
+      "prediction": "select",
+      "confidence": "high",
+      "correct": false,
+      "elapsed_s": 10.9,
+      "key_strengths": [
+        "Excellent full-stack development experience (Historical Case 1)",
+        "Strong technical skills in agile, java, jira, linux, python, and scrum (Candidate Profile)",
+        "Proven track record of delivering high-quality results and improving test efficiency"
+      ],
+      "key_gaps": [],
+      "reasoning": "The candidate's profile closely aligns with the historical reference cases, showcasing excellent full-stack development experience. The absence of job-required skills in the job description suggests that the candidate's skills are more than sufficient for this role.",
+      "parse_error": false
+    },
+    {
+      "case_id": "case_06852",
+      "role": "game developer",
+      "ground_truth": "select",
+      "prediction": "select",
+      "confidence": "high",
+      "correct": true,
+      "elapsed_s": 13.2,
+      "key_strengths": [
+        "Strong technical skills in Unreal Engine and C#, with experience in creating immersive gaming experiences.",
+        "Proven track record of delivering high-quality games on time and within budget, demonstrating excellent project management skills.",
+        "Passionate about innovation, teamwork, and continuous learning, indicating a strong fit for the company culture."
+      ],
+      "key_gaps": [
+        "Lack of experience in back-end development (Historical Case 8)",
+        "Limited system design expertise for senior role (Historical Case 7)"
+      ],
+      "reasoning": "This candidate's technical skills and project management experience align closely with Historical Cases 1-5, where candidates were SELECTED. Although there are some concerns regarding back-end development and system design expertise, these gaps can be addressed through training or mentorship. Overall, the candidate's strengths outweigh their weaknesses.",
+      "parse_error": false
+    },
+    {
+      "case_id": "case_06300",
+      "role": "cloud engineer",
+      "ground_truth": "reject",
+      "prediction": "select",
+      "confidence": "high",
+      "correct": false,
+      "elapsed_s": 12.4,
+      "key_strengths": [
+        "Strong background in cloud cost optimization, serverless architecture, and scripting.",
+        "Experience with multiple cloud platforms (AWS, Azure, Google Cloud) and services (EC2, RDS, S3, Lambda, CloudFront).",
+        "Proven track record of delivering scalable and efficient cloud solutions."
+      ],
+      "key_gaps": [],
+      "reasoning": "This candidate's skills and experience align closely with the historical case where a candidate was selected for a similar role. The candidate has a strong background in cloud cost optimization, serverless architecture, and scripting, which is not a gap in any of the historical cases that resulted in rejection.",
+      "parse_error": false
+    },
+    {
+      "case_id": "case_03653",
+      "role": "product manager",
+      "ground_truth": "select",
+      "prediction": "select",
+      "confidence": "high",
+      "correct": true,
+      "elapsed_s": 13.7,
+      "key_strengths": [
+        "Proven track record of delivering high-impact products that meet customer needs and drive business growth.",
+        "Strong leadership skills, demonstrated by successfully leading cross-functional teams and managing a team of product managers.",
+        "Excellent data analysis skills, with experience in conducting market research to inform product strategy."
+      ],
+      "key_gaps": [
+        "No specific mention of AI or machine learning experience, although the candidate has 8+ years of experience in product management",
+        "Limited information on how the candidate would handle a product development and model development role simultaneously"
+      ],
+      "reasoning": "Based on historical case 2 (SELECT), this candidate's strengths align with the decision rationale 'cultural fit', and their skills are comparable to those in cases 1 and 3, which were also SELECTed. The lack of AI or machine learning experience is a concern, but not a significant enough gap to override the strong leadership and data analysis skills demonstrated.",
+      "parse_error": false
+    },
+    {
+      "case_id": "case_03613",
+      "role": "full stack developer",
+      "ground_truth": "reject",
+      "prediction": "select",
+      "confidence": "high",
+      "correct": false,
+      "elapsed_s": 11.6,
+      "key_strengths": [
+        "strong technical skills in full stack development, including experience with Node.js, Express.js, and MongoDB",
+        "proven ability to collaborate with cross-functional teams and deliver high-quality projects on time",
+        " certifications as Certified Scrum Master"
+      ],
+      "key_gaps": [],
+      "reasoning": "This candidate's profile closely matches the requirements of the job description, with a strong technical skill set and relevant experience. The historical cases indicate that candidates with similar profiles have been selected for the role in the past.",
+      "parse_error": false
+    },
+    {
+      "case_id": "case_04021",
+      "role": "data analyst",
+      "ground_truth": "select",
+      "prediction": "select",
+      "confidence": "high",
+      "correct": true,
+      "elapsed_s": 14.5,
+      "key_strengths": [
+        "The candidate has relevant experience as a data analyst with 3+ years of experience in extracting insights from large datasets.",
+        "They have a strong skill set in data analysis, visualization, and storytelling, which aligns well with the job requirements.",
+        "Their passion for using data to drive business growth is also a valuable asset."
+      ],
+      "key_gaps": [
+        "The candidate applied for a Data Analyst role, not a Product Manager position as described in the job description.",
+        "They lack 5+ years of experience, which is mentioned in the job description as an essential requirement."
+      ],
+      "reasoning": "Comparing to Historical Case 1 and 2, this candidate has similar skills and experience, but their role application mismatch and lack of seniority are significant concerns. However, considering their strengths and historical cases with similar outcomes (SELECT), I believe they can be a good fit for the Data Analyst position.",
+      "parse_error": false
+    },
+    {
+      "case_id": "case_02576",
+      "role": "robotics engineer",
+      "ground_truth": "reject",
+      "prediction": "select",
+      "confidence": "high",
+      "correct": false,
+      "elapsed_s": 11.0,
+      "key_strengths": [
+        "Impressive experience in designing, developing, and deploying robotic systems using ROS, control systems, and sensor fusion techniques.",
+        "Strong programming skills in languages such as MATLAB and C++ with expertise in developing and testing complex robotic algorithms.",
+        "5+ years of experience in robotics engineering"
+      ],
+      "key_gaps": [],
+      "reasoning": "The candidate's profile closely aligns with the requirements for a robotics engineer, particularly in terms of technical skills and experience. The similarity metrics from historical cases also support selection, indicating that this candidate has the necessary qualifications to excel in the role.",
+      "parse_error": false
+    },
+    {
+      "case_id": "case_08900",
+      "role": "software engineer",
+      "ground_truth": "reject",
+      "prediction": "reject",
+      "confidence": "high",
+      "correct": true,
+      "elapsed_s": 9.2,
+      "key_strengths": [],
+      "key_gaps": [
+        "limited understanding of software development concepts, such as design patterns and testing methodologies",
+        "inadequate knowledge of algorithms and data structures",
+        "insufficient experience with version control (git) and database management"
+      ],
+      "reasoning": "Based on the candidate's profile and historical cases, it appears that this candidate lacks essential skills and experience required for the software engineer role. The gaps in their understanding and experience are significant, making them a high risk for the position.",
+      "parse_error": false
+    },
+    {
+      "case_id": "case_01603",
+      "role": "network engineer",
+      "ground_truth": "reject",
+      "prediction": "select",
+      "confidence": "medium",
+      "correct": false,
+      "elapsed_s": 17.5,
+      "key_strengths": [
+        "3+ years of experience in network engineering with a focus on design, implementation, and maintenance of complex network infrastructure",
+        "Strong scripting skills, including python (although not explicitly stated in the job description)",
+        "Experience with network security, including firewalls, vpns, and intrusion detection systems"
+      ],
+      "key_gaps": [
+        "Lack of experience with cloud-based network services, such as aws or azure",
+        "No explicit mention of experience with devops practices, including continuous integration and continuous deployment",
+        "No python skills explicitly mentioned in the job description, although scripting skills are required"
+      ],
+      "reasoning": "This candidate's profile closely resembles historical case 5 (similarity: 1.739), where a network engineer with strong technical expertise was selected. However, like case 2 (similarity: 1.790), this candidate lacks experience with aws and azure, as well as devops practices. Despite these gaps, their strong scripting skills and experience in network security make them a viable candidate.",
+      "parse_error": false
+    },
+    {
+      "case_id": "case_03517",
+      "role": "data scientist",
+      "ground_truth": "reject",
+      "prediction": "select",
+      "confidence": "high",
+      "correct": false,
+      "elapsed_s": 13.1,
+      "key_strengths": [
+        "Highly motivated and detail-oriented data scientist with expertise in statistical modeling, data visualization, and machine learning.",
+        "Proven track record of delivering high-impact projects and collaborating with cross-functional teams to drive business growth.",
+        "Proficient in extracting insights from complex data sets using SQL and statistical software."
+      ],
+      "key_gaps": [],
+      "reasoning": "This candidate's skills and experience closely align with the job description, and they have a strong track record of delivering high-impact projects. In comparison to Historical Case 1 (SELECT), this candidate has more extensive experience in data visualization and SQL. Additionally, unlike Historical Case 6 (REJECT), this candidate has expertise in machine learning algorithms.",
+      "parse_error": false
+    },
+    {
+      "case_id": "case_00461",
+      "role": "game developer",
+      "ground_truth": "select",
+      "prediction": "select",
+      "confidence": "high",
+      "correct": true,
+      "elapsed_s": 12.7,
+      "key_strengths": [
+        "Highly skilled and experienced game developer with expertise in unity, unreal engine, c#, and 3d modeling.",
+        "Proven track record of delivering high-quality games and collaborating with cross-functional teams.",
+        "Strong passion for creating immersive and engaging gameplay experiences."
+      ],
+      "key_gaps": [
+        "Lack of product management experience as per the job description",
+        "No mention of leadership skills in the candidate profile",
+        "No direct relevance to product management role"
+      ],
+      "reasoning": "The candidate's technical skills and experience are a good match for the job description, but there is a mismatch in terms of role and responsibilities. The historical cases suggest that candidates with similar skills and experience have been selected for game developer positions, so I'm inclined to select this candidate despite some gaps.",
+      "parse_error": false
+    },
+    {
+      "case_id": "case_01446",
+      "role": "data engineer",
+      "ground_truth": "reject",
+      "prediction": "select",
+      "confidence": "high",
+      "correct": false,
+      "elapsed_s": 16.5,
+      "key_strengths": [
+        "Proven expertise in data storage solutions, data warehousing, big data technologies, cloud data tools, etl pipelines, and programming languages such as python and scala.",
+        "Strong track record of delivering data-driven solutions with 3 years of experience in the industry",
+        "Collaboration skills: adept at working in a remote environment and collaborating with cross-functional teams to drive business outcomes"
+      ],
+      "key_gaps": [
+        "No specific certifications or advanced degrees mentioned",
+        "Some gaps in big data technologies compared to historical cases with more comprehensive expertise (Case 1, Case 2)",
+        "Could benefit from additional experience in real-time analytics and etl pipelines for optimal performance"
+      ],
+      "reasoning": "This candidate's strengths align well with the job description, particularly their expertise in cloud data tools, etl pipelines, and programming languages. While there are some gaps compared to top performers (Cases 1-3), they still have a strong track record and collaboration skills, making them a competitive selection.",
+      "parse_error": false
+    },
+    {
+      "case_id": "case_05927",
+      "role": "ux designer",
+      "ground_truth": "reject",
+      "prediction": "select",
+      "confidence": "high",
+      "correct": false,
+      "elapsed_s": 11.4,
+      "key_strengths": [
+        "5 years of experience in conducting user research and creating wireframes to design intuitive and user-centered interfaces",
+        "Proven track record of delivering high-quality designs that meet business objectives and improve user experience",
+        "Proficient in design tools such as Sketch, Figma, and Adobe Creative Suite"
+      ],
+      "key_gaps": [],
+      "reasoning": "Felicia's strengths align with the job description, particularly her experience in user research and wireframing. Compared to Historical Case 1, Felicia has similar skills but more relevant experience. Her profile lacks some of the specific technical skills mentioned in other historical cases, but it is not a significant gap for this role.",
+      "parse_error": false
+    },
+    {
+      "case_id": "case_01732",
+      "role": "cloud architect",
+      "ground_truth": "select",
+      "prediction": "select",
+      "confidence": "high",
+      "correct": true,
+      "elapsed_s": 17.8,
+      "key_strengths": [
+        "Strong technical expertise in required domains (AWS, Azure, GCP)",
+        "Excellent communication and teamwork abilities",
+        "Proven track record of delivering efficient, secure, and scalable cloud-based systems"
+      ],
+      "key_gaps": [
+        "Lack of experience in artificial intelligence and machine learning",
+        "No certifications or training in emerging technologies like serverless computing and containerization",
+        "Some gaps in communication and collaboration skills compared to historical cases with similar outcomes"
+      ],
+      "reasoning": "This candidate's technical expertise and experience in designing and implementing cloud architectures are well-aligned with the job requirements. While there are some gaps in emerging technologies and certifications, their overall profile is stronger than many of the rejected candidates in the historical reference cases.",
+      "parse_error": false
+    },
+    {
+      "case_id": "case_00485",
+      "role": "qa engineer",
+      "ground_truth": "select",
+      "prediction": "reject",
+      "confidence": "high",
+      "correct": false,
+      "elapsed_s": 11.9,
+      "key_strengths": [],
+      "key_gaps": [
+        "machine learning",
+        "lack of direct experience with machine learning in the job description and historical cases",
+        "no mention of data science or AI skills"
+      ],
+      "reasoning": "This candidate's skill set and experience do not align closely with the required skills for the qa engineer role, particularly in terms of machine learning expertise. Compared to Historical Case 1, where the candidate had solid experience in machine learning and AI, this candidate falls short. The lack of direct experience with machine learning and AI makes it unlikely that they would be able to lead the design and development of cutting-edge machine learning.",
+      "parse_error": false
+    },
+    {
+      "case_id": "case_00581",
+      "role": "data engineer",
+      "ground_truth": "select",
+      "prediction": "select",
+      "confidence": "high",
+      "correct": true,
+      "elapsed_s": 13.0,
+      "key_strengths": [
+        "Strong background in MLOps, Airflow, Big Data, Cloud Platforms, and Data Warehousing",
+        "Proven track record of successfully designing, implementing, and deploying scalable data pipelines",
+        "Skilled in leading cross-functional teams and collaborating with stakeholders"
+      ],
+      "key_gaps": [],
+      "reasoning": "Based on the candidate's profile, they have a strong technical skill set aligned with the job requirements. They also have relevant experience as a Senior Data Engineer at ABC Company, which is consistent with Historical Case 1. The similarity score between this candidate and the successful historical cases is high (1.933), indicating a good fit for the role.",
+      "parse_error": false
+    },
+    {
+      "case_id": "case_09237",
+      "role": "ui designer",
+      "ground_truth": "select",
+      "prediction": "select",
+      "confidence": "high",
+      "correct": true,
+      "elapsed_s": 12.9,
+      "key_strengths": [
+        "excellent problem-solving abilities and communication skills as mentioned in the job description match with Palash's proficiency in industry-standard design tools, human-centered design principles, and front-end development.",
+        "strong understanding of interaction design principles and graphic design expertise align with the job requirements.",
+        "Palash's experience in crafting user flows, wireframes, and high-fidelity designs meets business objectives, as per the job description."
+      ],
+      "key_gaps": [
+        "No direct experience in gaming, retail, or media domains mentioned in Palash's profile, which is a concern given the historical cases' emphasis on these domains.",
+        "Expected_experience : 6-8 years, but Palash's actual experience is not explicitly stated, raising questions about his readiness for the role."
+      ],
+      "reasoning": "The candidate matches the job description in terms of skills and strengths, but there are concerns regarding domain expertise and expected experience. This decision leans towards selecting Palash based on his overall profile, but with a nuanced understanding of the potential gaps.",
+      "parse_error": false
+    },
+    {
+      "case_id": "case_03240",
+      "role": "human resources specialist",
+      "ground_truth": "reject",
+      "prediction": "reject",
+      "confidence": "high",
+      "correct": true,
+      "elapsed_s": 9.6,
+      "key_strengths": [],
+      "key_gaps": [
+        "Job mismatch: The candidate applied for a Human Resources Specialist role, whereas the job description is for a Product Manager position with 10 years of experience"
+      ],
+      "reasoning": "Based on the historical cases and the current job description, I recommend rejecting the candidate due to the significant mismatch in job requirements. None of the candidate's skills or experiences match the product management position, which typically requires extensive technical expertise and leadership experience.",
+      "parse_error": false
+    },
+    {
+      "case_id": "case_04554",
+      "role": "digital marketing specialist",
+      "ground_truth": "reject",
+      "prediction": "select",
+      "confidence": "high",
+      "correct": false,
+      "elapsed_s": 10.7,
+      "key_strengths": [
+        "impressive leadership and communication abilities (Historical Case 1)",
+        "proven expertise in google ads, content marketing, social media marketing, and email marketing (Candidate Profile)",
+        "data analysis skills with excel and tableau proficiency"
+      ],
+      "key_gaps": [
+        "none detected"
+      ],
+      "reasoning": "The candidate's experience and skills align closely with the job description, particularly in digital marketing strategies and campaign optimization. Their strong leadership abilities and technical skills make them a strong fit for the role. Overall, their profile is more similar to Historical Cases 1-5, which had successful outcomes.",
+      "parse_error": false
+    },
+    {
+      "case_id": "case_09735",
+      "role": "data engineer",
+      "ground_truth": "select",
+      "prediction": "select",
+      "confidence": "high",
+      "correct": true,
+      "elapsed_s": 14.9,
+      "key_strengths": [
+        "Proven track record of delivering high-quality data solutions",
+        "Strong experience with cloud-based technologies, including AWS and Google Cloud",
+        "Excellent problem-solving and analytical skills"
+      ],
+      "key_gaps": [
+        "Data science and machine learning expertise",
+        "DevOps practices and Docker/Kubernetes experience"
+      ],
+      "reasoning": "This candidate's profile closely matches the historical cases (1.950 and 1.945) where candidates with growth mindset and adaptability were selected. While there are some skill gaps, their strong technical skills and experience make up for it.",
+      "parse_error": false
+    },
+    {
+      "case_id": "case_09928",
+      "role": "data scientist",
+      "ground_truth": "select",
+      "prediction": "select",
+      "confidence": "high",
+      "correct": true,
+      "elapsed_s": 20.4,
+      "key_strengths": [
+        "Strong programming skills in languages such as Python, R, or SQL.",
+        "Experience with machine learning libraries such as scikit-learn, TensorFlow, or PyTorch.",
+        "Excellent communication and collaboration skills."
+      ],
+      "key_gaps": [
+        "Lack of experience with cloud-based data platforms such as Amazon Web Services (AWS), Google Cloud Platform (GCP), or Microsoft Azure.",
+        "Limited knowledge in computer vision and natural language processing (NLP).",
+        "No certification in data science or a related field."
+      ],
+      "reasoning": "The candidate's strengths align with the job requirements, particularly in programming skills and machine learning experience. However, there are some gaps in cloud-based platforms and NLP, which may require additional training or onboarding. Overall, the candidate's strengths outweigh the weaknesses, making them a suitable selection.",
+      "parse_error": false
+    },
+    {
+      "case_id": "case_02339",
+      "role": "cloud engineer",
+      "ground_truth": "select",
+      "prediction": "select",
+      "confidence": "high",
+      "correct": true,
+      "elapsed_s": 10.9,
+      "key_strengths": [
+        "Strong background in cloud migration, cost optimization, and serverless architecture",
+        "Experience with automation tools like Terraform and Ansible",
+        "Certifications in AWS and Azure"
+      ],
+      "key_gaps": [],
+      "reasoning": "This candidate's profile closely matches Historical Case 1, which had a similar outcome of SELECT. They have a strong technical skill set, certifications, and relevant experience, which aligns with the job description. No significant gaps or concerns were detected.",
+      "parse_error": false
+    },
+    {
+      "case_id": "case_07402",
+      "role": "it support specialist",
+      "ground_truth": "reject",
+      "prediction": "select",
+      "confidence": "high",
+      "correct": false,
+      "elapsed_s": 11.7,
+      "key_strengths": [
+        "Proven track record of resolving complex technical issues and delivering exceptional customer service.",
+        "Extensive experience in troubleshooting, hardware/software knowledge, and networking.",
+        "Excellent technical skills, including operating systems, hardware, software, and networking."
+      ],
+      "key_gaps": [
+        "No direct experience in software engineering mentioned",
+        "Limited cloud platform experience"
+      ],
+      "reasoning": "This candidate's profile shows excellent alignment with the historical cases where candidates were selected (Cases 1-5). Their technical skills and experience are closely matched to those required for an IT Support Specialist role, making them a strong fit. While there are some gaps in their experience, they do not seem severe enough to outweigh their strengths.",
+      "parse_error": false
+    },
+    {
+      "case_id": "case_08963",
+      "role": "data engineer",
+      "ground_truth": "select",
+      "prediction": "select",
+      "confidence": "high",
+      "correct": true,
+      "elapsed_s": 10.1,
+      "key_strengths": [
+        "Proven expertise in designing and implementing data warehousing solutions using technologies like Amazon Redshift, Microsoft Azure Synapse Analytics, and Google Bigquery.",
+        "Certified in AWS Certified Developer - Associate and AWS Certified Solutions Architect - Associate.",
+        "Well-versed in big data technologies like Hadoop, Spark, and NoSQL databases."
+      ],
+      "key_gaps": [],
+      "reasoning": "The candidate's skills and experience align closely with the job description. They have a strong foundation in data engineering and are certified in AWS, which is a key requirement for many companies. The historical cases suggest that candidates with similar profiles tend to perform well.",
+      "parse_error": false
+    },
+    {
+      "case_id": "case_05544",
+      "role": "cloud architect",
+      "ground_truth": "reject",
+      "prediction": "select",
+      "confidence": "high",
+      "correct": false,
+      "elapsed_s": 11.3,
+      "key_strengths": [
+        "Excellent full-stack development experience (Historical Case 1)",
+        "Strong technical skills in AI and ML (Historical Case 4)",
+        "Proven track record of delivering scalable, secure, and efficient cloud solutions"
+      ],
+      "key_gaps": [],
+      "reasoning": "The candidate's skillset closely matches the historical cases with positive outcomes, particularly in terms of technical expertise. There are no significant gaps or concerns based on the provided information.",
+      "parse_error": false
+    },
+    {
+      "case_id": "case_06983",
+      "role": "robotics engineer",
+      "ground_truth": "reject",
+      "prediction": "select",
+      "confidence": "HIGH",
+      "correct": false,
+      "elapsed_s": 10.6,
+      "key_strengths": [
+        "Strong background in control systems, mechatronics, and sensor fusion.",
+        "Proficient in Matlab and programming languages such as C++ and Python.",
+        "Proven track record of delivering high-quality projects and collaborating with cross-functional teams."
+      ],
+      "key_gaps": [],
+      "reasoning": "The candidate's skills and experience closely align with the job description, especially in system design and development. The historical cases show a strong trend of selecting candidates with similar profiles, and this candidate does not exhibit any significant gaps or concerns. Therefore, I recommend selecting this candidate.",
+      "parse_error": false
+    },
+    {
+      "case_id": "case_04511",
+      "role": "digital marketing specialist",
+      "ground_truth": "select",
+      "prediction": "select",
+      "confidence": "high",
+      "correct": true,
+      "elapsed_s": 10.3,
+      "key_strengths": [
+        "Excellent full-stack development experience (Historical Case 1)",
+        "Impressive leadership and communication abilities (Historical Case 2)",
+        "Strong technical skills in data analysis and reporting tools (Candidate Profile)"
+      ],
+      "key_gaps": [],
+      "reasoning": "The candidate's profile matches the historical cases of selected candidates, with a strong focus on digital marketing and technical skills. Unlike the rejected cases, this candidate has no skill gaps or concerns, making them a suitable fit for the role.",
+      "parse_error": false
+    },
+    {
+      "case_id": "case_08276",
+      "role": "data engineer",
+      "ground_truth": "select",
+      "prediction": "select",
+      "confidence": "HIGH",
+      "correct": true,
+      "elapsed_s": 12.7,
+      "key_strengths": [
+        "Strong technical skills in mlops, airflow, etl, big data, and cloud platforms",
+        "Proven track record of success in delivering data-driven solutions",
+        "Experience with multiple cloud platforms (AWS, Azure, GCP)"
+      ],
+      "key_gaps": [],
+      "reasoning": "This candidate has a very strong profile compared to the historical cases. They have an impressive set of technical skills and a proven track record of success, which aligns well with the job description. The only reason to consider rejecting them would be if they lack experience in system design expertise, but the case history suggests that their strengths outweigh this potential gap.",
+      "parse_error": false
+    },
+    {
+      "case_id": "case_01510",
+      "role": "data scientist",
+      "ground_truth": "reject",
+      "prediction": "select",
+      "confidence": "high",
+      "correct": false,
+      "elapsed_s": 16.5,
+      "key_strengths": [
+        "8+ years of experience in delivering high-impact projects, driving business growth, and fostering data-driven decision-making",
+        "Proven track record of achieving exceptional results in competitive environments",
+        "Skilled in predictive modeling, data storytelling, big data processing, and deep learning"
+      ],
+      "key_gaps": [
+        "The candidate's job title is Senior Data Scientist, but the job description requires 6 years of experience",
+        "The candidate has more experience than required for the role, which could be a concern if they are not looking to move into a leadership position or transition out of data science"
+      ],
+      "reasoning": "This candidate's skills and experience align closely with Historical Case 1, where the outcome was SELECT. The candidate's expertise in statistical software, SQL querying, and machine learning algorithms makes them a strong fit for the role. While there are some concerns about their job title and potential motivation to move into a leadership position or transition out of data science, these can be addressed through further evaluation and discussion.",
+      "parse_error": false
+    },
+    {
+      "case_id": "case_06938",
+      "role": "cloud architect",
+      "ground_truth": "reject",
+      "prediction": "select",
+      "confidence": "high",
+      "correct": false,
+      "elapsed_s": 14.4,
+      "key_strengths": [
+        "8+ years of experience in designing and implementing scalable, secure, and high-performance cloud architectures on Azure, GCP, and Kubernetes.",
+        "Proven track record of improving cloud infrastructure efficiency, reducing costs, and ensuring compliance with industry standards.",
+        "Strong technical skills in AI and ML."
+      ],
+      "key_gaps": [
+        "No explicit mention of experience with AI model development or bringing new ideas to life",
+        "Lack of certifications specific to AI/ML or data engineering",
+        "No information about leadership skills for a senior position"
+      ],
+      "reasoning": "This candidate's profile shows strong technical skills and experience in cloud architecture, which aligns with the job description. While there are some gaps in their profile, they can be addressed through additional training or support. The historical cases suggest that similar candidates have been selected for similar roles.",
+      "parse_error": false
+    }
+  ]
+}

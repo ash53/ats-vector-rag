@@ -1,0 +1,6367 @@
+{
+  "config": {
+    "n": 300,
+    "seed": 42
+  },
+  "baselines": {
+    "always-select": {
+      "metrics": {
+        "accuracy": 0.5,
+        "precision": 0.5,
+        "recall": 1.0,
+        "f1": 0.6667,
+        "pred_select_rate": 1.0,
+        "confusion_matrix": {
+          "TP (pred select, actual select)": 150,
+          "FP (pred select, actual reject)": 150,
+          "FN (pred reject, actual select)": 0,
+          "TN (pred reject, actual reject)": 0
+        },
+        "total_cases": 300
+      },
+      "results": [
+        {
+          "case_id": "case_06998",
+          "role": "machine learning engineer",
+          "ground_truth": "reject",
+          "prediction": "select",
+          "correct": false
+        },
+        {
+          "case_id": "case_07231",
+          "role": "ar/vr developer",
+          "ground_truth": "reject",
+          "prediction": "select",
+          "correct": false
+        },
+        {
+          "case_id": "case_00821",
+          "role": "data scientist",
+          "ground_truth": "select",
+          "prediction": "select",
+          "correct": true
+        },
+        {
+          "case_id": "case_05048",
+          "role": "cloud engineer",
+          "ground_truth": "reject",
+          "prediction": "select",
+          "correct": false
+        },
+        {
+          "case_id": "case_09238",
+          "role": "data engineer",
+          "ground_truth": "select",
+          "prediction": "select",
+          "correct": true
+        },
+        {
+          "case_id": "case_00539",
+          "role": "ui engineer",
+          "ground_truth": "select",
+          "prediction": "select",
+          "correct": true
+        },
+        {
+          "case_id": "case_02550",
+          "role": "it support specialist",
+          "ground_truth": "select",
+          "prediction": "select",
+          "correct": true
+        },
+        {
+          "case_id": "case_06134",
+          "role": "ui engineer",
+          "ground_truth": "select",
+          "prediction": "select",
+          "correct": true
+        },
+        {
+          "case_id": "case_03874",
+          "role": "game developer",
+          "ground_truth": "reject",
+          "prediction": "select",
+          "correct": false
+        },
+        {
+          "case_id": "case_08196",
+          "role": "ui engineer",
+          "ground_truth": "select",
+          "prediction": "select",
+          "correct": true
+        },
+        {
+          "case_id": "case_00461",
+          "role": "game developer",
+          "ground_truth": "select",
+          "prediction": "select",
+          "correct": true
+        },
+        {
+          "case_id": "case_06655",
+          "role": "ai researcher",
+          "ground_truth": "reject",
+          "prediction": "select",
+          "correct": false
+        },
+        {
+          "case_id": "case_02682",
+          "role": "ui engineer",
+          "ground_truth": "reject",
+          "prediction": "select",
+          "correct": false
+        },
+        {
+          "case_id": "case_04321",
+          "role": "ui engineer",
+          "ground_truth": "select",
+          "prediction": "select",
+          "correct": true
+        },
+        {
+          "case_id": "case_03560",
+          "role": "robotics engineer",
+          "ground_truth": "reject",
+          "prediction": "select",
+          "correct": false
+        },
+        {
+          "case_id": "case_07766",
+          "role": "data architect",
+          "ground_truth": "reject",
+          "prediction": "select",
+          "correct": false
+        },
+        {
+          "case_id": "case_01069",
+          "role": "ui engineer",
+          "ground_truth": "reject",
+          "prediction": "select",
+          "correct": false
+        },
+        {
+          "case_id": "case_01741",
+          "role": "game developer",
+          "ground_truth": "reject",
+          "prediction": "select",
+          "correct": false
+        },
+        {
+          "case_id": "case_03483",
+          "role": "ui engineer",
+          "ground_truth": "reject",
+          "prediction": "select",
+          "correct": false
+        },
+        {
+          "case_id": "case_01934",
+          "role": "software developer",
+          "ground_truth": "reject",
+          "prediction": "select",
+          "correct": false
+        },
+        {
+          "case_id": "case_05487",
+          "role": "ar/vr developer",
+          "ground_truth": "select",
+          "prediction": "select",
+          "correct": true
+        },
+        {
+          "case_id": "case_01049",
+          "role": "data scientist",
+          "ground_truth": "reject",
+          "prediction": "select",
+          "correct": false
+        },
+        {
+          "case_id": "case_05993",
+          "role": "qa engineer",
+          "ground_truth": "reject",
+          "prediction": "select",
+          "correct": false
+        },
+        {
+          "case_id": "case_09832",
+          "role": "data scientist",
+          "ground_truth": "select",
+          "prediction": "select",
+          "correct": true
+        },
+        {
+          "case_id": "case_04563",
+          "role": "ar/vr developer",
+          "ground_truth": "select",
+          "prediction": "select",
+          "correct": true
+        },
+        {
+          "case_id": "case_08685",
+          "role": "data engineer",
+          "ground_truth": "select",
+          "prediction": "select",
+          "correct": true
+        },
+        {
+          "case_id": "case_01923",
+          "role": "project manager",
+          "ground_truth": "select",
+          "prediction": "select",
+          "correct": true
+        },
+        {
+          "case_id": "case_00064",
+          "role": "devops engineer",
+          "ground_truth": "select",
+          "prediction": "select",
+          "correct": true
+        },
+        {
+          "case_id": "case_04058",
+          "role": "machine learning engineer",
+          "ground_truth": "reject",
+          "prediction": "select",
+          "correct": false
+        },
+        {
+          "case_id": "case_00973",
+          "role": "cloud architect",
+          "ground_truth": "select",
+          "prediction": "select",
+          "correct": true
+        },
+        {
+          "case_id": "case_09516",
+          "role": "data scientist",
+          "ground_truth": "select",
+          "prediction": "select",
+          "correct": true
+        },
+        {
+          "case_id": "case_01878",
+          "role": "project manager",
+          "ground_truth": "select",
+          "prediction": "select",
+          "correct": true
+        },
+        {
+          "case_id": "case_05842",
+          "role": "mobile app developer",
+          "ground_truth": "reject",
+          "prediction": "select",
+          "correct": false
+        },
+        {
+          "case_id": "case_04405",
+          "role": "cybersecurity analyst",
+          "ground_truth": "select",
+          "prediction": "select",
+          "correct": true
+        },
+        {
+          "case_id": "case_04391",
+          "role": "robotics engineer",
+          "ground_truth": "select",
+          "prediction": "select",
+          "correct": true
+        },
+        {
+          "case_id": "case_03104",
+          "role": "database administrator",
+          "ground_truth": "reject",
+          "prediction": "select",
+          "correct": false
+        },
+        {
+          "case_id": "case_07398",
+          "role": "cloud architect",
+          "ground_truth": "reject",
+          "prediction": "select",
+          "correct": false
+        },
+        {
+          "case_id": "case_03281",
+          "role": "qa engineer",
+          "ground_truth": "select",
+          "prediction": "select",
+          "correct": true
+        },
+        {
+          "case_id": "case_00211",
+          "role": "data analyst",
+          "ground_truth": "reject",
+          "prediction": "select",
+          "correct": false
+        },
+        {
+          "case_id": "case_02101",
+          "role": "system administrator",
+          "ground_truth": "select",
+          "prediction": "select",
+          "correct": true
+        },
+        {
+          "case_id": "case_06990",
+          "role": "cloud engineer",
+          "ground_truth": "reject",
+          "prediction": "select",
+          "correct": false
+        },
+        {
+          "case_id": "case_00763",
+          "role": "qa engineer",
+          "ground_truth": "select",
+          "prediction": "select",
+          "correct": true
+        },
+        {
+          "case_id": "case_01498",
+          "role": "ui designer",
+          "ground_truth": "select",
+          "prediction": "select",
+          "correct": true
+        },
+        {
+          "case_id": "case_03124",
+          "role": "database administrator",
+          "ground_truth": "reject",
+          "prediction": "select",
+          "correct": false
+        },
+        {
+          "case_id": "case_09295",
+          "role": "product manager",
+          "ground_truth": "reject",
+          "prediction": "select",
+          "correct": false
+        },
+        {
+          "case_id": "case_03805",
+          "role": "game developer",
+          "ground_truth": "select",
+          "prediction": "select",
+          "correct": true
+        },
+        {
+          "case_id": "case_00872",
+          "role": "product manager",
+          "ground_truth": "reject",
+          "prediction": "select",
+          "correct": false
+        },
+        {
+          "case_id": "case_02708",
+          "role": "data engineer",
+          "ground_truth": "select",
+          "prediction": "select",
+          "correct": true
+        },
+        {
+          "case_id": "case_00934",
+          "role": "cloud engineer",
+          "ground_truth": "reject",
+          "prediction": "select",
+          "correct": false
+        },
+        {
+          "case_id": "case_04089",
+          "role": "product manager",
+          "ground_truth": "reject",
+          "prediction": "select",
+          "correct": false
+        },
+        {
+          "case_id": "case_06155",
+          "role": "game developer",
+          "ground_truth": "select",
+          "prediction": "select",
+          "correct": true
+        },
+        {
+          "case_id": "case_01102",
+          "role": "data scientist",
+          "ground_truth": "select",
+          "prediction": "select",
+          "correct": true
+        },
+        {
+          "case_id": "case_03582",
+          "role": "data engineer",
+          "ground_truth": "select",
+          "prediction": "select",
+          "correct": true
+        },
+        {
+          "case_id": "case_02652",
+          "role": "data analyst",
+          "ground_truth": "reject",
+          "prediction": "select",
+          "correct": false
+        },
+        {
+          "case_id": "case_02662",
+          "role": "cloud architect",
+          "ground_truth": "select",
+          "prediction": "select",
+          "correct": true
+        },
+        {
+          "case_id": "case_00990",
+          "role": "game developer",
+          "ground_truth": "reject",
+          "prediction": "select",
+          "correct": false
+        },
+        {
+          "case_id": "case_06934",
+          "role": "software engineer",
+          "ground_truth": "reject",
+          "prediction": "select",
+          "correct": false
+        },
+        {
+          "case_id": "case_06959",
+          "role": "machine learning engineer",
+          "ground_truth": "select",
+          "prediction": "select",
+          "correct": true
+        },
+        {
+          "case_id": "case_00927",
+          "role": "blockchain developer",
+          "ground_truth": "reject",
+          "prediction": "select",
+          "correct": false
+        },
+        {
+          "case_id": "case_08623",
+          "role": "product manager",
+          "ground_truth": "reject",
+          "prediction": "select",
+          "correct": false
+        },
+        {
+          "case_id": "case_06473",
+          "role": "business analyst",
+          "ground_truth": "reject",
+          "prediction": "select",
+          "correct": false
+        },
+        {
+          "case_id": "case_07487",
+          "role": "ux designer",
+          "ground_truth": "select",
+          "prediction": "select",
+          "correct": true
+        },
+        {
+          "case_id": "case_08684",
+          "role": "data analyst",
+          "ground_truth": "reject",
+          "prediction": "select",
+          "correct": false
+        },
+        {
+          "case_id": "case_00899",
+          "role": "qa engineer",
+          "ground_truth": "reject",
+          "prediction": "select",
+          "correct": false
+        },
+        {
+          "case_id": "case_08772",
+          "role": "data scientist",
+          "ground_truth": "select",
+          "prediction": "select",
+          "correct": true
+        },
+        {
+          "case_id": "case_02631",
+          "role": "data engineer",
+          "ground_truth": "select",
+          "prediction": "select",
+          "correct": true
+        },
+        {
+          "case_id": "case_03695",
+          "role": "ux designer",
+          "ground_truth": "reject",
+          "prediction": "select",
+          "correct": false
+        },
+        {
+          "case_id": "case_08980",
+          "role": "software engineer",
+          "ground_truth": "reject",
+          "prediction": "select",
+          "correct": false
+        },
+        {
+          "case_id": "case_07436",
+          "role": "cloud engineer",
+          "ground_truth": "reject",
+          "prediction": "select",
+          "correct": false
+        },
+        {
+          "case_id": "case_06226",
+          "role": "ar/vr developer",
+          "ground_truth": "select",
+          "prediction": "select",
+          "correct": true
+        },
+        {
+          "case_id": "case_09881",
+          "role": "data scientist",
+          "ground_truth": "reject",
+          "prediction": "select",
+          "correct": false
+        },
+        {
+          "case_id": "case_08013",
+          "role": "data scientist",
+          "ground_truth": "reject",
+          "prediction": "select",
+          "correct": false
+        },
+        {
+          "case_id": "case_09316",
+          "role": "product manager",
+          "ground_truth": "reject",
+          "prediction": "select",
+          "correct": false
+        },
+        {
+          "case_id": "case_02688",
+          "role": "devops engineer",
+          "ground_truth": "select",
+          "prediction": "select",
+          "correct": true
+        },
+        {
+          "case_id": "case_02339",
+          "role": "cloud engineer",
+          "ground_truth": "select",
+          "prediction": "select",
+          "correct": true
+        },
+        {
+          "case_id": "case_04021",
+          "role": "data analyst",
+          "ground_truth": "select",
+          "prediction": "select",
+          "correct": true
+        },
+        {
+          "case_id": "case_00485",
+          "role": "qa engineer",
+          "ground_truth": "select",
+          "prediction": "select",
+          "correct": true
+        },
+        {
+          "case_id": "case_09717",
+          "role": "software engineer",
+          "ground_truth": "select",
+          "prediction": "select",
+          "correct": true
+        },
+        {
+          "case_id": "case_05587",
+          "role": "ui engineer",
+          "ground_truth": "reject",
+          "prediction": "select",
+          "correct": false
+        },
+        {
+          "case_id": "case_01171",
+          "role": "ui engineer",
+          "ground_truth": "reject",
+          "prediction": "select",
+          "correct": false
+        },
+        {
+          "case_id": "case_05545",
+          "role": "machine learning engineer",
+          "ground_truth": "select",
+          "prediction": "select",
+          "correct": true
+        },
+        {
+          "case_id": "case_07116",
+          "role": "data architect",
+          "ground_truth": "reject",
+          "prediction": "select",
+          "correct": false
+        },
+        {
+          "case_id": "case_04356",
+          "role": "cybersecurity analyst",
+          "ground_truth": "select",
+          "prediction": "select",
+          "correct": true
+        },
+        {
+          "case_id": "case_08818",
+          "role": "ui designer",
+          "ground_truth": "select",
+          "prediction": "select",
+          "correct": true
+        },
+        {
+          "case_id": "case_05287",
+          "role": "data architect",
+          "ground_truth": "select",
+          "prediction": "select",
+          "correct": true
+        },
+        {
+          "case_id": "case_04133",
+          "role": "database administrator",
+          "ground_truth": "select",
+          "prediction": "select",
+          "correct": true
+        },
+        {
+          "case_id": "case_03497",
+          "role": "it support specialist",
+          "ground_truth": "select",
+          "prediction": "select",
+          "correct": true
+        },
+        {
+          "case_id": "case_09595",
+          "role": "data engineer",
+          "ground_truth": "reject",
+          "prediction": "select",
+          "correct": false
+        },
+        {
+          "case_id": "case_09384",
+          "role": "data scientist",
+          "ground_truth": "reject",
+          "prediction": "select",
+          "correct": false
+        },
+        {
+          "case_id": "case_04809",
+          "role": "system administrator",
+          "ground_truth": "select",
+          "prediction": "select",
+          "correct": true
+        },
+        {
+          "case_id": "case_08957",
+          "role": "product manager",
+          "ground_truth": "select",
+          "prediction": "select",
+          "correct": true
+        },
+        {
+          "case_id": "case_01101",
+          "role": "data engineer",
+          "ground_truth": "reject",
+          "prediction": "select",
+          "correct": false
+        },
+        {
+          "case_id": "case_04883",
+          "role": "ai researcher",
+          "ground_truth": "select",
+          "prediction": "select",
+          "correct": true
+        },
+        {
+          "case_id": "case_05335",
+          "role": "ux designer",
+          "ground_truth": "reject",
+          "prediction": "select",
+          "correct": false
+        },
+        {
+          "case_id": "case_06855",
+          "role": "cloud engineer",
+          "ground_truth": "select",
+          "prediction": "select",
+          "correct": true
+        },
+        {
+          "case_id": "case_02380",
+          "role": "e-commerce specialist",
+          "ground_truth": "select",
+          "prediction": "select",
+          "correct": true
+        },
+        {
+          "case_id": "case_09513",
+          "role": "data scientist",
+          "ground_truth": "reject",
+          "prediction": "select",
+          "correct": false
+        },
+        {
+          "case_id": "case_09082",
+          "role": "data scientist",
+          "ground_truth": "reject",
+          "prediction": "select",
+          "correct": false
+        },
+        {
+          "case_id": "case_00221",
+          "role": "product manager",
+          "ground_truth": "select",
+          "prediction": "select",
+          "correct": true
+        },
+        {
+          "case_id": "case_03743",
+          "role": "qa engineer",
+          "ground_truth": "select",
+          "prediction": "select",
+          "correct": true
+        },
+        {
+          "case_id": "case_06148",
+          "role": "digital marketing specialist",
+          "ground_truth": "select",
+          "prediction": "select",
+          "correct": true
+        },
+        {
+          "case_id": "case_04020",
+          "role": "cloud engineer",
+          "ground_truth": "select",
+          "prediction": "select",
+          "correct": true
+        },
+        {
+          "case_id": "case_08858",
+          "role": "data analyst",
+          "ground_truth": "select",
+          "prediction": "select",
+          "correct": true
+        },
+        {
+          "case_id": "case_00799",
+          "role": "human resources specialist",
+          "ground_truth": "select",
+          "prediction": "select",
+          "correct": true
+        },
+        {
+          "case_id": "case_03897",
+          "role": "digital marketing specialist",
+          "ground_truth": "reject",
+          "prediction": "select",
+          "correct": false
+        },
+        {
+          "case_id": "case_01586",
+          "role": "data scientist",
+          "ground_truth": "select",
+          "prediction": "select",
+          "correct": true
+        },
+        {
+          "case_id": "case_08323",
+          "role": "ui engineer",
+          "ground_truth": "select",
+          "prediction": "select",
+          "correct": true
+        },
+        {
+          "case_id": "case_00833",
+          "role": "digital marketing specialist",
+          "ground_truth": "reject",
+          "prediction": "select",
+          "correct": false
+        },
+        {
+          "case_id": "case_05897",
+          "role": "it support specialist",
+          "ground_truth": "select",
+          "prediction": "select",
+          "correct": true
+        },
+        {
+          "case_id": "case_09428",
+          "role": "product manager",
+          "ground_truth": "reject",
+          "prediction": "select",
+          "correct": false
+        },
+        {
+          "case_id": "case_06628",
+          "role": "product manager",
+          "ground_truth": "reject",
+          "prediction": "select",
+          "correct": false
+        },
+        {
+          "case_id": "case_09435",
+          "role": "software engineer",
+          "ground_truth": "reject",
+          "prediction": "select",
+          "correct": false
+        },
+        {
+          "case_id": "case_02829",
+          "role": "e-commerce specialist",
+          "ground_truth": "select",
+          "prediction": "select",
+          "correct": true
+        },
+        {
+          "case_id": "case_03496",
+          "role": "software engineer",
+          "ground_truth": "reject",
+          "prediction": "select",
+          "correct": false
+        },
+        {
+          "case_id": "case_06809",
+          "role": "data analyst",
+          "ground_truth": "select",
+          "prediction": "select",
+          "correct": true
+        },
+        {
+          "case_id": "case_07476",
+          "role": "it support specialist",
+          "ground_truth": "select",
+          "prediction": "select",
+          "correct": true
+        },
+        {
+          "case_id": "case_06499",
+          "role": "it support specialist",
+          "ground_truth": "select",
+          "prediction": "select",
+          "correct": true
+        },
+        {
+          "case_id": "case_05436",
+          "role": "it support specialist",
+          "ground_truth": "reject",
+          "prediction": "select",
+          "correct": false
+        },
+        {
+          "case_id": "case_03022",
+          "role": "data engineer",
+          "ground_truth": "reject",
+          "prediction": "select",
+          "correct": false
+        },
+        {
+          "case_id": "case_02107",
+          "role": "cybersecurity analyst",
+          "ground_truth": "reject",
+          "prediction": "select",
+          "correct": false
+        },
+        {
+          "case_id": "case_07305",
+          "role": "data architect",
+          "ground_truth": "select",
+          "prediction": "select",
+          "correct": true
+        },
+        {
+          "case_id": "case_08276",
+          "role": "data engineer",
+          "ground_truth": "select",
+          "prediction": "select",
+          "correct": true
+        },
+        {
+          "case_id": "case_00778",
+          "role": "qa engineer",
+          "ground_truth": "reject",
+          "prediction": "select",
+          "correct": false
+        },
+        {
+          "case_id": "case_01516",
+          "role": "data engineer",
+          "ground_truth": "reject",
+          "prediction": "select",
+          "correct": false
+        },
+        {
+          "case_id": "case_07598",
+          "role": "product manager",
+          "ground_truth": "reject",
+          "prediction": "select",
+          "correct": false
+        },
+        {
+          "case_id": "case_03272",
+          "role": "qa engineer",
+          "ground_truth": "reject",
+          "prediction": "select",
+          "correct": false
+        },
+        {
+          "case_id": "case_00102",
+          "role": "business analyst",
+          "ground_truth": "reject",
+          "prediction": "select",
+          "correct": false
+        },
+        {
+          "case_id": "case_00462",
+          "role": "game developer",
+          "ground_truth": "reject",
+          "prediction": "select",
+          "correct": false
+        },
+        {
+          "case_id": "case_04676",
+          "role": "blockchain developer",
+          "ground_truth": "reject",
+          "prediction": "select",
+          "correct": false
+        },
+        {
+          "case_id": "case_07549",
+          "role": "content writer",
+          "ground_truth": "select",
+          "prediction": "select",
+          "correct": true
+        },
+        {
+          "case_id": "case_04557",
+          "role": "cloud architect",
+          "ground_truth": "select",
+          "prediction": "select",
+          "correct": true
+        },
+        {
+          "case_id": "case_00896",
+          "role": "devops engineer",
+          "ground_truth": "reject",
+          "prediction": "select",
+          "correct": false
+        },
+        {
+          "case_id": "case_03945",
+          "role": "devops engineer",
+          "ground_truth": "reject",
+          "prediction": "select",
+          "correct": false
+        },
+        {
+          "case_id": "case_08707",
+          "role": "product manager",
+          "ground_truth": "reject",
+          "prediction": "select",
+          "correct": false
+        },
+        {
+          "case_id": "case_06721",
+          "role": "machine learning engineer",
+          "ground_truth": "reject",
+          "prediction": "select",
+          "correct": false
+        },
+        {
+          "case_id": "case_08832",
+          "role": "data scientist",
+          "ground_truth": "reject",
+          "prediction": "select",
+          "correct": false
+        },
+        {
+          "case_id": "case_04805",
+          "role": "digital marketing specialist",
+          "ground_truth": "select",
+          "prediction": "select",
+          "correct": true
+        },
+        {
+          "case_id": "case_09683",
+          "role": "data scientist",
+          "ground_truth": "reject",
+          "prediction": "select",
+          "correct": false
+        },
+        {
+          "case_id": "case_10093",
+          "role": "software engineer",
+          "ground_truth": "reject",
+          "prediction": "select",
+          "correct": false
+        },
+        {
+          "case_id": "case_08991",
+          "role": "data engineer",
+          "ground_truth": "reject",
+          "prediction": "select",
+          "correct": false
+        },
+        {
+          "case_id": "case_08866",
+          "role": "ui designer",
+          "ground_truth": "select",
+          "prediction": "select",
+          "correct": true
+        },
+        {
+          "case_id": "case_01530",
+          "role": "software engineer",
+          "ground_truth": "reject",
+          "prediction": "select",
+          "correct": false
+        },
+        {
+          "case_id": "case_02699",
+          "role": "robotics engineer",
+          "ground_truth": "select",
+          "prediction": "select",
+          "correct": true
+        },
+        {
+          "case_id": "case_01355",
+          "role": "data engineer",
+          "ground_truth": "select",
+          "prediction": "select",
+          "correct": true
+        },
+        {
+          "case_id": "case_04042",
+          "role": "full stack developer",
+          "ground_truth": "select",
+          "prediction": "select",
+          "correct": true
+        },
+        {
+          "case_id": "case_03924",
+          "role": "human resources specialist",
+          "ground_truth": "reject",
+          "prediction": "select",
+          "correct": false
+        },
+        {
+          "case_id": "case_01457",
+          "role": "ui designer",
+          "ground_truth": "reject",
+          "prediction": "select",
+          "correct": false
+        },
+        {
+          "case_id": "case_09755",
+          "role": "product manager",
+          "ground_truth": "reject",
+          "prediction": "select",
+          "correct": false
+        },
+        {
+          "case_id": "case_08855",
+          "role": "data scientist",
+          "ground_truth": "reject",
+          "prediction": "select",
+          "correct": false
+        },
+        {
+          "case_id": "case_01141",
+          "role": "ui engineer",
+          "ground_truth": "select",
+          "prediction": "select",
+          "correct": true
+        },
+        {
+          "case_id": "case_01558",
+          "role": "product manager",
+          "ground_truth": "select",
+          "prediction": "select",
+          "correct": true
+        },
+        {
+          "case_id": "case_08474",
+          "role": "data scientist",
+          "ground_truth": "reject",
+          "prediction": "select",
+          "correct": false
+        },
+        {
+          "case_id": "case_07908",
+          "role": "game developer",
+          "ground_truth": "reject",
+          "prediction": "select",
+          "correct": false
+        },
+        {
+          "case_id": "case_02983",
+          "role": "ux designer",
+          "ground_truth": "reject",
+          "prediction": "select",
+          "correct": false
+        },
+        {
+          "case_id": "case_08709",
+          "role": "software engineer",
+          "ground_truth": "select",
+          "prediction": "select",
+          "correct": true
+        },
+        {
+          "case_id": "case_03757",
+          "role": "full stack developer",
+          "ground_truth": "reject",
+          "prediction": "select",
+          "correct": false
+        },
+        {
+          "case_id": "case_06020",
+          "role": "human resources specialist",
+          "ground_truth": "select",
+          "prediction": "select",
+          "correct": true
+        },
+        {
+          "case_id": "case_06864",
+          "role": "robotics engineer",
+          "ground_truth": "select",
+          "prediction": "select",
+          "correct": true
+        },
+        {
+          "case_id": "case_08963",
+          "role": "data engineer",
+          "ground_truth": "select",
+          "prediction": "select",
+          "correct": true
+        },
+        {
+          "case_id": "case_02051",
+          "role": "robotics engineer",
+          "ground_truth": "reject",
+          "prediction": "select",
+          "correct": false
+        },
+        {
+          "case_id": "case_04334",
+          "role": "product manager",
+          "ground_truth": "select",
+          "prediction": "select",
+          "correct": true
+        },
+        {
+          "case_id": "case_04558",
+          "role": "system administrator",
+          "ground_truth": "reject",
+          "prediction": "select",
+          "correct": false
+        },
+        {
+          "case_id": "case_05543",
+          "role": "data analyst",
+          "ground_truth": "select",
+          "prediction": "select",
+          "correct": true
+        },
+        {
+          "case_id": "case_00031",
+          "role": "cloud architect",
+          "ground_truth": "reject",
+          "prediction": "select",
+          "correct": false
+        },
+        {
+          "case_id": "case_02009",
+          "role": "ui engineer",
+          "ground_truth": "reject",
+          "prediction": "select",
+          "correct": false
+        },
+        {
+          "case_id": "case_09928",
+          "role": "data scientist",
+          "ground_truth": "select",
+          "prediction": "select",
+          "correct": true
+        },
+        {
+          "case_id": "case_10040",
+          "role": "data engineer",
+          "ground_truth": "select",
+          "prediction": "select",
+          "correct": true
+        },
+        {
+          "case_id": "case_00583",
+          "role": "software engineer",
+          "ground_truth": "select",
+          "prediction": "select",
+          "correct": true
+        },
+        {
+          "case_id": "case_09631",
+          "role": "data engineer",
+          "ground_truth": "select",
+          "prediction": "select",
+          "correct": true
+        },
+        {
+          "case_id": "case_09070",
+          "role": "ui designer",
+          "ground_truth": "select",
+          "prediction": "select",
+          "correct": true
+        },
+        {
+          "case_id": "case_07805",
+          "role": "ux designer",
+          "ground_truth": "reject",
+          "prediction": "select",
+          "correct": false
+        },
+        {
+          "case_id": "case_03775",
+          "role": "cloud architect",
+          "ground_truth": "reject",
+          "prediction": "select",
+          "correct": false
+        },
+        {
+          "case_id": "case_04738",
+          "role": "cloud engineer",
+          "ground_truth": "select",
+          "prediction": "select",
+          "correct": true
+        },
+        {
+          "case_id": "case_01372",
+          "role": "software engineer",
+          "ground_truth": "select",
+          "prediction": "select",
+          "correct": true
+        },
+        {
+          "case_id": "case_06787",
+          "role": "cloud engineer",
+          "ground_truth": "reject",
+          "prediction": "select",
+          "correct": false
+        },
+        {
+          "case_id": "case_03478",
+          "role": "ai researcher",
+          "ground_truth": "select",
+          "prediction": "select",
+          "correct": true
+        },
+        {
+          "case_id": "case_09838",
+          "role": "product manager",
+          "ground_truth": "select",
+          "prediction": "select",
+          "correct": true
+        },
+        {
+          "case_id": "case_01242",
+          "role": "data analyst",
+          "ground_truth": "reject",
+          "prediction": "select",
+          "correct": false
+        },
+        {
+          "case_id": "case_03719",
+          "role": "business analyst",
+          "ground_truth": "select",
+          "prediction": "select",
+          "correct": true
+        },
+        {
+          "case_id": "case_06183",
+          "role": "ar/vr developer",
+          "ground_truth": "select",
+          "prediction": "select",
+          "correct": true
+        },
+        {
+          "case_id": "case_07680",
+          "role": "e-commerce specialist",
+          "ground_truth": "reject",
+          "prediction": "select",
+          "correct": false
+        },
+        {
+          "case_id": "case_04362",
+          "role": "data analyst",
+          "ground_truth": "select",
+          "prediction": "select",
+          "correct": true
+        },
+        {
+          "case_id": "case_00122",
+          "role": "e-commerce specialist",
+          "ground_truth": "select",
+          "prediction": "select",
+          "correct": true
+        },
+        {
+          "case_id": "case_06594",
+          "role": "machine learning engineer",
+          "ground_truth": "reject",
+          "prediction": "select",
+          "correct": false
+        },
+        {
+          "case_id": "case_05610",
+          "role": "content writer",
+          "ground_truth": "select",
+          "prediction": "select",
+          "correct": true
+        },
+        {
+          "case_id": "case_02494",
+          "role": "it support specialist",
+          "ground_truth": "reject",
+          "prediction": "select",
+          "correct": false
+        },
+        {
+          "case_id": "case_07962",
+          "role": "digital marketing specialist",
+          "ground_truth": "reject",
+          "prediction": "select",
+          "correct": false
+        },
+        {
+          "case_id": "case_04326",
+          "role": "e-commerce specialist",
+          "ground_truth": "reject",
+          "prediction": "select",
+          "correct": false
+        },
+        {
+          "case_id": "case_09596",
+          "role": "data engineer",
+          "ground_truth": "reject",
+          "prediction": "select",
+          "correct": false
+        },
+        {
+          "case_id": "case_07316",
+          "role": "data scientist",
+          "ground_truth": "reject",
+          "prediction": "select",
+          "correct": false
+        },
+        {
+          "case_id": "case_05564",
+          "role": "it support specialist",
+          "ground_truth": "reject",
+          "prediction": "select",
+          "correct": false
+        },
+        {
+          "case_id": "case_03612",
+          "role": "data analyst",
+          "ground_truth": "reject",
+          "prediction": "select",
+          "correct": false
+        },
+        {
+          "case_id": "case_01732",
+          "role": "cloud architect",
+          "ground_truth": "select",
+          "prediction": "select",
+          "correct": true
+        },
+        {
+          "case_id": "case_06463",
+          "role": "digital marketing specialist",
+          "ground_truth": "select",
+          "prediction": "select",
+          "correct": true
+        },
+        {
+          "case_id": "case_08810",
+          "role": "data scientist",
+          "ground_truth": "select",
+          "prediction": "select",
+          "correct": true
+        },
+        {
+          "case_id": "case_06970",
+          "role": "system administrator",
+          "ground_truth": "reject",
+          "prediction": "select",
+          "correct": false
+        },
+        {
+          "case_id": "case_01703",
+          "role": "data analyst",
+          "ground_truth": "select",
+          "prediction": "select",
+          "correct": true
+        },
+        {
+          "case_id": "case_05843",
+          "role": "robotics engineer",
+          "ground_truth": "select",
+          "prediction": "select",
+          "correct": true
+        },
+        {
+          "case_id": "case_09048",
+          "role": "product manager",
+          "ground_truth": "reject",
+          "prediction": "select",
+          "correct": false
+        },
+        {
+          "case_id": "case_00888",
+          "role": "data engineer",
+          "ground_truth": "reject",
+          "prediction": "select",
+          "correct": false
+        },
+        {
+          "case_id": "case_06288",
+          "role": "e-commerce specialist",
+          "ground_truth": "reject",
+          "prediction": "select",
+          "correct": false
+        },
+        {
+          "case_id": "case_04074",
+          "role": "robotics engineer",
+          "ground_truth": "reject",
+          "prediction": "select",
+          "correct": false
+        },
+        {
+          "case_id": "case_01043",
+          "role": "product manager",
+          "ground_truth": "reject",
+          "prediction": "select",
+          "correct": false
+        },
+        {
+          "case_id": "case_09329",
+          "role": "data scientist",
+          "ground_truth": "select",
+          "prediction": "select",
+          "correct": true
+        },
+        {
+          "case_id": "case_04564",
+          "role": "machine learning engineer",
+          "ground_truth": "select",
+          "prediction": "select",
+          "correct": true
+        },
+        {
+          "case_id": "case_02666",
+          "role": "cloud engineer",
+          "ground_truth": "reject",
+          "prediction": "select",
+          "correct": false
+        },
+        {
+          "case_id": "case_07385",
+          "role": "database administrator",
+          "ground_truth": "select",
+          "prediction": "select",
+          "correct": true
+        },
+        {
+          "case_id": "case_06991",
+          "role": "content writer",
+          "ground_truth": "reject",
+          "prediction": "select",
+          "correct": false
+        },
+        {
+          "case_id": "case_03100",
+          "role": "content writer",
+          "ground_truth": "reject",
+          "prediction": "select",
+          "correct": false
+        },
+        {
+          "case_id": "case_05131",
+          "role": "data architect",
+          "ground_truth": "select",
+          "prediction": "select",
+          "correct": true
+        },
+        {
+          "case_id": "case_06726",
+          "role": "mobile app developer",
+          "ground_truth": "reject",
+          "prediction": "select",
+          "correct": false
+        },
+        {
+          "case_id": "case_08410",
+          "role": "software engineer",
+          "ground_truth": "reject",
+          "prediction": "select",
+          "correct": false
+        },
+        {
+          "case_id": "case_08165",
+          "role": "ui engineer",
+          "ground_truth": "select",
+          "prediction": "select",
+          "correct": true
+        },
+        {
+          "case_id": "case_04437",
+          "role": "ui engineer",
+          "ground_truth": "select",
+          "prediction": "select",
+          "correct": true
+        },
+        {
+          "case_id": "case_06852",
+          "role": "game developer",
+          "ground_truth": "select",
+          "prediction": "select",
+          "correct": true
+        },
+        {
+          "case_id": "case_02582",
+          "role": "ai researcher",
+          "ground_truth": "select",
+          "prediction": "select",
+          "correct": true
+        },
+        {
+          "case_id": "case_08069",
+          "role": "data scientist",
+          "ground_truth": "select",
+          "prediction": "select",
+          "correct": true
+        },
+        {
+          "case_id": "case_08314",
+          "role": "ui engineer",
+          "ground_truth": "reject",
+          "prediction": "select",
+          "correct": false
+        },
+        {
+          "case_id": "case_07965",
+          "role": "cloud architect",
+          "ground_truth": "reject",
+          "prediction": "select",
+          "correct": false
+        },
+        {
+          "case_id": "case_00010",
+          "role": "ui engineer",
+          "ground_truth": "select",
+          "prediction": "select",
+          "correct": true
+        },
+        {
+          "case_id": "case_06407",
+          "role": "cloud architect",
+          "ground_truth": "select",
+          "prediction": "select",
+          "correct": true
+        },
+        {
+          "case_id": "case_07770",
+          "role": "devops engineer",
+          "ground_truth": "reject",
+          "prediction": "select",
+          "correct": false
+        },
+        {
+          "case_id": "case_09735",
+          "role": "data engineer",
+          "ground_truth": "select",
+          "prediction": "select",
+          "correct": true
+        },
+        {
+          "case_id": "case_07494",
+          "role": "data analyst",
+          "ground_truth": "reject",
+          "prediction": "select",
+          "correct": false
+        },
+        {
+          "case_id": "case_01646",
+          "role": "digital marketing specialist",
+          "ground_truth": "select",
+          "prediction": "select",
+          "correct": true
+        },
+        {
+          "case_id": "case_08809",
+          "role": "product manager",
+          "ground_truth": "reject",
+          "prediction": "select",
+          "correct": false
+        },
+        {
+          "case_id": "case_09237",
+          "role": "ui designer",
+          "ground_truth": "select",
+          "prediction": "select",
+          "correct": true
+        },
+        {
+          "case_id": "case_02657",
+          "role": "devops engineer",
+          "ground_truth": "select",
+          "prediction": "select",
+          "correct": true
+        },
+        {
+          "case_id": "case_04511",
+          "role": "digital marketing specialist",
+          "ground_truth": "select",
+          "prediction": "select",
+          "correct": true
+        },
+        {
+          "case_id": "case_10037",
+          "role": "ui engineer",
+          "ground_truth": "select",
+          "prediction": "select",
+          "correct": true
+        },
+        {
+          "case_id": "case_02537",
+          "role": "full stack developer",
+          "ground_truth": "reject",
+          "prediction": "select",
+          "correct": false
+        },
+        {
+          "case_id": "case_06191",
+          "role": "qa engineer",
+          "ground_truth": "reject",
+          "prediction": "select",
+          "correct": false
+        },
+        {
+          "case_id": "case_01796",
+          "role": "machine learning engineer",
+          "ground_truth": "select",
+          "prediction": "select",
+          "correct": true
+        },
+        {
+          "case_id": "case_01852",
+          "role": "project manager",
+          "ground_truth": "select",
+          "prediction": "select",
+          "correct": true
+        },
+        {
+          "case_id": "case_05163",
+          "role": "machine learning engineer",
+          "ground_truth": "reject",
+          "prediction": "select",
+          "correct": false
+        },
+        {
+          "case_id": "case_09959",
+          "role": "ui engineer",
+          "ground_truth": "select",
+          "prediction": "select",
+          "correct": true
+        },
+        {
+          "case_id": "case_07823",
+          "role": "data architect",
+          "ground_truth": "reject",
+          "prediction": "select",
+          "correct": false
+        },
+        {
+          "case_id": "case_07970",
+          "role": "digital marketing specialist",
+          "ground_truth": "reject",
+          "prediction": "select",
+          "correct": false
+        },
+        {
+          "case_id": "case_03537",
+          "role": "full stack developer",
+          "ground_truth": "select",
+          "prediction": "select",
+          "correct": true
+        },
+        {
+          "case_id": "case_00901",
+          "role": "data architect",
+          "ground_truth": "reject",
+          "prediction": "select",
+          "correct": false
+        },
+        {
+          "case_id": "case_05148",
+          "role": "robotics engineer",
+          "ground_truth": "select",
+          "prediction": "select",
+          "correct": true
+        },
+        {
+          "case_id": "case_01877",
+          "role": "data scientist",
+          "ground_truth": "select",
+          "prediction": "select",
+          "correct": true
+        },
+        {
+          "case_id": "case_00581",
+          "role": "data engineer",
+          "ground_truth": "select",
+          "prediction": "select",
+          "correct": true
+        },
+        {
+          "case_id": "case_01239",
+          "role": "software engineer",
+          "ground_truth": "select",
+          "prediction": "select",
+          "correct": true
+        },
+        {
+          "case_id": "case_03976",
+          "role": "mobile app developer",
+          "ground_truth": "reject",
+          "prediction": "select",
+          "correct": false
+        },
+        {
+          "case_id": "case_02322",
+          "role": "it support specialist",
+          "ground_truth": "select",
+          "prediction": "select",
+          "correct": true
+        },
+        {
+          "case_id": "case_01334",
+          "role": "software engineer",
+          "ground_truth": "reject",
+          "prediction": "select",
+          "correct": false
+        },
+        {
+          "case_id": "case_03604",
+          "role": "full stack developer",
+          "ground_truth": "select",
+          "prediction": "select",
+          "correct": true
+        },
+        {
+          "case_id": "case_01605",
+          "role": "game developer",
+          "ground_truth": "select",
+          "prediction": "select",
+          "correct": true
+        },
+        {
+          "case_id": "case_01473",
+          "role": "product manager",
+          "ground_truth": "reject",
+          "prediction": "select",
+          "correct": false
+        },
+        {
+          "case_id": "case_08765",
+          "role": "data scientist",
+          "ground_truth": "reject",
+          "prediction": "select",
+          "correct": false
+        },
+        {
+          "case_id": "case_03103",
+          "role": "data architect",
+          "ground_truth": "reject",
+          "prediction": "select",
+          "correct": false
+        },
+        {
+          "case_id": "case_05931",
+          "role": "data analyst",
+          "ground_truth": "select",
+          "prediction": "select",
+          "correct": true
+        },
+        {
+          "case_id": "case_00875",
+          "role": "qa engineer",
+          "ground_truth": "reject",
+          "prediction": "select",
+          "correct": false
+        },
+        {
+          "case_id": "case_04389",
+          "role": "robotics engineer",
+          "ground_truth": "select",
+          "prediction": "select",
+          "correct": true
+        },
+        {
+          "case_id": "case_07977",
+          "role": "human resources specialist",
+          "ground_truth": "reject",
+          "prediction": "select",
+          "correct": false
+        },
+        {
+          "case_id": "case_00595",
+          "role": "software engineer",
+          "ground_truth": "reject",
+          "prediction": "select",
+          "correct": false
+        },
+        {
+          "case_id": "case_03456",
+          "role": "ai researcher",
+          "ground_truth": "reject",
+          "prediction": "select",
+          "correct": false
+        },
+        {
+          "case_id": "case_03589",
+          "role": "digital marketing specialist",
+          "ground_truth": "select",
+          "prediction": "select",
+          "correct": true
+        },
+        {
+          "case_id": "case_03284",
+          "role": "data scientist",
+          "ground_truth": "select",
+          "prediction": "select",
+          "correct": true
+        },
+        {
+          "case_id": "case_02956",
+          "role": "ai researcher",
+          "ground_truth": "select",
+          "prediction": "select",
+          "correct": true
+        },
+        {
+          "case_id": "case_09155",
+          "role": "product manager",
+          "ground_truth": "select",
+          "prediction": "select",
+          "correct": true
+        },
+        {
+          "case_id": "case_01206",
+          "role": "software engineer",
+          "ground_truth": "select",
+          "prediction": "select",
+          "correct": true
+        },
+        {
+          "case_id": "case_03809",
+          "role": "human resources specialist",
+          "ground_truth": "select",
+          "prediction": "select",
+          "correct": true
+        },
+        {
+          "case_id": "case_08243",
+          "role": "data scientist",
+          "ground_truth": "reject",
+          "prediction": "select",
+          "correct": false
+        },
+        {
+          "case_id": "case_03451",
+          "role": "software engineer",
+          "ground_truth": "select",
+          "prediction": "select",
+          "correct": true
+        },
+        {
+          "case_id": "case_03159",
+          "role": "qa engineer",
+          "ground_truth": "select",
+          "prediction": "select",
+          "correct": true
+        },
+        {
+          "case_id": "case_09508",
+          "role": "product manager",
+          "ground_truth": "reject",
+          "prediction": "select",
+          "correct": false
+        },
+        {
+          "case_id": "case_01056",
+          "role": "data engineer",
+          "ground_truth": "reject",
+          "prediction": "select",
+          "correct": false
+        },
+        {
+          "case_id": "case_01780",
+          "role": "database administrator",
+          "ground_truth": "reject",
+          "prediction": "select",
+          "correct": false
+        },
+        {
+          "case_id": "case_01541",
+          "role": "data engineer",
+          "ground_truth": "reject",
+          "prediction": "select",
+          "correct": false
+        },
+        {
+          "case_id": "case_03596",
+          "role": "cloud architect",
+          "ground_truth": "select",
+          "prediction": "select",
+          "correct": true
+        },
+        {
+          "case_id": "case_06072",
+          "role": "data architect",
+          "ground_truth": "select",
+          "prediction": "select",
+          "correct": true
+        },
+        {
+          "case_id": "case_00299",
+          "role": "mobile app developer",
+          "ground_truth": "reject",
+          "prediction": "select",
+          "correct": false
+        },
+        {
+          "case_id": "case_09087",
+          "role": "data analyst",
+          "ground_truth": "select",
+          "prediction": "select",
+          "correct": true
+        },
+        {
+          "case_id": "case_01727",
+          "role": "devops engineer",
+          "ground_truth": "select",
+          "prediction": "select",
+          "correct": true
+        },
+        {
+          "case_id": "case_05128",
+          "role": "ai researcher",
+          "ground_truth": "reject",
+          "prediction": "select",
+          "correct": false
+        },
+        {
+          "case_id": "case_01919",
+          "role": "data scientist",
+          "ground_truth": "reject",
+          "prediction": "select",
+          "correct": false
+        },
+        {
+          "case_id": "case_04031",
+          "role": "game developer",
+          "ground_truth": "reject",
+          "prediction": "select",
+          "correct": false
+        },
+        {
+          "case_id": "case_04328",
+          "role": "mobile app developer",
+          "ground_truth": "reject",
+          "prediction": "select",
+          "correct": false
+        },
+        {
+          "case_id": "case_08359",
+          "role": "product manager",
+          "ground_truth": "select",
+          "prediction": "select",
+          "correct": true
+        },
+        {
+          "case_id": "case_00774",
+          "role": "data engineer",
+          "ground_truth": "reject",
+          "prediction": "select",
+          "correct": false
+        },
+        {
+          "case_id": "case_09691",
+          "role": "product manager",
+          "ground_truth": "reject",
+          "prediction": "select",
+          "correct": false
+        },
+        {
+          "case_id": "case_05888",
+          "role": "system administrator",
+          "ground_truth": "select",
+          "prediction": "select",
+          "correct": true
+        },
+        {
+          "case_id": "case_03853",
+          "role": "data engineer",
+          "ground_truth": "reject",
+          "prediction": "select",
+          "correct": false
+        },
+        {
+          "case_id": "case_03653",
+          "role": "product manager",
+          "ground_truth": "select",
+          "prediction": "select",
+          "correct": true
+        },
+        {
+          "case_id": "case_06154",
+          "role": "cloud architect",
+          "ground_truth": "select",
+          "prediction": "select",
+          "correct": true
+        },
+        {
+          "case_id": "case_01280",
+          "role": "ui designer",
+          "ground_truth": "reject",
+          "prediction": "select",
+          "correct": false
+        },
+        {
+          "case_id": "case_02245",
+          "role": "cloud architect",
+          "ground_truth": "reject",
+          "prediction": "select",
+          "correct": false
+        },
+        {
+          "case_id": "case_00275",
+          "role": "human resources specialist",
+          "ground_truth": "reject",
+          "prediction": "select",
+          "correct": false
+        },
+        {
+          "case_id": "case_05783",
+          "role": "ai researcher",
+          "ground_truth": "select",
+          "prediction": "select",
+          "correct": true
+        },
+        {
+          "case_id": "case_01098",
+          "role": "ui engineer",
+          "ground_truth": "reject",
+          "prediction": "select",
+          "correct": false
+        },
+        {
+          "case_id": "case_07387",
+          "role": "digital marketing specialist",
+          "ground_truth": "select",
+          "prediction": "select",
+          "correct": true
+        },
+        {
+          "case_id": "case_07644",
+          "role": "devops engineer",
+          "ground_truth": "select",
+          "prediction": "select",
+          "correct": true
+        },
+        {
+          "case_id": "case_09255",
+          "role": "ui designer",
+          "ground_truth": "reject",
+          "prediction": "select",
+          "correct": false
+        },
+        {
+          "case_id": "case_09609",
+          "role": "data scientist",
+          "ground_truth": "select",
+          "prediction": "select",
+          "correct": true
+        },
+        {
+          "case_id": "case_07071",
+          "role": "game developer",
+          "ground_truth": "select",
+          "prediction": "select",
+          "correct": true
+        },
+        {
+          "case_id": "case_01226",
+          "role": "data analyst",
+          "ground_truth": "reject",
+          "prediction": "select",
+          "correct": false
+        },
+        {
+          "case_id": "case_04861",
+          "role": "data scientist",
+          "ground_truth": "reject",
+          "prediction": "select",
+          "correct": false
+        },
+        {
+          "case_id": "case_06668",
+          "role": "ai researcher",
+          "ground_truth": "reject",
+          "prediction": "select",
+          "correct": false
+        }
+      ]
+    },
+    "keyword-tfidf": {
+      "metrics": {
+        "accuracy": 0.4767,
+        "precision": 0.4685,
+        "recall": 0.3467,
+        "f1": 0.3985,
+        "pred_select_rate": 0.37,
+        "confusion_matrix": {
+          "TP (pred select, actual select)": 52,
+          "FP (pred select, actual reject)": 59,
+          "FN (pred reject, actual select)": 98,
+          "TN (pred reject, actual reject)": 91
+        },
+        "total_cases": 300,
+        "threshold": 0.07533849098753577,
+        "train_accuracy": 0.5068,
+        "test_auc": 0.474
+      },
+      "results": [
+        {
+          "case_id": "case_06998",
+          "role": "machine learning engineer",
+          "ground_truth": "reject",
+          "prediction": "reject",
+          "correct": true
+        },
+        {
+          "case_id": "case_07231",
+          "role": "ar/vr developer",
+          "ground_truth": "reject",
+          "prediction": "select",
+          "correct": false
+        },
+        {
+          "case_id": "case_00821",
+          "role": "data scientist",
+          "ground_truth": "select",
+          "prediction": "select",
+          "correct": true
+        },
+        {
+          "case_id": "case_05048",
+          "role": "cloud engineer",
+          "ground_truth": "reject",
+          "prediction": "reject",
+          "correct": true
+        },
+        {
+          "case_id": "case_09238",
+          "role": "data engineer",
+          "ground_truth": "select",
+          "prediction": "reject",
+          "correct": false
+        },
+        {
+          "case_id": "case_00539",
+          "role": "ui engineer",
+          "ground_truth": "select",
+          "prediction": "reject",
+          "correct": false
+        },
+        {
+          "case_id": "case_02550",
+          "role": "it support specialist",
+          "ground_truth": "select",
+          "prediction": "select",
+          "correct": true
+        },
+        {
+          "case_id": "case_06134",
+          "role": "ui engineer",
+          "ground_truth": "select",
+          "prediction": "reject",
+          "correct": false
+        },
+        {
+          "case_id": "case_03874",
+          "role": "game developer",
+          "ground_truth": "reject",
+          "prediction": "select",
+          "correct": false
+        },
+        {
+          "case_id": "case_08196",
+          "role": "ui engineer",
+          "ground_truth": "select",
+          "prediction": "select",
+          "correct": true
+        },
+        {
+          "case_id": "case_00461",
+          "role": "game developer",
+          "ground_truth": "select",
+          "prediction": "reject",
+          "correct": false
+        },
+        {
+          "case_id": "case_06655",
+          "role": "ai researcher",
+          "ground_truth": "reject",
+          "prediction": "reject",
+          "correct": true
+        },
+        {
+          "case_id": "case_02682",
+          "role": "ui engineer",
+          "ground_truth": "reject",
+          "prediction": "reject",
+          "correct": true
+        },
+        {
+          "case_id": "case_04321",
+          "role": "ui engineer",
+          "ground_truth": "select",
+          "prediction": "select",
+          "correct": true
+        },
+        {
+          "case_id": "case_03560",
+          "role": "robotics engineer",
+          "ground_truth": "reject",
+          "prediction": "reject",
+          "correct": true
+        },
+        {
+          "case_id": "case_07766",
+          "role": "data architect",
+          "ground_truth": "reject",
+          "prediction": "select",
+          "correct": false
+        },
+        {
+          "case_id": "case_01069",
+          "role": "ui engineer",
+          "ground_truth": "reject",
+          "prediction": "select",
+          "correct": false
+        },
+        {
+          "case_id": "case_01741",
+          "role": "game developer",
+          "ground_truth": "reject",
+          "prediction": "select",
+          "correct": false
+        },
+        {
+          "case_id": "case_03483",
+          "role": "ui engineer",
+          "ground_truth": "reject",
+          "prediction": "reject",
+          "correct": true
+        },
+        {
+          "case_id": "case_01934",
+          "role": "software developer",
+          "ground_truth": "reject",
+          "prediction": "reject",
+          "correct": true
+        },
+        {
+          "case_id": "case_05487",
+          "role": "ar/vr developer",
+          "ground_truth": "select",
+          "prediction": "select",
+          "correct": true
+        },
+        {
+          "case_id": "case_01049",
+          "role": "data scientist",
+          "ground_truth": "reject",
+          "prediction": "select",
+          "correct": false
+        },
+        {
+          "case_id": "case_05993",
+          "role": "qa engineer",
+          "ground_truth": "reject",
+          "prediction": "reject",
+          "correct": true
+        },
+        {
+          "case_id": "case_09832",
+          "role": "data scientist",
+          "ground_truth": "select",
+          "prediction": "select",
+          "correct": true
+        },
+        {
+          "case_id": "case_04563",
+          "role": "ar/vr developer",
+          "ground_truth": "select",
+          "prediction": "reject",
+          "correct": false
+        },
+        {
+          "case_id": "case_08685",
+          "role": "data engineer",
+          "ground_truth": "select",
+          "prediction": "reject",
+          "correct": false
+        },
+        {
+          "case_id": "case_01923",
+          "role": "project manager",
+          "ground_truth": "select",
+          "prediction": "reject",
+          "correct": false
+        },
+        {
+          "case_id": "case_00064",
+          "role": "devops engineer",
+          "ground_truth": "select",
+          "prediction": "reject",
+          "correct": false
+        },
+        {
+          "case_id": "case_04058",
+          "role": "machine learning engineer",
+          "ground_truth": "reject",
+          "prediction": "reject",
+          "correct": true
+        },
+        {
+          "case_id": "case_00973",
+          "role": "cloud architect",
+          "ground_truth": "select",
+          "prediction": "reject",
+          "correct": false
+        },
+        {
+          "case_id": "case_09516",
+          "role": "data scientist",
+          "ground_truth": "select",
+          "prediction": "reject",
+          "correct": false
+        },
+        {
+          "case_id": "case_01878",
+          "role": "project manager",
+          "ground_truth": "select",
+          "prediction": "reject",
+          "correct": false
+        },
+        {
+          "case_id": "case_05842",
+          "role": "mobile app developer",
+          "ground_truth": "reject",
+          "prediction": "select",
+          "correct": false
+        },
+        {
+          "case_id": "case_04405",
+          "role": "cybersecurity analyst",
+          "ground_truth": "select",
+          "prediction": "reject",
+          "correct": false
+        },
+        {
+          "case_id": "case_04391",
+          "role": "robotics engineer",
+          "ground_truth": "select",
+          "prediction": "reject",
+          "correct": false
+        },
+        {
+          "case_id": "case_03104",
+          "role": "database administrator",
+          "ground_truth": "reject",
+          "prediction": "reject",
+          "correct": true
+        },
+        {
+          "case_id": "case_07398",
+          "role": "cloud architect",
+          "ground_truth": "reject",
+          "prediction": "reject",
+          "correct": true
+        },
+        {
+          "case_id": "case_03281",
+          "role": "qa engineer",
+          "ground_truth": "select",
+          "prediction": "reject",
+          "correct": false
+        },
+        {
+          "case_id": "case_00211",
+          "role": "data analyst",
+          "ground_truth": "reject",
+          "prediction": "reject",
+          "correct": true
+        },
+        {
+          "case_id": "case_02101",
+          "role": "system administrator",
+          "ground_truth": "select",
+          "prediction": "reject",
+          "correct": false
+        },
+        {
+          "case_id": "case_06990",
+          "role": "cloud engineer",
+          "ground_truth": "reject",
+          "prediction": "reject",
+          "correct": true
+        },
+        {
+          "case_id": "case_00763",
+          "role": "qa engineer",
+          "ground_truth": "select",
+          "prediction": "reject",
+          "correct": false
+        },
+        {
+          "case_id": "case_01498",
+          "role": "ui designer",
+          "ground_truth": "select",
+          "prediction": "reject",
+          "correct": false
+        },
+        {
+          "case_id": "case_03124",
+          "role": "database administrator",
+          "ground_truth": "reject",
+          "prediction": "reject",
+          "correct": true
+        },
+        {
+          "case_id": "case_09295",
+          "role": "product manager",
+          "ground_truth": "reject",
+          "prediction": "reject",
+          "correct": true
+        },
+        {
+          "case_id": "case_03805",
+          "role": "game developer",
+          "ground_truth": "select",
+          "prediction": "reject",
+          "correct": false
+        },
+        {
+          "case_id": "case_00872",
+          "role": "product manager",
+          "ground_truth": "reject",
+          "prediction": "reject",
+          "correct": true
+        },
+        {
+          "case_id": "case_02708",
+          "role": "data engineer",
+          "ground_truth": "select",
+          "prediction": "reject",
+          "correct": false
+        },
+        {
+          "case_id": "case_00934",
+          "role": "cloud engineer",
+          "ground_truth": "reject",
+          "prediction": "reject",
+          "correct": true
+        },
+        {
+          "case_id": "case_04089",
+          "role": "product manager",
+          "ground_truth": "reject",
+          "prediction": "reject",
+          "correct": true
+        },
+        {
+          "case_id": "case_06155",
+          "role": "game developer",
+          "ground_truth": "select",
+          "prediction": "reject",
+          "correct": false
+        },
+        {
+          "case_id": "case_01102",
+          "role": "data scientist",
+          "ground_truth": "select",
+          "prediction": "select",
+          "correct": true
+        },
+        {
+          "case_id": "case_03582",
+          "role": "data engineer",
+          "ground_truth": "select",
+          "prediction": "reject",
+          "correct": false
+        },
+        {
+          "case_id": "case_02652",
+          "role": "data analyst",
+          "ground_truth": "reject",
+          "prediction": "reject",
+          "correct": true
+        },
+        {
+          "case_id": "case_02662",
+          "role": "cloud architect",
+          "ground_truth": "select",
+          "prediction": "reject",
+          "correct": false
+        },
+        {
+          "case_id": "case_00990",
+          "role": "game developer",
+          "ground_truth": "reject",
+          "prediction": "select",
+          "correct": false
+        },
+        {
+          "case_id": "case_06934",
+          "role": "software engineer",
+          "ground_truth": "reject",
+          "prediction": "reject",
+          "correct": true
+        },
+        {
+          "case_id": "case_06959",
+          "role": "machine learning engineer",
+          "ground_truth": "select",
+          "prediction": "reject",
+          "correct": false
+        },
+        {
+          "case_id": "case_00927",
+          "role": "blockchain developer",
+          "ground_truth": "reject",
+          "prediction": "select",
+          "correct": false
+        },
+        {
+          "case_id": "case_08623",
+          "role": "product manager",
+          "ground_truth": "reject",
+          "prediction": "reject",
+          "correct": true
+        },
+        {
+          "case_id": "case_06473",
+          "role": "business analyst",
+          "ground_truth": "reject",
+          "prediction": "reject",
+          "correct": true
+        },
+        {
+          "case_id": "case_07487",
+          "role": "ux designer",
+          "ground_truth": "select",
+          "prediction": "reject",
+          "correct": false
+        },
+        {
+          "case_id": "case_08684",
+          "role": "data analyst",
+          "ground_truth": "reject",
+          "prediction": "reject",
+          "correct": true
+        },
+        {
+          "case_id": "case_00899",
+          "role": "qa engineer",
+          "ground_truth": "reject",
+          "prediction": "reject",
+          "correct": true
+        },
+        {
+          "case_id": "case_08772",
+          "role": "data scientist",
+          "ground_truth": "select",
+          "prediction": "reject",
+          "correct": false
+        },
+        {
+          "case_id": "case_02631",
+          "role": "data engineer",
+          "ground_truth": "select",
+          "prediction": "reject",
+          "correct": false
+        },
+        {
+          "case_id": "case_03695",
+          "role": "ux designer",
+          "ground_truth": "reject",
+          "prediction": "select",
+          "correct": false
+        },
+        {
+          "case_id": "case_08980",
+          "role": "software engineer",
+          "ground_truth": "reject",
+          "prediction": "reject",
+          "correct": true
+        },
+        {
+          "case_id": "case_07436",
+          "role": "cloud engineer",
+          "ground_truth": "reject",
+          "prediction": "reject",
+          "correct": true
+        },
+        {
+          "case_id": "case_06226",
+          "role": "ar/vr developer",
+          "ground_truth": "select",
+          "prediction": "select",
+          "correct": true
+        },
+        {
+          "case_id": "case_09881",
+          "role": "data scientist",
+          "ground_truth": "reject",
+          "prediction": "select",
+          "correct": false
+        },
+        {
+          "case_id": "case_08013",
+          "role": "data scientist",
+          "ground_truth": "reject",
+          "prediction": "select",
+          "correct": false
+        },
+        {
+          "case_id": "case_09316",
+          "role": "product manager",
+          "ground_truth": "reject",
+          "prediction": "select",
+          "correct": false
+        },
+        {
+          "case_id": "case_02688",
+          "role": "devops engineer",
+          "ground_truth": "select",
+          "prediction": "reject",
+          "correct": false
+        },
+        {
+          "case_id": "case_02339",
+          "role": "cloud engineer",
+          "ground_truth": "select",
+          "prediction": "reject",
+          "correct": false
+        },
+        {
+          "case_id": "case_04021",
+          "role": "data analyst",
+          "ground_truth": "select",
+          "prediction": "reject",
+          "correct": false
+        },
+        {
+          "case_id": "case_00485",
+          "role": "qa engineer",
+          "ground_truth": "select",
+          "prediction": "reject",
+          "correct": false
+        },
+        {
+          "case_id": "case_09717",
+          "role": "software engineer",
+          "ground_truth": "select",
+          "prediction": "select",
+          "correct": true
+        },
+        {
+          "case_id": "case_05587",
+          "role": "ui engineer",
+          "ground_truth": "reject",
+          "prediction": "reject",
+          "correct": true
+        },
+        {
+          "case_id": "case_01171",
+          "role": "ui engineer",
+          "ground_truth": "reject",
+          "prediction": "select",
+          "correct": false
+        },
+        {
+          "case_id": "case_05545",
+          "role": "machine learning engineer",
+          "ground_truth": "select",
+          "prediction": "reject",
+          "correct": false
+        },
+        {
+          "case_id": "case_07116",
+          "role": "data architect",
+          "ground_truth": "reject",
+          "prediction": "reject",
+          "correct": true
+        },
+        {
+          "case_id": "case_04356",
+          "role": "cybersecurity analyst",
+          "ground_truth": "select",
+          "prediction": "reject",
+          "correct": false
+        },
+        {
+          "case_id": "case_08818",
+          "role": "ui designer",
+          "ground_truth": "select",
+          "prediction": "reject",
+          "correct": false
+        },
+        {
+          "case_id": "case_05287",
+          "role": "data architect",
+          "ground_truth": "select",
+          "prediction": "reject",
+          "correct": false
+        },
+        {
+          "case_id": "case_04133",
+          "role": "database administrator",
+          "ground_truth": "select",
+          "prediction": "select",
+          "correct": true
+        },
+        {
+          "case_id": "case_03497",
+          "role": "it support specialist",
+          "ground_truth": "select",
+          "prediction": "select",
+          "correct": true
+        },
+        {
+          "case_id": "case_09595",
+          "role": "data engineer",
+          "ground_truth": "reject",
+          "prediction": "select",
+          "correct": false
+        },
+        {
+          "case_id": "case_09384",
+          "role": "data scientist",
+          "ground_truth": "reject",
+          "prediction": "reject",
+          "correct": true
+        },
+        {
+          "case_id": "case_04809",
+          "role": "system administrator",
+          "ground_truth": "select",
+          "prediction": "reject",
+          "correct": false
+        },
+        {
+          "case_id": "case_08957",
+          "role": "product manager",
+          "ground_truth": "select",
+          "prediction": "reject",
+          "correct": false
+        },
+        {
+          "case_id": "case_01101",
+          "role": "data engineer",
+          "ground_truth": "reject",
+          "prediction": "select",
+          "correct": false
+        },
+        {
+          "case_id": "case_04883",
+          "role": "ai researcher",
+          "ground_truth": "select",
+          "prediction": "select",
+          "correct": true
+        },
+        {
+          "case_id": "case_05335",
+          "role": "ux designer",
+          "ground_truth": "reject",
+          "prediction": "select",
+          "correct": false
+        },
+        {
+          "case_id": "case_06855",
+          "role": "cloud engineer",
+          "ground_truth": "select",
+          "prediction": "reject",
+          "correct": false
+        },
+        {
+          "case_id": "case_02380",
+          "role": "e-commerce specialist",
+          "ground_truth": "select",
+          "prediction": "reject",
+          "correct": false
+        },
+        {
+          "case_id": "case_09513",
+          "role": "data scientist",
+          "ground_truth": "reject",
+          "prediction": "select",
+          "correct": false
+        },
+        {
+          "case_id": "case_09082",
+          "role": "data scientist",
+          "ground_truth": "reject",
+          "prediction": "reject",
+          "correct": true
+        },
+        {
+          "case_id": "case_00221",
+          "role": "product manager",
+          "ground_truth": "select",
+          "prediction": "reject",
+          "correct": false
+        },
+        {
+          "case_id": "case_03743",
+          "role": "qa engineer",
+          "ground_truth": "select",
+          "prediction": "reject",
+          "correct": false
+        },
+        {
+          "case_id": "case_06148",
+          "role": "digital marketing specialist",
+          "ground_truth": "select",
+          "prediction": "select",
+          "correct": true
+        },
+        {
+          "case_id": "case_04020",
+          "role": "cloud engineer",
+          "ground_truth": "select",
+          "prediction": "reject",
+          "correct": false
+        },
+        {
+          "case_id": "case_08858",
+          "role": "data analyst",
+          "ground_truth": "select",
+          "prediction": "reject",
+          "correct": false
+        },
+        {
+          "case_id": "case_00799",
+          "role": "human resources specialist",
+          "ground_truth": "select",
+          "prediction": "select",
+          "correct": true
+        },
+        {
+          "case_id": "case_03897",
+          "role": "digital marketing specialist",
+          "ground_truth": "reject",
+          "prediction": "reject",
+          "correct": true
+        },
+        {
+          "case_id": "case_01586",
+          "role": "data scientist",
+          "ground_truth": "select",
+          "prediction": "reject",
+          "correct": false
+        },
+        {
+          "case_id": "case_08323",
+          "role": "ui engineer",
+          "ground_truth": "select",
+          "prediction": "select",
+          "correct": true
+        },
+        {
+          "case_id": "case_00833",
+          "role": "digital marketing specialist",
+          "ground_truth": "reject",
+          "prediction": "select",
+          "correct": false
+        },
+        {
+          "case_id": "case_05897",
+          "role": "it support specialist",
+          "ground_truth": "select",
+          "prediction": "reject",
+          "correct": false
+        },
+        {
+          "case_id": "case_09428",
+          "role": "product manager",
+          "ground_truth": "reject",
+          "prediction": "reject",
+          "correct": true
+        },
+        {
+          "case_id": "case_06628",
+          "role": "product manager",
+          "ground_truth": "reject",
+          "prediction": "reject",
+          "correct": true
+        },
+        {
+          "case_id": "case_09435",
+          "role": "software engineer",
+          "ground_truth": "reject",
+          "prediction": "reject",
+          "correct": true
+        },
+        {
+          "case_id": "case_02829",
+          "role": "e-commerce specialist",
+          "ground_truth": "select",
+          "prediction": "reject",
+          "correct": false
+        },
+        {
+          "case_id": "case_03496",
+          "role": "software engineer",
+          "ground_truth": "reject",
+          "prediction": "reject",
+          "correct": true
+        },
+        {
+          "case_id": "case_06809",
+          "role": "data analyst",
+          "ground_truth": "select",
+          "prediction": "reject",
+          "correct": false
+        },
+        {
+          "case_id": "case_07476",
+          "role": "it support specialist",
+          "ground_truth": "select",
+          "prediction": "select",
+          "correct": true
+        },
+        {
+          "case_id": "case_06499",
+          "role": "it support specialist",
+          "ground_truth": "select",
+          "prediction": "select",
+          "correct": true
+        },
+        {
+          "case_id": "case_05436",
+          "role": "it support specialist",
+          "ground_truth": "reject",
+          "prediction": "reject",
+          "correct": true
+        },
+        {
+          "case_id": "case_03022",
+          "role": "data engineer",
+          "ground_truth": "reject",
+          "prediction": "reject",
+          "correct": true
+        },
+        {
+          "case_id": "case_02107",
+          "role": "cybersecurity analyst",
+          "ground_truth": "reject",
+          "prediction": "select",
+          "correct": false
+        },
+        {
+          "case_id": "case_07305",
+          "role": "data architect",
+          "ground_truth": "select",
+          "prediction": "reject",
+          "correct": false
+        },
+        {
+          "case_id": "case_08276",
+          "role": "data engineer",
+          "ground_truth": "select",
+          "prediction": "select",
+          "correct": true
+        },
+        {
+          "case_id": "case_00778",
+          "role": "qa engineer",
+          "ground_truth": "reject",
+          "prediction": "reject",
+          "correct": true
+        },
+        {
+          "case_id": "case_01516",
+          "role": "data engineer",
+          "ground_truth": "reject",
+          "prediction": "reject",
+          "correct": true
+        },
+        {
+          "case_id": "case_07598",
+          "role": "product manager",
+          "ground_truth": "reject",
+          "prediction": "reject",
+          "correct": true
+        },
+        {
+          "case_id": "case_03272",
+          "role": "qa engineer",
+          "ground_truth": "reject",
+          "prediction": "select",
+          "correct": false
+        },
+        {
+          "case_id": "case_00102",
+          "role": "business analyst",
+          "ground_truth": "reject",
+          "prediction": "reject",
+          "correct": true
+        },
+        {
+          "case_id": "case_00462",
+          "role": "game developer",
+          "ground_truth": "reject",
+          "prediction": "select",
+          "correct": false
+        },
+        {
+          "case_id": "case_04676",
+          "role": "blockchain developer",
+          "ground_truth": "reject",
+          "prediction": "select",
+          "correct": false
+        },
+        {
+          "case_id": "case_07549",
+          "role": "content writer",
+          "ground_truth": "select",
+          "prediction": "reject",
+          "correct": false
+        },
+        {
+          "case_id": "case_04557",
+          "role": "cloud architect",
+          "ground_truth": "select",
+          "prediction": "reject",
+          "correct": false
+        },
+        {
+          "case_id": "case_00896",
+          "role": "devops engineer",
+          "ground_truth": "reject",
+          "prediction": "reject",
+          "correct": true
+        },
+        {
+          "case_id": "case_03945",
+          "role": "devops engineer",
+          "ground_truth": "reject",
+          "prediction": "select",
+          "correct": false
+        },
+        {
+          "case_id": "case_08707",
+          "role": "product manager",
+          "ground_truth": "reject",
+          "prediction": "reject",
+          "correct": true
+        },
+        {
+          "case_id": "case_06721",
+          "role": "machine learning engineer",
+          "ground_truth": "reject",
+          "prediction": "select",
+          "correct": false
+        },
+        {
+          "case_id": "case_08832",
+          "role": "data scientist",
+          "ground_truth": "reject",
+          "prediction": "reject",
+          "correct": true
+        },
+        {
+          "case_id": "case_04805",
+          "role": "digital marketing specialist",
+          "ground_truth": "select",
+          "prediction": "reject",
+          "correct": false
+        },
+        {
+          "case_id": "case_09683",
+          "role": "data scientist",
+          "ground_truth": "reject",
+          "prediction": "select",
+          "correct": false
+        },
+        {
+          "case_id": "case_10093",
+          "role": "software engineer",
+          "ground_truth": "reject",
+          "prediction": "select",
+          "correct": false
+        },
+        {
+          "case_id": "case_08991",
+          "role": "data engineer",
+          "ground_truth": "reject",
+          "prediction": "reject",
+          "correct": true
+        },
+        {
+          "case_id": "case_08866",
+          "role": "ui designer",
+          "ground_truth": "select",
+          "prediction": "reject",
+          "correct": false
+        },
+        {
+          "case_id": "case_01530",
+          "role": "software engineer",
+          "ground_truth": "reject",
+          "prediction": "reject",
+          "correct": true
+        },
+        {
+          "case_id": "case_02699",
+          "role": "robotics engineer",
+          "ground_truth": "select",
+          "prediction": "reject",
+          "correct": false
+        },
+        {
+          "case_id": "case_01355",
+          "role": "data engineer",
+          "ground_truth": "select",
+          "prediction": "reject",
+          "correct": false
+        },
+        {
+          "case_id": "case_04042",
+          "role": "full stack developer",
+          "ground_truth": "select",
+          "prediction": "select",
+          "correct": true
+        },
+        {
+          "case_id": "case_03924",
+          "role": "human resources specialist",
+          "ground_truth": "reject",
+          "prediction": "select",
+          "correct": false
+        },
+        {
+          "case_id": "case_01457",
+          "role": "ui designer",
+          "ground_truth": "reject",
+          "prediction": "reject",
+          "correct": true
+        },
+        {
+          "case_id": "case_09755",
+          "role": "product manager",
+          "ground_truth": "reject",
+          "prediction": "select",
+          "correct": false
+        },
+        {
+          "case_id": "case_08855",
+          "role": "data scientist",
+          "ground_truth": "reject",
+          "prediction": "reject",
+          "correct": true
+        },
+        {
+          "case_id": "case_01141",
+          "role": "ui engineer",
+          "ground_truth": "select",
+          "prediction": "select",
+          "correct": true
+        },
+        {
+          "case_id": "case_01558",
+          "role": "product manager",
+          "ground_truth": "select",
+          "prediction": "reject",
+          "correct": false
+        },
+        {
+          "case_id": "case_08474",
+          "role": "data scientist",
+          "ground_truth": "reject",
+          "prediction": "select",
+          "correct": false
+        },
+        {
+          "case_id": "case_07908",
+          "role": "game developer",
+          "ground_truth": "reject",
+          "prediction": "reject",
+          "correct": true
+        },
+        {
+          "case_id": "case_02983",
+          "role": "ux designer",
+          "ground_truth": "reject",
+          "prediction": "select",
+          "correct": false
+        },
+        {
+          "case_id": "case_08709",
+          "role": "software engineer",
+          "ground_truth": "select",
+          "prediction": "reject",
+          "correct": false
+        },
+        {
+          "case_id": "case_03757",
+          "role": "full stack developer",
+          "ground_truth": "reject",
+          "prediction": "select",
+          "correct": false
+        },
+        {
+          "case_id": "case_06020",
+          "role": "human resources specialist",
+          "ground_truth": "select",
+          "prediction": "select",
+          "correct": true
+        },
+        {
+          "case_id": "case_06864",
+          "role": "robotics engineer",
+          "ground_truth": "select",
+          "prediction": "select",
+          "correct": true
+        },
+        {
+          "case_id": "case_08963",
+          "role": "data engineer",
+          "ground_truth": "select",
+          "prediction": "reject",
+          "correct": false
+        },
+        {
+          "case_id": "case_02051",
+          "role": "robotics engineer",
+          "ground_truth": "reject",
+          "prediction": "select",
+          "correct": false
+        },
+        {
+          "case_id": "case_04334",
+          "role": "product manager",
+          "ground_truth": "select",
+          "prediction": "reject",
+          "correct": false
+        },
+        {
+          "case_id": "case_04558",
+          "role": "system administrator",
+          "ground_truth": "reject",
+          "prediction": "reject",
+          "correct": true
+        },
+        {
+          "case_id": "case_05543",
+          "role": "data analyst",
+          "ground_truth": "select",
+          "prediction": "reject",
+          "correct": false
+        },
+        {
+          "case_id": "case_00031",
+          "role": "cloud architect",
+          "ground_truth": "reject",
+          "prediction": "reject",
+          "correct": true
+        },
+        {
+          "case_id": "case_02009",
+          "role": "ui engineer",
+          "ground_truth": "reject",
+          "prediction": "reject",
+          "correct": true
+        },
+        {
+          "case_id": "case_09928",
+          "role": "data scientist",
+          "ground_truth": "select",
+          "prediction": "select",
+          "correct": true
+        },
+        {
+          "case_id": "case_10040",
+          "role": "data engineer",
+          "ground_truth": "select",
+          "prediction": "select",
+          "correct": true
+        },
+        {
+          "case_id": "case_00583",
+          "role": "software engineer",
+          "ground_truth": "select",
+          "prediction": "reject",
+          "correct": false
+        },
+        {
+          "case_id": "case_09631",
+          "role": "data engineer",
+          "ground_truth": "select",
+          "prediction": "select",
+          "correct": true
+        },
+        {
+          "case_id": "case_09070",
+          "role": "ui designer",
+          "ground_truth": "select",
+          "prediction": "reject",
+          "correct": false
+        },
+        {
+          "case_id": "case_07805",
+          "role": "ux designer",
+          "ground_truth": "reject",
+          "prediction": "reject",
+          "correct": true
+        },
+        {
+          "case_id": "case_03775",
+          "role": "cloud architect",
+          "ground_truth": "reject",
+          "prediction": "reject",
+          "correct": true
+        },
+        {
+          "case_id": "case_04738",
+          "role": "cloud engineer",
+          "ground_truth": "select",
+          "prediction": "reject",
+          "correct": false
+        },
+        {
+          "case_id": "case_01372",
+          "role": "software engineer",
+          "ground_truth": "select",
+          "prediction": "reject",
+          "correct": false
+        },
+        {
+          "case_id": "case_06787",
+          "role": "cloud engineer",
+          "ground_truth": "reject",
+          "prediction": "reject",
+          "correct": true
+        },
+        {
+          "case_id": "case_03478",
+          "role": "ai researcher",
+          "ground_truth": "select",
+          "prediction": "reject",
+          "correct": false
+        },
+        {
+          "case_id": "case_09838",
+          "role": "product manager",
+          "ground_truth": "select",
+          "prediction": "select",
+          "correct": true
+        },
+        {
+          "case_id": "case_01242",
+          "role": "data analyst",
+          "ground_truth": "reject",
+          "prediction": "reject",
+          "correct": true
+        },
+        {
+          "case_id": "case_03719",
+          "role": "business analyst",
+          "ground_truth": "select",
+          "prediction": "reject",
+          "correct": false
+        },
+        {
+          "case_id": "case_06183",
+          "role": "ar/vr developer",
+          "ground_truth": "select",
+          "prediction": "select",
+          "correct": true
+        },
+        {
+          "case_id": "case_07680",
+          "role": "e-commerce specialist",
+          "ground_truth": "reject",
+          "prediction": "reject",
+          "correct": true
+        },
+        {
+          "case_id": "case_04362",
+          "role": "data analyst",
+          "ground_truth": "select",
+          "prediction": "select",
+          "correct": true
+        },
+        {
+          "case_id": "case_00122",
+          "role": "e-commerce specialist",
+          "ground_truth": "select",
+          "prediction": "reject",
+          "correct": false
+        },
+        {
+          "case_id": "case_06594",
+          "role": "machine learning engineer",
+          "ground_truth": "reject",
+          "prediction": "reject",
+          "correct": true
+        },
+        {
+          "case_id": "case_05610",
+          "role": "content writer",
+          "ground_truth": "select",
+          "prediction": "reject",
+          "correct": false
+        },
+        {
+          "case_id": "case_02494",
+          "role": "it support specialist",
+          "ground_truth": "reject",
+          "prediction": "select",
+          "correct": false
+        },
+        {
+          "case_id": "case_07962",
+          "role": "digital marketing specialist",
+          "ground_truth": "reject",
+          "prediction": "select",
+          "correct": false
+        },
+        {
+          "case_id": "case_04326",
+          "role": "e-commerce specialist",
+          "ground_truth": "reject",
+          "prediction": "reject",
+          "correct": true
+        },
+        {
+          "case_id": "case_09596",
+          "role": "data engineer",
+          "ground_truth": "reject",
+          "prediction": "select",
+          "correct": false
+        },
+        {
+          "case_id": "case_07316",
+          "role": "data scientist",
+          "ground_truth": "reject",
+          "prediction": "reject",
+          "correct": true
+        },
+        {
+          "case_id": "case_05564",
+          "role": "it support specialist",
+          "ground_truth": "reject",
+          "prediction": "reject",
+          "correct": true
+        },
+        {
+          "case_id": "case_03612",
+          "role": "data analyst",
+          "ground_truth": "reject",
+          "prediction": "reject",
+          "correct": true
+        },
+        {
+          "case_id": "case_01732",
+          "role": "cloud architect",
+          "ground_truth": "select",
+          "prediction": "select",
+          "correct": true
+        },
+        {
+          "case_id": "case_06463",
+          "role": "digital marketing specialist",
+          "ground_truth": "select",
+          "prediction": "select",
+          "correct": true
+        },
+        {
+          "case_id": "case_08810",
+          "role": "data scientist",
+          "ground_truth": "select",
+          "prediction": "reject",
+          "correct": false
+        },
+        {
+          "case_id": "case_06970",
+          "role": "system administrator",
+          "ground_truth": "reject",
+          "prediction": "select",
+          "correct": false
+        },
+        {
+          "case_id": "case_01703",
+          "role": "data analyst",
+          "ground_truth": "select",
+          "prediction": "select",
+          "correct": true
+        },
+        {
+          "case_id": "case_05843",
+          "role": "robotics engineer",
+          "ground_truth": "select",
+          "prediction": "select",
+          "correct": true
+        },
+        {
+          "case_id": "case_09048",
+          "role": "product manager",
+          "ground_truth": "reject",
+          "prediction": "reject",
+          "correct": true
+        },
+        {
+          "case_id": "case_00888",
+          "role": "data engineer",
+          "ground_truth": "reject",
+          "prediction": "reject",
+          "correct": true
+        },
+        {
+          "case_id": "case_06288",
+          "role": "e-commerce specialist",
+          "ground_truth": "reject",
+          "prediction": "reject",
+          "correct": true
+        },
+        {
+          "case_id": "case_04074",
+          "role": "robotics engineer",
+          "ground_truth": "reject",
+          "prediction": "reject",
+          "correct": true
+        },
+        {
+          "case_id": "case_01043",
+          "role": "product manager",
+          "ground_truth": "reject",
+          "prediction": "select",
+          "correct": false
+        },
+        {
+          "case_id": "case_09329",
+          "role": "data scientist",
+          "ground_truth": "select",
+          "prediction": "reject",
+          "correct": false
+        },
+        {
+          "case_id": "case_04564",
+          "role": "machine learning engineer",
+          "ground_truth": "select",
+          "prediction": "reject",
+          "correct": false
+        },
+        {
+          "case_id": "case_02666",
+          "role": "cloud engineer",
+          "ground_truth": "reject",
+          "prediction": "reject",
+          "correct": true
+        },
+        {
+          "case_id": "case_07385",
+          "role": "database administrator",
+          "ground_truth": "select",
+          "prediction": "reject",
+          "correct": false
+        },
+        {
+          "case_id": "case_06991",
+          "role": "content writer",
+          "ground_truth": "reject",
+          "prediction": "select",
+          "correct": false
+        },
+        {
+          "case_id": "case_03100",
+          "role": "content writer",
+          "ground_truth": "reject",
+          "prediction": "select",
+          "correct": false
+        },
+        {
+          "case_id": "case_05131",
+          "role": "data architect",
+          "ground_truth": "select",
+          "prediction": "select",
+          "correct": true
+        },
+        {
+          "case_id": "case_06726",
+          "role": "mobile app developer",
+          "ground_truth": "reject",
+          "prediction": "select",
+          "correct": false
+        },
+        {
+          "case_id": "case_08410",
+          "role": "software engineer",
+          "ground_truth": "reject",
+          "prediction": "select",
+          "correct": false
+        },
+        {
+          "case_id": "case_08165",
+          "role": "ui engineer",
+          "ground_truth": "select",
+          "prediction": "select",
+          "correct": true
+        },
+        {
+          "case_id": "case_04437",
+          "role": "ui engineer",
+          "ground_truth": "select",
+          "prediction": "reject",
+          "correct": false
+        },
+        {
+          "case_id": "case_06852",
+          "role": "game developer",
+          "ground_truth": "select",
+          "prediction": "select",
+          "correct": true
+        },
+        {
+          "case_id": "case_02582",
+          "role": "ai researcher",
+          "ground_truth": "select",
+          "prediction": "reject",
+          "correct": false
+        },
+        {
+          "case_id": "case_08069",
+          "role": "data scientist",
+          "ground_truth": "select",
+          "prediction": "select",
+          "correct": true
+        },
+        {
+          "case_id": "case_08314",
+          "role": "ui engineer",
+          "ground_truth": "reject",
+          "prediction": "select",
+          "correct": false
+        },
+        {
+          "case_id": "case_07965",
+          "role": "cloud architect",
+          "ground_truth": "reject",
+          "prediction": "reject",
+          "correct": true
+        },
+        {
+          "case_id": "case_00010",
+          "role": "ui engineer",
+          "ground_truth": "select",
+          "prediction": "reject",
+          "correct": false
+        },
+        {
+          "case_id": "case_06407",
+          "role": "cloud architect",
+          "ground_truth": "select",
+          "prediction": "reject",
+          "correct": false
+        },
+        {
+          "case_id": "case_07770",
+          "role": "devops engineer",
+          "ground_truth": "reject",
+          "prediction": "reject",
+          "correct": true
+        },
+        {
+          "case_id": "case_09735",
+          "role": "data engineer",
+          "ground_truth": "select",
+          "prediction": "select",
+          "correct": true
+        },
+        {
+          "case_id": "case_07494",
+          "role": "data analyst",
+          "ground_truth": "reject",
+          "prediction": "reject",
+          "correct": true
+        },
+        {
+          "case_id": "case_01646",
+          "role": "digital marketing specialist",
+          "ground_truth": "select",
+          "prediction": "select",
+          "correct": true
+        },
+        {
+          "case_id": "case_08809",
+          "role": "product manager",
+          "ground_truth": "reject",
+          "prediction": "reject",
+          "correct": true
+        },
+        {
+          "case_id": "case_09237",
+          "role": "ui designer",
+          "ground_truth": "select",
+          "prediction": "reject",
+          "correct": false
+        },
+        {
+          "case_id": "case_02657",
+          "role": "devops engineer",
+          "ground_truth": "select",
+          "prediction": "reject",
+          "correct": false
+        },
+        {
+          "case_id": "case_04511",
+          "role": "digital marketing specialist",
+          "ground_truth": "select",
+          "prediction": "select",
+          "correct": true
+        },
+        {
+          "case_id": "case_10037",
+          "role": "ui engineer",
+          "ground_truth": "select",
+          "prediction": "select",
+          "correct": true
+        },
+        {
+          "case_id": "case_02537",
+          "role": "full stack developer",
+          "ground_truth": "reject",
+          "prediction": "select",
+          "correct": false
+        },
+        {
+          "case_id": "case_06191",
+          "role": "qa engineer",
+          "ground_truth": "reject",
+          "prediction": "reject",
+          "correct": true
+        },
+        {
+          "case_id": "case_01796",
+          "role": "machine learning engineer",
+          "ground_truth": "select",
+          "prediction": "select",
+          "correct": true
+        },
+        {
+          "case_id": "case_01852",
+          "role": "project manager",
+          "ground_truth": "select",
+          "prediction": "reject",
+          "correct": false
+        },
+        {
+          "case_id": "case_05163",
+          "role": "machine learning engineer",
+          "ground_truth": "reject",
+          "prediction": "reject",
+          "correct": true
+        },
+        {
+          "case_id": "case_09959",
+          "role": "ui engineer",
+          "ground_truth": "select",
+          "prediction": "select",
+          "correct": true
+        },
+        {
+          "case_id": "case_07823",
+          "role": "data architect",
+          "ground_truth": "reject",
+          "prediction": "reject",
+          "correct": true
+        },
+        {
+          "case_id": "case_07970",
+          "role": "digital marketing specialist",
+          "ground_truth": "reject",
+          "prediction": "select",
+          "correct": false
+        },
+        {
+          "case_id": "case_03537",
+          "role": "full stack developer",
+          "ground_truth": "select",
+          "prediction": "select",
+          "correct": true
+        },
+        {
+          "case_id": "case_00901",
+          "role": "data architect",
+          "ground_truth": "reject",
+          "prediction": "select",
+          "correct": false
+        },
+        {
+          "case_id": "case_05148",
+          "role": "robotics engineer",
+          "ground_truth": "select",
+          "prediction": "select",
+          "correct": true
+        },
+        {
+          "case_id": "case_01877",
+          "role": "data scientist",
+          "ground_truth": "select",
+          "prediction": "reject",
+          "correct": false
+        },
+        {
+          "case_id": "case_00581",
+          "role": "data engineer",
+          "ground_truth": "select",
+          "prediction": "reject",
+          "correct": false
+        },
+        {
+          "case_id": "case_01239",
+          "role": "software engineer",
+          "ground_truth": "select",
+          "prediction": "reject",
+          "correct": false
+        },
+        {
+          "case_id": "case_03976",
+          "role": "mobile app developer",
+          "ground_truth": "reject",
+          "prediction": "select",
+          "correct": false
+        },
+        {
+          "case_id": "case_02322",
+          "role": "it support specialist",
+          "ground_truth": "select",
+          "prediction": "reject",
+          "correct": false
+        },
+        {
+          "case_id": "case_01334",
+          "role": "software engineer",
+          "ground_truth": "reject",
+          "prediction": "reject",
+          "correct": true
+        },
+        {
+          "case_id": "case_03604",
+          "role": "full stack developer",
+          "ground_truth": "select",
+          "prediction": "select",
+          "correct": true
+        },
+        {
+          "case_id": "case_01605",
+          "role": "game developer",
+          "ground_truth": "select",
+          "prediction": "select",
+          "correct": true
+        },
+        {
+          "case_id": "case_01473",
+          "role": "product manager",
+          "ground_truth": "reject",
+          "prediction": "reject",
+          "correct": true
+        },
+        {
+          "case_id": "case_08765",
+          "role": "data scientist",
+          "ground_truth": "reject",
+          "prediction": "reject",
+          "correct": true
+        },
+        {
+          "case_id": "case_03103",
+          "role": "data architect",
+          "ground_truth": "reject",
+          "prediction": "reject",
+          "correct": true
+        },
+        {
+          "case_id": "case_05931",
+          "role": "data analyst",
+          "ground_truth": "select",
+          "prediction": "reject",
+          "correct": false
+        },
+        {
+          "case_id": "case_00875",
+          "role": "qa engineer",
+          "ground_truth": "reject",
+          "prediction": "reject",
+          "correct": true
+        },
+        {
+          "case_id": "case_04389",
+          "role": "robotics engineer",
+          "ground_truth": "select",
+          "prediction": "select",
+          "correct": true
+        },
+        {
+          "case_id": "case_07977",
+          "role": "human resources specialist",
+          "ground_truth": "reject",
+          "prediction": "reject",
+          "correct": true
+        },
+        {
+          "case_id": "case_00595",
+          "role": "software engineer",
+          "ground_truth": "reject",
+          "prediction": "reject",
+          "correct": true
+        },
+        {
+          "case_id": "case_03456",
+          "role": "ai researcher",
+          "ground_truth": "reject",
+          "prediction": "reject",
+          "correct": true
+        },
+        {
+          "case_id": "case_03589",
+          "role": "digital marketing specialist",
+          "ground_truth": "select",
+          "prediction": "reject",
+          "correct": false
+        },
+        {
+          "case_id": "case_03284",
+          "role": "data scientist",
+          "ground_truth": "select",
+          "prediction": "reject",
+          "correct": false
+        },
+        {
+          "case_id": "case_02956",
+          "role": "ai researcher",
+          "ground_truth": "select",
+          "prediction": "reject",
+          "correct": false
+        },
+        {
+          "case_id": "case_09155",
+          "role": "product manager",
+          "ground_truth": "select",
+          "prediction": "reject",
+          "correct": false
+        },
+        {
+          "case_id": "case_01206",
+          "role": "software engineer",
+          "ground_truth": "select",
+          "prediction": "reject",
+          "correct": false
+        },
+        {
+          "case_id": "case_03809",
+          "role": "human resources specialist",
+          "ground_truth": "select",
+          "prediction": "reject",
+          "correct": false
+        },
+        {
+          "case_id": "case_08243",
+          "role": "data scientist",
+          "ground_truth": "reject",
+          "prediction": "select",
+          "correct": false
+        },
+        {
+          "case_id": "case_03451",
+          "role": "software engineer",
+          "ground_truth": "select",
+          "prediction": "reject",
+          "correct": false
+        },
+        {
+          "case_id": "case_03159",
+          "role": "qa engineer",
+          "ground_truth": "select",
+          "prediction": "reject",
+          "correct": false
+        },
+        {
+          "case_id": "case_09508",
+          "role": "product manager",
+          "ground_truth": "reject",
+          "prediction": "select",
+          "correct": false
+        },
+        {
+          "case_id": "case_01056",
+          "role": "data engineer",
+          "ground_truth": "reject",
+          "prediction": "select",
+          "correct": false
+        },
+        {
+          "case_id": "case_01780",
+          "role": "database administrator",
+          "ground_truth": "reject",
+          "prediction": "select",
+          "correct": false
+        },
+        {
+          "case_id": "case_01541",
+          "role": "data engineer",
+          "ground_truth": "reject",
+          "prediction": "reject",
+          "correct": true
+        },
+        {
+          "case_id": "case_03596",
+          "role": "cloud architect",
+          "ground_truth": "select",
+          "prediction": "reject",
+          "correct": false
+        },
+        {
+          "case_id": "case_06072",
+          "role": "data architect",
+          "ground_truth": "select",
+          "prediction": "reject",
+          "correct": false
+        },
+        {
+          "case_id": "case_00299",
+          "role": "mobile app developer",
+          "ground_truth": "reject",
+          "prediction": "reject",
+          "correct": true
+        },
+        {
+          "case_id": "case_09087",
+          "role": "data analyst",
+          "ground_truth": "select",
+          "prediction": "reject",
+          "correct": false
+        },
+        {
+          "case_id": "case_01727",
+          "role": "devops engineer",
+          "ground_truth": "select",
+          "prediction": "select",
+          "correct": true
+        },
+        {
+          "case_id": "case_05128",
+          "role": "ai researcher",
+          "ground_truth": "reject",
+          "prediction": "reject",
+          "correct": true
+        },
+        {
+          "case_id": "case_01919",
+          "role": "data scientist",
+          "ground_truth": "reject",
+          "prediction": "reject",
+          "correct": true
+        },
+        {
+          "case_id": "case_04031",
+          "role": "game developer",
+          "ground_truth": "reject",
+          "prediction": "select",
+          "correct": false
+        },
+        {
+          "case_id": "case_04328",
+          "role": "mobile app developer",
+          "ground_truth": "reject",
+          "prediction": "select",
+          "correct": false
+        },
+        {
+          "case_id": "case_08359",
+          "role": "product manager",
+          "ground_truth": "select",
+          "prediction": "select",
+          "correct": true
+        },
+        {
+          "case_id": "case_00774",
+          "role": "data engineer",
+          "ground_truth": "reject",
+          "prediction": "reject",
+          "correct": true
+        },
+        {
+          "case_id": "case_09691",
+          "role": "product manager",
+          "ground_truth": "reject",
+          "prediction": "select",
+          "correct": false
+        },
+        {
+          "case_id": "case_05888",
+          "role": "system administrator",
+          "ground_truth": "select",
+          "prediction": "reject",
+          "correct": false
+        },
+        {
+          "case_id": "case_03853",
+          "role": "data engineer",
+          "ground_truth": "reject",
+          "prediction": "reject",
+          "correct": true
+        },
+        {
+          "case_id": "case_03653",
+          "role": "product manager",
+          "ground_truth": "select",
+          "prediction": "reject",
+          "correct": false
+        },
+        {
+          "case_id": "case_06154",
+          "role": "cloud architect",
+          "ground_truth": "select",
+          "prediction": "reject",
+          "correct": false
+        },
+        {
+          "case_id": "case_01280",
+          "role": "ui designer",
+          "ground_truth": "reject",
+          "prediction": "select",
+          "correct": false
+        },
+        {
+          "case_id": "case_02245",
+          "role": "cloud architect",
+          "ground_truth": "reject",
+          "prediction": "reject",
+          "correct": true
+        },
+        {
+          "case_id": "case_00275",
+          "role": "human resources specialist",
+          "ground_truth": "reject",
+          "prediction": "select",
+          "correct": false
+        },
+        {
+          "case_id": "case_05783",
+          "role": "ai researcher",
+          "ground_truth": "select",
+          "prediction": "reject",
+          "correct": false
+        },
+        {
+          "case_id": "case_01098",
+          "role": "ui engineer",
+          "ground_truth": "reject",
+          "prediction": "select",
+          "correct": false
+        },
+        {
+          "case_id": "case_07387",
+          "role": "digital marketing specialist",
+          "ground_truth": "select",
+          "prediction": "select",
+          "correct": true
+        },
+        {
+          "case_id": "case_07644",
+          "role": "devops engineer",
+          "ground_truth": "select",
+          "prediction": "reject",
+          "correct": false
+        },
+        {
+          "case_id": "case_09255",
+          "role": "ui designer",
+          "ground_truth": "reject",
+          "prediction": "select",
+          "correct": false
+        },
+        {
+          "case_id": "case_09609",
+          "role": "data scientist",
+          "ground_truth": "select",
+          "prediction": "select",
+          "correct": true
+        },
+        {
+          "case_id": "case_07071",
+          "role": "game developer",
+          "ground_truth": "select",
+          "prediction": "select",
+          "correct": true
+        },
+        {
+          "case_id": "case_01226",
+          "role": "data analyst",
+          "ground_truth": "reject",
+          "prediction": "reject",
+          "correct": true
+        },
+        {
+          "case_id": "case_04861",
+          "role": "data scientist",
+          "ground_truth": "reject",
+          "prediction": "reject",
+          "correct": true
+        },
+        {
+          "case_id": "case_06668",
+          "role": "ai researcher",
+          "ground_truth": "reject",
+          "prediction": "select",
+          "correct": false
+        }
+      ]
+    },
+    "supervised-logreg": {
+      "metrics": {
+        "accuracy": 0.5367,
+        "precision": 0.539,
+        "recall": 0.5067,
+        "f1": 0.5223,
+        "pred_select_rate": 0.47,
+        "confusion_matrix": {
+          "TP (pred select, actual select)": 76,
+          "FP (pred select, actual reject)": 65,
+          "FN (pred reject, actual select)": 74,
+          "TN (pred reject, actual reject)": 85
+        },
+        "total_cases": 300,
+        "test_auc": 0.601,
+        "n_train": 9874
+      },
+      "results": [
+        {
+          "case_id": "case_06998",
+          "role": "machine learning engineer",
+          "ground_truth": "reject",
+          "prediction": "reject",
+          "correct": true
+        },
+        {
+          "case_id": "case_07231",
+          "role": "ar/vr developer",
+          "ground_truth": "reject",
+          "prediction": "select",
+          "correct": false
+        },
+        {
+          "case_id": "case_00821",
+          "role": "data scientist",
+          "ground_truth": "select",
+          "prediction": "select",
+          "correct": true
+        },
+        {
+          "case_id": "case_05048",
+          "role": "cloud engineer",
+          "ground_truth": "reject",
+          "prediction": "reject",
+          "correct": true
+        },
+        {
+          "case_id": "case_09238",
+          "role": "data engineer",
+          "ground_truth": "select",
+          "prediction": "select",
+          "correct": true
+        },
+        {
+          "case_id": "case_00539",
+          "role": "ui engineer",
+          "ground_truth": "select",
+          "prediction": "reject",
+          "correct": false
+        },
+        {
+          "case_id": "case_02550",
+          "role": "it support specialist",
+          "ground_truth": "select",
+          "prediction": "select",
+          "correct": true
+        },
+        {
+          "case_id": "case_06134",
+          "role": "ui engineer",
+          "ground_truth": "select",
+          "prediction": "select",
+          "correct": true
+        },
+        {
+          "case_id": "case_03874",
+          "role": "game developer",
+          "ground_truth": "reject",
+          "prediction": "select",
+          "correct": false
+        },
+        {
+          "case_id": "case_08196",
+          "role": "ui engineer",
+          "ground_truth": "select",
+          "prediction": "reject",
+          "correct": false
+        },
+        {
+          "case_id": "case_00461",
+          "role": "game developer",
+          "ground_truth": "select",
+          "prediction": "select",
+          "correct": true
+        },
+        {
+          "case_id": "case_06655",
+          "role": "ai researcher",
+          "ground_truth": "reject",
+          "prediction": "select",
+          "correct": false
+        },
+        {
+          "case_id": "case_02682",
+          "role": "ui engineer",
+          "ground_truth": "reject",
+          "prediction": "reject",
+          "correct": true
+        },
+        {
+          "case_id": "case_04321",
+          "role": "ui engineer",
+          "ground_truth": "select",
+          "prediction": "reject",
+          "correct": false
+        },
+        {
+          "case_id": "case_03560",
+          "role": "robotics engineer",
+          "ground_truth": "reject",
+          "prediction": "select",
+          "correct": false
+        },
+        {
+          "case_id": "case_07766",
+          "role": "data architect",
+          "ground_truth": "reject",
+          "prediction": "reject",
+          "correct": true
+        },
+        {
+          "case_id": "case_01069",
+          "role": "ui engineer",
+          "ground_truth": "reject",
+          "prediction": "select",
+          "correct": false
+        },
+        {
+          "case_id": "case_01741",
+          "role": "game developer",
+          "ground_truth": "reject",
+          "prediction": "select",
+          "correct": false
+        },
+        {
+          "case_id": "case_03483",
+          "role": "ui engineer",
+          "ground_truth": "reject",
+          "prediction": "reject",
+          "correct": true
+        },
+        {
+          "case_id": "case_01934",
+          "role": "software developer",
+          "ground_truth": "reject",
+          "prediction": "reject",
+          "correct": true
+        },
+        {
+          "case_id": "case_05487",
+          "role": "ar/vr developer",
+          "ground_truth": "select",
+          "prediction": "reject",
+          "correct": false
+        },
+        {
+          "case_id": "case_01049",
+          "role": "data scientist",
+          "ground_truth": "reject",
+          "prediction": "select",
+          "correct": false
+        },
+        {
+          "case_id": "case_05993",
+          "role": "qa engineer",
+          "ground_truth": "reject",
+          "prediction": "reject",
+          "correct": true
+        },
+        {
+          "case_id": "case_09832",
+          "role": "data scientist",
+          "ground_truth": "select",
+          "prediction": "reject",
+          "correct": false
+        },
+        {
+          "case_id": "case_04563",
+          "role": "ar/vr developer",
+          "ground_truth": "select",
+          "prediction": "reject",
+          "correct": false
+        },
+        {
+          "case_id": "case_08685",
+          "role": "data engineer",
+          "ground_truth": "select",
+          "prediction": "select",
+          "correct": true
+        },
+        {
+          "case_id": "case_01923",
+          "role": "project manager",
+          "ground_truth": "select",
+          "prediction": "select",
+          "correct": true
+        },
+        {
+          "case_id": "case_00064",
+          "role": "devops engineer",
+          "ground_truth": "select",
+          "prediction": "reject",
+          "correct": false
+        },
+        {
+          "case_id": "case_04058",
+          "role": "machine learning engineer",
+          "ground_truth": "reject",
+          "prediction": "reject",
+          "correct": true
+        },
+        {
+          "case_id": "case_00973",
+          "role": "cloud architect",
+          "ground_truth": "select",
+          "prediction": "select",
+          "correct": true
+        },
+        {
+          "case_id": "case_09516",
+          "role": "data scientist",
+          "ground_truth": "select",
+          "prediction": "reject",
+          "correct": false
+        },
+        {
+          "case_id": "case_01878",
+          "role": "project manager",
+          "ground_truth": "select",
+          "prediction": "select",
+          "correct": true
+        },
+        {
+          "case_id": "case_05842",
+          "role": "mobile app developer",
+          "ground_truth": "reject",
+          "prediction": "reject",
+          "correct": true
+        },
+        {
+          "case_id": "case_04405",
+          "role": "cybersecurity analyst",
+          "ground_truth": "select",
+          "prediction": "reject",
+          "correct": false
+        },
+        {
+          "case_id": "case_04391",
+          "role": "robotics engineer",
+          "ground_truth": "select",
+          "prediction": "select",
+          "correct": true
+        },
+        {
+          "case_id": "case_03104",
+          "role": "database administrator",
+          "ground_truth": "reject",
+          "prediction": "reject",
+          "correct": true
+        },
+        {
+          "case_id": "case_07398",
+          "role": "cloud architect",
+          "ground_truth": "reject",
+          "prediction": "select",
+          "correct": false
+        },
+        {
+          "case_id": "case_03281",
+          "role": "qa engineer",
+          "ground_truth": "select",
+          "prediction": "reject",
+          "correct": false
+        },
+        {
+          "case_id": "case_00211",
+          "role": "data analyst",
+          "ground_truth": "reject",
+          "prediction": "select",
+          "correct": false
+        },
+        {
+          "case_id": "case_02101",
+          "role": "system administrator",
+          "ground_truth": "select",
+          "prediction": "select",
+          "correct": true
+        },
+        {
+          "case_id": "case_06990",
+          "role": "cloud engineer",
+          "ground_truth": "reject",
+          "prediction": "reject",
+          "correct": true
+        },
+        {
+          "case_id": "case_00763",
+          "role": "qa engineer",
+          "ground_truth": "select",
+          "prediction": "reject",
+          "correct": false
+        },
+        {
+          "case_id": "case_01498",
+          "role": "ui designer",
+          "ground_truth": "select",
+          "prediction": "select",
+          "correct": true
+        },
+        {
+          "case_id": "case_03124",
+          "role": "database administrator",
+          "ground_truth": "reject",
+          "prediction": "select",
+          "correct": false
+        },
+        {
+          "case_id": "case_09295",
+          "role": "product manager",
+          "ground_truth": "reject",
+          "prediction": "reject",
+          "correct": true
+        },
+        {
+          "case_id": "case_03805",
+          "role": "game developer",
+          "ground_truth": "select",
+          "prediction": "reject",
+          "correct": false
+        },
+        {
+          "case_id": "case_00872",
+          "role": "product manager",
+          "ground_truth": "reject",
+          "prediction": "select",
+          "correct": false
+        },
+        {
+          "case_id": "case_02708",
+          "role": "data engineer",
+          "ground_truth": "select",
+          "prediction": "reject",
+          "correct": false
+        },
+        {
+          "case_id": "case_00934",
+          "role": "cloud engineer",
+          "ground_truth": "reject",
+          "prediction": "reject",
+          "correct": true
+        },
+        {
+          "case_id": "case_04089",
+          "role": "product manager",
+          "ground_truth": "reject",
+          "prediction": "select",
+          "correct": false
+        },
+        {
+          "case_id": "case_06155",
+          "role": "game developer",
+          "ground_truth": "select",
+          "prediction": "reject",
+          "correct": false
+        },
+        {
+          "case_id": "case_01102",
+          "role": "data scientist",
+          "ground_truth": "select",
+          "prediction": "select",
+          "correct": true
+        },
+        {
+          "case_id": "case_03582",
+          "role": "data engineer",
+          "ground_truth": "select",
+          "prediction": "select",
+          "correct": true
+        },
+        {
+          "case_id": "case_02652",
+          "role": "data analyst",
+          "ground_truth": "reject",
+          "prediction": "reject",
+          "correct": true
+        },
+        {
+          "case_id": "case_02662",
+          "role": "cloud architect",
+          "ground_truth": "select",
+          "prediction": "reject",
+          "correct": false
+        },
+        {
+          "case_id": "case_00990",
+          "role": "game developer",
+          "ground_truth": "reject",
+          "prediction": "reject",
+          "correct": true
+        },
+        {
+          "case_id": "case_06934",
+          "role": "software engineer",
+          "ground_truth": "reject",
+          "prediction": "reject",
+          "correct": true
+        },
+        {
+          "case_id": "case_06959",
+          "role": "machine learning engineer",
+          "ground_truth": "select",
+          "prediction": "select",
+          "correct": true
+        },
+        {
+          "case_id": "case_00927",
+          "role": "blockchain developer",
+          "ground_truth": "reject",
+          "prediction": "select",
+          "correct": false
+        },
+        {
+          "case_id": "case_08623",
+          "role": "product manager",
+          "ground_truth": "reject",
+          "prediction": "reject",
+          "correct": true
+        },
+        {
+          "case_id": "case_06473",
+          "role": "business analyst",
+          "ground_truth": "reject",
+          "prediction": "reject",
+          "correct": true
+        },
+        {
+          "case_id": "case_07487",
+          "role": "ux designer",
+          "ground_truth": "select",
+          "prediction": "reject",
+          "correct": false
+        },
+        {
+          "case_id": "case_08684",
+          "role": "data analyst",
+          "ground_truth": "reject",
+          "prediction": "reject",
+          "correct": true
+        },
+        {
+          "case_id": "case_00899",
+          "role": "qa engineer",
+          "ground_truth": "reject",
+          "prediction": "reject",
+          "correct": true
+        },
+        {
+          "case_id": "case_08772",
+          "role": "data scientist",
+          "ground_truth": "select",
+          "prediction": "select",
+          "correct": true
+        },
+        {
+          "case_id": "case_02631",
+          "role": "data engineer",
+          "ground_truth": "select",
+          "prediction": "reject",
+          "correct": false
+        },
+        {
+          "case_id": "case_03695",
+          "role": "ux designer",
+          "ground_truth": "reject",
+          "prediction": "select",
+          "correct": false
+        },
+        {
+          "case_id": "case_08980",
+          "role": "software engineer",
+          "ground_truth": "reject",
+          "prediction": "reject",
+          "correct": true
+        },
+        {
+          "case_id": "case_07436",
+          "role": "cloud engineer",
+          "ground_truth": "reject",
+          "prediction": "reject",
+          "correct": true
+        },
+        {
+          "case_id": "case_06226",
+          "role": "ar/vr developer",
+          "ground_truth": "select",
+          "prediction": "select",
+          "correct": true
+        },
+        {
+          "case_id": "case_09881",
+          "role": "data scientist",
+          "ground_truth": "reject",
+          "prediction": "reject",
+          "correct": true
+        },
+        {
+          "case_id": "case_08013",
+          "role": "data scientist",
+          "ground_truth": "reject",
+          "prediction": "reject",
+          "correct": true
+        },
+        {
+          "case_id": "case_09316",
+          "role": "product manager",
+          "ground_truth": "reject",
+          "prediction": "reject",
+          "correct": true
+        },
+        {
+          "case_id": "case_02688",
+          "role": "devops engineer",
+          "ground_truth": "select",
+          "prediction": "select",
+          "correct": true
+        },
+        {
+          "case_id": "case_02339",
+          "role": "cloud engineer",
+          "ground_truth": "select",
+          "prediction": "reject",
+          "correct": false
+        },
+        {
+          "case_id": "case_04021",
+          "role": "data analyst",
+          "ground_truth": "select",
+          "prediction": "select",
+          "correct": true
+        },
+        {
+          "case_id": "case_00485",
+          "role": "qa engineer",
+          "ground_truth": "select",
+          "prediction": "select",
+          "correct": true
+        },
+        {
+          "case_id": "case_09717",
+          "role": "software engineer",
+          "ground_truth": "select",
+          "prediction": "reject",
+          "correct": false
+        },
+        {
+          "case_id": "case_05587",
+          "role": "ui engineer",
+          "ground_truth": "reject",
+          "prediction": "reject",
+          "correct": true
+        },
+        {
+          "case_id": "case_01171",
+          "role": "ui engineer",
+          "ground_truth": "reject",
+          "prediction": "select",
+          "correct": false
+        },
+        {
+          "case_id": "case_05545",
+          "role": "machine learning engineer",
+          "ground_truth": "select",
+          "prediction": "reject",
+          "correct": false
+        },
+        {
+          "case_id": "case_07116",
+          "role": "data architect",
+          "ground_truth": "reject",
+          "prediction": "select",
+          "correct": false
+        },
+        {
+          "case_id": "case_04356",
+          "role": "cybersecurity analyst",
+          "ground_truth": "select",
+          "prediction": "reject",
+          "correct": false
+        },
+        {
+          "case_id": "case_08818",
+          "role": "ui designer",
+          "ground_truth": "select",
+          "prediction": "select",
+          "correct": true
+        },
+        {
+          "case_id": "case_05287",
+          "role": "data architect",
+          "ground_truth": "select",
+          "prediction": "select",
+          "correct": true
+        },
+        {
+          "case_id": "case_04133",
+          "role": "database administrator",
+          "ground_truth": "select",
+          "prediction": "reject",
+          "correct": false
+        },
+        {
+          "case_id": "case_03497",
+          "role": "it support specialist",
+          "ground_truth": "select",
+          "prediction": "select",
+          "correct": true
+        },
+        {
+          "case_id": "case_09595",
+          "role": "data engineer",
+          "ground_truth": "reject",
+          "prediction": "select",
+          "correct": false
+        },
+        {
+          "case_id": "case_09384",
+          "role": "data scientist",
+          "ground_truth": "reject",
+          "prediction": "reject",
+          "correct": true
+        },
+        {
+          "case_id": "case_04809",
+          "role": "system administrator",
+          "ground_truth": "select",
+          "prediction": "select",
+          "correct": true
+        },
+        {
+          "case_id": "case_08957",
+          "role": "product manager",
+          "ground_truth": "select",
+          "prediction": "select",
+          "correct": true
+        },
+        {
+          "case_id": "case_01101",
+          "role": "data engineer",
+          "ground_truth": "reject",
+          "prediction": "select",
+          "correct": false
+        },
+        {
+          "case_id": "case_04883",
+          "role": "ai researcher",
+          "ground_truth": "select",
+          "prediction": "reject",
+          "correct": false
+        },
+        {
+          "case_id": "case_05335",
+          "role": "ux designer",
+          "ground_truth": "reject",
+          "prediction": "select",
+          "correct": false
+        },
+        {
+          "case_id": "case_06855",
+          "role": "cloud engineer",
+          "ground_truth": "select",
+          "prediction": "reject",
+          "correct": false
+        },
+        {
+          "case_id": "case_02380",
+          "role": "e-commerce specialist",
+          "ground_truth": "select",
+          "prediction": "reject",
+          "correct": false
+        },
+        {
+          "case_id": "case_09513",
+          "role": "data scientist",
+          "ground_truth": "reject",
+          "prediction": "reject",
+          "correct": true
+        },
+        {
+          "case_id": "case_09082",
+          "role": "data scientist",
+          "ground_truth": "reject",
+          "prediction": "reject",
+          "correct": true
+        },
+        {
+          "case_id": "case_00221",
+          "role": "product manager",
+          "ground_truth": "select",
+          "prediction": "reject",
+          "correct": false
+        },
+        {
+          "case_id": "case_03743",
+          "role": "qa engineer",
+          "ground_truth": "select",
+          "prediction": "reject",
+          "correct": false
+        },
+        {
+          "case_id": "case_06148",
+          "role": "digital marketing specialist",
+          "ground_truth": "select",
+          "prediction": "reject",
+          "correct": false
+        },
+        {
+          "case_id": "case_04020",
+          "role": "cloud engineer",
+          "ground_truth": "select",
+          "prediction": "reject",
+          "correct": false
+        },
+        {
+          "case_id": "case_08858",
+          "role": "data analyst",
+          "ground_truth": "select",
+          "prediction": "select",
+          "correct": true
+        },
+        {
+          "case_id": "case_00799",
+          "role": "human resources specialist",
+          "ground_truth": "select",
+          "prediction": "reject",
+          "correct": false
+        },
+        {
+          "case_id": "case_03897",
+          "role": "digital marketing specialist",
+          "ground_truth": "reject",
+          "prediction": "reject",
+          "correct": true
+        },
+        {
+          "case_id": "case_01586",
+          "role": "data scientist",
+          "ground_truth": "select",
+          "prediction": "reject",
+          "correct": false
+        },
+        {
+          "case_id": "case_08323",
+          "role": "ui engineer",
+          "ground_truth": "select",
+          "prediction": "reject",
+          "correct": false
+        },
+        {
+          "case_id": "case_00833",
+          "role": "digital marketing specialist",
+          "ground_truth": "reject",
+          "prediction": "select",
+          "correct": false
+        },
+        {
+          "case_id": "case_05897",
+          "role": "it support specialist",
+          "ground_truth": "select",
+          "prediction": "select",
+          "correct": true
+        },
+        {
+          "case_id": "case_09428",
+          "role": "product manager",
+          "ground_truth": "reject",
+          "prediction": "reject",
+          "correct": true
+        },
+        {
+          "case_id": "case_06628",
+          "role": "product manager",
+          "ground_truth": "reject",
+          "prediction": "reject",
+          "correct": true
+        },
+        {
+          "case_id": "case_09435",
+          "role": "software engineer",
+          "ground_truth": "reject",
+          "prediction": "reject",
+          "correct": true
+        },
+        {
+          "case_id": "case_02829",
+          "role": "e-commerce specialist",
+          "ground_truth": "select",
+          "prediction": "reject",
+          "correct": false
+        },
+        {
+          "case_id": "case_03496",
+          "role": "software engineer",
+          "ground_truth": "reject",
+          "prediction": "select",
+          "correct": false
+        },
+        {
+          "case_id": "case_06809",
+          "role": "data analyst",
+          "ground_truth": "select",
+          "prediction": "reject",
+          "correct": false
+        },
+        {
+          "case_id": "case_07476",
+          "role": "it support specialist",
+          "ground_truth": "select",
+          "prediction": "reject",
+          "correct": false
+        },
+        {
+          "case_id": "case_06499",
+          "role": "it support specialist",
+          "ground_truth": "select",
+          "prediction": "select",
+          "correct": true
+        },
+        {
+          "case_id": "case_05436",
+          "role": "it support specialist",
+          "ground_truth": "reject",
+          "prediction": "select",
+          "correct": false
+        },
+        {
+          "case_id": "case_03022",
+          "role": "data engineer",
+          "ground_truth": "reject",
+          "prediction": "reject",
+          "correct": true
+        },
+        {
+          "case_id": "case_02107",
+          "role": "cybersecurity analyst",
+          "ground_truth": "reject",
+          "prediction": "select",
+          "correct": false
+        },
+        {
+          "case_id": "case_07305",
+          "role": "data architect",
+          "ground_truth": "select",
+          "prediction": "select",
+          "correct": true
+        },
+        {
+          "case_id": "case_08276",
+          "role": "data engineer",
+          "ground_truth": "select",
+          "prediction": "reject",
+          "correct": false
+        },
+        {
+          "case_id": "case_00778",
+          "role": "qa engineer",
+          "ground_truth": "reject",
+          "prediction": "reject",
+          "correct": true
+        },
+        {
+          "case_id": "case_01516",
+          "role": "data engineer",
+          "ground_truth": "reject",
+          "prediction": "reject",
+          "correct": true
+        },
+        {
+          "case_id": "case_07598",
+          "role": "product manager",
+          "ground_truth": "reject",
+          "prediction": "reject",
+          "correct": true
+        },
+        {
+          "case_id": "case_03272",
+          "role": "qa engineer",
+          "ground_truth": "reject",
+          "prediction": "reject",
+          "correct": true
+        },
+        {
+          "case_id": "case_00102",
+          "role": "business analyst",
+          "ground_truth": "reject",
+          "prediction": "reject",
+          "correct": true
+        },
+        {
+          "case_id": "case_00462",
+          "role": "game developer",
+          "ground_truth": "reject",
+          "prediction": "select",
+          "correct": false
+        },
+        {
+          "case_id": "case_04676",
+          "role": "blockchain developer",
+          "ground_truth": "reject",
+          "prediction": "select",
+          "correct": false
+        },
+        {
+          "case_id": "case_07549",
+          "role": "content writer",
+          "ground_truth": "select",
+          "prediction": "select",
+          "correct": true
+        },
+        {
+          "case_id": "case_04557",
+          "role": "cloud architect",
+          "ground_truth": "select",
+          "prediction": "reject",
+          "correct": false
+        },
+        {
+          "case_id": "case_00896",
+          "role": "devops engineer",
+          "ground_truth": "reject",
+          "prediction": "select",
+          "correct": false
+        },
+        {
+          "case_id": "case_03945",
+          "role": "devops engineer",
+          "ground_truth": "reject",
+          "prediction": "reject",
+          "correct": true
+        },
+        {
+          "case_id": "case_08707",
+          "role": "product manager",
+          "ground_truth": "reject",
+          "prediction": "reject",
+          "correct": true
+        },
+        {
+          "case_id": "case_06721",
+          "role": "machine learning engineer",
+          "ground_truth": "reject",
+          "prediction": "select",
+          "correct": false
+        },
+        {
+          "case_id": "case_08832",
+          "role": "data scientist",
+          "ground_truth": "reject",
+          "prediction": "reject",
+          "correct": true
+        },
+        {
+          "case_id": "case_04805",
+          "role": "digital marketing specialist",
+          "ground_truth": "select",
+          "prediction": "reject",
+          "correct": false
+        },
+        {
+          "case_id": "case_09683",
+          "role": "data scientist",
+          "ground_truth": "reject",
+          "prediction": "select",
+          "correct": false
+        },
+        {
+          "case_id": "case_10093",
+          "role": "software engineer",
+          "ground_truth": "reject",
+          "prediction": "reject",
+          "correct": true
+        },
+        {
+          "case_id": "case_08991",
+          "role": "data engineer",
+          "ground_truth": "reject",
+          "prediction": "reject",
+          "correct": true
+        },
+        {
+          "case_id": "case_08866",
+          "role": "ui designer",
+          "ground_truth": "select",
+          "prediction": "select",
+          "correct": true
+        },
+        {
+          "case_id": "case_01530",
+          "role": "software engineer",
+          "ground_truth": "reject",
+          "prediction": "select",
+          "correct": false
+        },
+        {
+          "case_id": "case_02699",
+          "role": "robotics engineer",
+          "ground_truth": "select",
+          "prediction": "reject",
+          "correct": false
+        },
+        {
+          "case_id": "case_01355",
+          "role": "data engineer",
+          "ground_truth": "select",
+          "prediction": "reject",
+          "correct": false
+        },
+        {
+          "case_id": "case_04042",
+          "role": "full stack developer",
+          "ground_truth": "select",
+          "prediction": "select",
+          "correct": true
+        },
+        {
+          "case_id": "case_03924",
+          "role": "human resources specialist",
+          "ground_truth": "reject",
+          "prediction": "select",
+          "correct": false
+        },
+        {
+          "case_id": "case_01457",
+          "role": "ui designer",
+          "ground_truth": "reject",
+          "prediction": "select",
+          "correct": false
+        },
+        {
+          "case_id": "case_09755",
+          "role": "product manager",
+          "ground_truth": "reject",
+          "prediction": "reject",
+          "correct": true
+        },
+        {
+          "case_id": "case_08855",
+          "role": "data scientist",
+          "ground_truth": "reject",
+          "prediction": "reject",
+          "correct": true
+        },
+        {
+          "case_id": "case_01141",
+          "role": "ui engineer",
+          "ground_truth": "select",
+          "prediction": "reject",
+          "correct": false
+        },
+        {
+          "case_id": "case_01558",
+          "role": "product manager",
+          "ground_truth": "select",
+          "prediction": "reject",
+          "correct": false
+        },
+        {
+          "case_id": "case_08474",
+          "role": "data scientist",
+          "ground_truth": "reject",
+          "prediction": "reject",
+          "correct": true
+        },
+        {
+          "case_id": "case_07908",
+          "role": "game developer",
+          "ground_truth": "reject",
+          "prediction": "select",
+          "correct": false
+        },
+        {
+          "case_id": "case_02983",
+          "role": "ux designer",
+          "ground_truth": "reject",
+          "prediction": "select",
+          "correct": false
+        },
+        {
+          "case_id": "case_08709",
+          "role": "software engineer",
+          "ground_truth": "select",
+          "prediction": "select",
+          "correct": true
+        },
+        {
+          "case_id": "case_03757",
+          "role": "full stack developer",
+          "ground_truth": "reject",
+          "prediction": "select",
+          "correct": false
+        },
+        {
+          "case_id": "case_06020",
+          "role": "human resources specialist",
+          "ground_truth": "select",
+          "prediction": "select",
+          "correct": true
+        },
+        {
+          "case_id": "case_06864",
+          "role": "robotics engineer",
+          "ground_truth": "select",
+          "prediction": "reject",
+          "correct": false
+        },
+        {
+          "case_id": "case_08963",
+          "role": "data engineer",
+          "ground_truth": "select",
+          "prediction": "select",
+          "correct": true
+        },
+        {
+          "case_id": "case_02051",
+          "role": "robotics engineer",
+          "ground_truth": "reject",
+          "prediction": "reject",
+          "correct": true
+        },
+        {
+          "case_id": "case_04334",
+          "role": "product manager",
+          "ground_truth": "select",
+          "prediction": "reject",
+          "correct": false
+        },
+        {
+          "case_id": "case_04558",
+          "role": "system administrator",
+          "ground_truth": "reject",
+          "prediction": "select",
+          "correct": false
+        },
+        {
+          "case_id": "case_05543",
+          "role": "data analyst",
+          "ground_truth": "select",
+          "prediction": "reject",
+          "correct": false
+        },
+        {
+          "case_id": "case_00031",
+          "role": "cloud architect",
+          "ground_truth": "reject",
+          "prediction": "reject",
+          "correct": true
+        },
+        {
+          "case_id": "case_02009",
+          "role": "ui engineer",
+          "ground_truth": "reject",
+          "prediction": "select",
+          "correct": false
+        },
+        {
+          "case_id": "case_09928",
+          "role": "data scientist",
+          "ground_truth": "select",
+          "prediction": "select",
+          "correct": true
+        },
+        {
+          "case_id": "case_10040",
+          "role": "data engineer",
+          "ground_truth": "select",
+          "prediction": "reject",
+          "correct": false
+        },
+        {
+          "case_id": "case_00583",
+          "role": "software engineer",
+          "ground_truth": "select",
+          "prediction": "reject",
+          "correct": false
+        },
+        {
+          "case_id": "case_09631",
+          "role": "data engineer",
+          "ground_truth": "select",
+          "prediction": "select",
+          "correct": true
+        },
+        {
+          "case_id": "case_09070",
+          "role": "ui designer",
+          "ground_truth": "select",
+          "prediction": "select",
+          "correct": true
+        },
+        {
+          "case_id": "case_07805",
+          "role": "ux designer",
+          "ground_truth": "reject",
+          "prediction": "select",
+          "correct": false
+        },
+        {
+          "case_id": "case_03775",
+          "role": "cloud architect",
+          "ground_truth": "reject",
+          "prediction": "reject",
+          "correct": true
+        },
+        {
+          "case_id": "case_04738",
+          "role": "cloud engineer",
+          "ground_truth": "select",
+          "prediction": "reject",
+          "correct": false
+        },
+        {
+          "case_id": "case_01372",
+          "role": "software engineer",
+          "ground_truth": "select",
+          "prediction": "select",
+          "correct": true
+        },
+        {
+          "case_id": "case_06787",
+          "role": "cloud engineer",
+          "ground_truth": "reject",
+          "prediction": "reject",
+          "correct": true
+        },
+        {
+          "case_id": "case_03478",
+          "role": "ai researcher",
+          "ground_truth": "select",
+          "prediction": "reject",
+          "correct": false
+        },
+        {
+          "case_id": "case_09838",
+          "role": "product manager",
+          "ground_truth": "select",
+          "prediction": "select",
+          "correct": true
+        },
+        {
+          "case_id": "case_01242",
+          "role": "data analyst",
+          "ground_truth": "reject",
+          "prediction": "reject",
+          "correct": true
+        },
+        {
+          "case_id": "case_03719",
+          "role": "business analyst",
+          "ground_truth": "select",
+          "prediction": "select",
+          "correct": true
+        },
+        {
+          "case_id": "case_06183",
+          "role": "ar/vr developer",
+          "ground_truth": "select",
+          "prediction": "reject",
+          "correct": false
+        },
+        {
+          "case_id": "case_07680",
+          "role": "e-commerce specialist",
+          "ground_truth": "reject",
+          "prediction": "reject",
+          "correct": true
+        },
+        {
+          "case_id": "case_04362",
+          "role": "data analyst",
+          "ground_truth": "select",
+          "prediction": "reject",
+          "correct": false
+        },
+        {
+          "case_id": "case_00122",
+          "role": "e-commerce specialist",
+          "ground_truth": "select",
+          "prediction": "reject",
+          "correct": false
+        },
+        {
+          "case_id": "case_06594",
+          "role": "machine learning engineer",
+          "ground_truth": "reject",
+          "prediction": "reject",
+          "correct": true
+        },
+        {
+          "case_id": "case_05610",
+          "role": "content writer",
+          "ground_truth": "select",
+          "prediction": "reject",
+          "correct": false
+        },
+        {
+          "case_id": "case_02494",
+          "role": "it support specialist",
+          "ground_truth": "reject",
+          "prediction": "select",
+          "correct": false
+        },
+        {
+          "case_id": "case_07962",
+          "role": "digital marketing specialist",
+          "ground_truth": "reject",
+          "prediction": "select",
+          "correct": false
+        },
+        {
+          "case_id": "case_04326",
+          "role": "e-commerce specialist",
+          "ground_truth": "reject",
+          "prediction": "reject",
+          "correct": true
+        },
+        {
+          "case_id": "case_09596",
+          "role": "data engineer",
+          "ground_truth": "reject",
+          "prediction": "reject",
+          "correct": true
+        },
+        {
+          "case_id": "case_07316",
+          "role": "data scientist",
+          "ground_truth": "reject",
+          "prediction": "reject",
+          "correct": true
+        },
+        {
+          "case_id": "case_05564",
+          "role": "it support specialist",
+          "ground_truth": "reject",
+          "prediction": "select",
+          "correct": false
+        },
+        {
+          "case_id": "case_03612",
+          "role": "data analyst",
+          "ground_truth": "reject",
+          "prediction": "select",
+          "correct": false
+        },
+        {
+          "case_id": "case_01732",
+          "role": "cloud architect",
+          "ground_truth": "select",
+          "prediction": "select",
+          "correct": true
+        },
+        {
+          "case_id": "case_06463",
+          "role": "digital marketing specialist",
+          "ground_truth": "select",
+          "prediction": "reject",
+          "correct": false
+        },
+        {
+          "case_id": "case_08810",
+          "role": "data scientist",
+          "ground_truth": "select",
+          "prediction": "select",
+          "correct": true
+        },
+        {
+          "case_id": "case_06970",
+          "role": "system administrator",
+          "ground_truth": "reject",
+          "prediction": "select",
+          "correct": false
+        },
+        {
+          "case_id": "case_01703",
+          "role": "data analyst",
+          "ground_truth": "select",
+          "prediction": "reject",
+          "correct": false
+        },
+        {
+          "case_id": "case_05843",
+          "role": "robotics engineer",
+          "ground_truth": "select",
+          "prediction": "select",
+          "correct": true
+        },
+        {
+          "case_id": "case_09048",
+          "role": "product manager",
+          "ground_truth": "reject",
+          "prediction": "reject",
+          "correct": true
+        },
+        {
+          "case_id": "case_00888",
+          "role": "data engineer",
+          "ground_truth": "reject",
+          "prediction": "reject",
+          "correct": true
+        },
+        {
+          "case_id": "case_06288",
+          "role": "e-commerce specialist",
+          "ground_truth": "reject",
+          "prediction": "select",
+          "correct": false
+        },
+        {
+          "case_id": "case_04074",
+          "role": "robotics engineer",
+          "ground_truth": "reject",
+          "prediction": "select",
+          "correct": false
+        },
+        {
+          "case_id": "case_01043",
+          "role": "product manager",
+          "ground_truth": "reject",
+          "prediction": "reject",
+          "correct": true
+        },
+        {
+          "case_id": "case_09329",
+          "role": "data scientist",
+          "ground_truth": "select",
+          "prediction": "select",
+          "correct": true
+        },
+        {
+          "case_id": "case_04564",
+          "role": "machine learning engineer",
+          "ground_truth": "select",
+          "prediction": "reject",
+          "correct": false
+        },
+        {
+          "case_id": "case_02666",
+          "role": "cloud engineer",
+          "ground_truth": "reject",
+          "prediction": "reject",
+          "correct": true
+        },
+        {
+          "case_id": "case_07385",
+          "role": "database administrator",
+          "ground_truth": "select",
+          "prediction": "select",
+          "correct": true
+        },
+        {
+          "case_id": "case_06991",
+          "role": "content writer",
+          "ground_truth": "reject",
+          "prediction": "reject",
+          "correct": true
+        },
+        {
+          "case_id": "case_03100",
+          "role": "content writer",
+          "ground_truth": "reject",
+          "prediction": "select",
+          "correct": false
+        },
+        {
+          "case_id": "case_05131",
+          "role": "data architect",
+          "ground_truth": "select",
+          "prediction": "reject",
+          "correct": false
+        },
+        {
+          "case_id": "case_06726",
+          "role": "mobile app developer",
+          "ground_truth": "reject",
+          "prediction": "reject",
+          "correct": true
+        },
+        {
+          "case_id": "case_08410",
+          "role": "software engineer",
+          "ground_truth": "reject",
+          "prediction": "select",
+          "correct": false
+        },
+        {
+          "case_id": "case_08165",
+          "role": "ui engineer",
+          "ground_truth": "select",
+          "prediction": "select",
+          "correct": true
+        },
+        {
+          "case_id": "case_04437",
+          "role": "ui engineer",
+          "ground_truth": "select",
+          "prediction": "reject",
+          "correct": false
+        },
+        {
+          "case_id": "case_06852",
+          "role": "game developer",
+          "ground_truth": "select",
+          "prediction": "select",
+          "correct": true
+        },
+        {
+          "case_id": "case_02582",
+          "role": "ai researcher",
+          "ground_truth": "select",
+          "prediction": "select",
+          "correct": true
+        },
+        {
+          "case_id": "case_08069",
+          "role": "data scientist",
+          "ground_truth": "select",
+          "prediction": "select",
+          "correct": true
+        },
+        {
+          "case_id": "case_08314",
+          "role": "ui engineer",
+          "ground_truth": "reject",
+          "prediction": "reject",
+          "correct": true
+        },
+        {
+          "case_id": "case_07965",
+          "role": "cloud architect",
+          "ground_truth": "reject",
+          "prediction": "reject",
+          "correct": true
+        },
+        {
+          "case_id": "case_00010",
+          "role": "ui engineer",
+          "ground_truth": "select",
+          "prediction": "reject",
+          "correct": false
+        },
+        {
+          "case_id": "case_06407",
+          "role": "cloud architect",
+          "ground_truth": "select",
+          "prediction": "reject",
+          "correct": false
+        },
+        {
+          "case_id": "case_07770",
+          "role": "devops engineer",
+          "ground_truth": "reject",
+          "prediction": "select",
+          "correct": false
+        },
+        {
+          "case_id": "case_09735",
+          "role": "data engineer",
+          "ground_truth": "select",
+          "prediction": "select",
+          "correct": true
+        },
+        {
+          "case_id": "case_07494",
+          "role": "data analyst",
+          "ground_truth": "reject",
+          "prediction": "reject",
+          "correct": true
+        },
+        {
+          "case_id": "case_01646",
+          "role": "digital marketing specialist",
+          "ground_truth": "select",
+          "prediction": "reject",
+          "correct": false
+        },
+        {
+          "case_id": "case_08809",
+          "role": "product manager",
+          "ground_truth": "reject",
+          "prediction": "reject",
+          "correct": true
+        },
+        {
+          "case_id": "case_09237",
+          "role": "ui designer",
+          "ground_truth": "select",
+          "prediction": "select",
+          "correct": true
+        },
+        {
+          "case_id": "case_02657",
+          "role": "devops engineer",
+          "ground_truth": "select",
+          "prediction": "select",
+          "correct": true
+        },
+        {
+          "case_id": "case_04511",
+          "role": "digital marketing specialist",
+          "ground_truth": "select",
+          "prediction": "select",
+          "correct": true
+        },
+        {
+          "case_id": "case_10037",
+          "role": "ui engineer",
+          "ground_truth": "select",
+          "prediction": "reject",
+          "correct": false
+        },
+        {
+          "case_id": "case_02537",
+          "role": "full stack developer",
+          "ground_truth": "reject",
+          "prediction": "select",
+          "correct": false
+        },
+        {
+          "case_id": "case_06191",
+          "role": "qa engineer",
+          "ground_truth": "reject",
+          "prediction": "reject",
+          "correct": true
+        },
+        {
+          "case_id": "case_01796",
+          "role": "machine learning engineer",
+          "ground_truth": "select",
+          "prediction": "reject",
+          "correct": false
+        },
+        {
+          "case_id": "case_01852",
+          "role": "project manager",
+          "ground_truth": "select",
+          "prediction": "select",
+          "correct": true
+        },
+        {
+          "case_id": "case_05163",
+          "role": "machine learning engineer",
+          "ground_truth": "reject",
+          "prediction": "reject",
+          "correct": true
+        },
+        {
+          "case_id": "case_09959",
+          "role": "ui engineer",
+          "ground_truth": "select",
+          "prediction": "select",
+          "correct": true
+        },
+        {
+          "case_id": "case_07823",
+          "role": "data architect",
+          "ground_truth": "reject",
+          "prediction": "reject",
+          "correct": true
+        },
+        {
+          "case_id": "case_07970",
+          "role": "digital marketing specialist",
+          "ground_truth": "reject",
+          "prediction": "select",
+          "correct": false
+        },
+        {
+          "case_id": "case_03537",
+          "role": "full stack developer",
+          "ground_truth": "select",
+          "prediction": "select",
+          "correct": true
+        },
+        {
+          "case_id": "case_00901",
+          "role": "data architect",
+          "ground_truth": "reject",
+          "prediction": "reject",
+          "correct": true
+        },
+        {
+          "case_id": "case_05148",
+          "role": "robotics engineer",
+          "ground_truth": "select",
+          "prediction": "reject",
+          "correct": false
+        },
+        {
+          "case_id": "case_01877",
+          "role": "data scientist",
+          "ground_truth": "select",
+          "prediction": "select",
+          "correct": true
+        },
+        {
+          "case_id": "case_00581",
+          "role": "data engineer",
+          "ground_truth": "select",
+          "prediction": "select",
+          "correct": true
+        },
+        {
+          "case_id": "case_01239",
+          "role": "software engineer",
+          "ground_truth": "select",
+          "prediction": "select",
+          "correct": true
+        },
+        {
+          "case_id": "case_03976",
+          "role": "mobile app developer",
+          "ground_truth": "reject",
+          "prediction": "select",
+          "correct": false
+        },
+        {
+          "case_id": "case_02322",
+          "role": "it support specialist",
+          "ground_truth": "select",
+          "prediction": "reject",
+          "correct": false
+        },
+        {
+          "case_id": "case_01334",
+          "role": "software engineer",
+          "ground_truth": "reject",
+          "prediction": "select",
+          "correct": false
+        },
+        {
+          "case_id": "case_03604",
+          "role": "full stack developer",
+          "ground_truth": "select",
+          "prediction": "reject",
+          "correct": false
+        },
+        {
+          "case_id": "case_01605",
+          "role": "game developer",
+          "ground_truth": "select",
+          "prediction": "select",
+          "correct": true
+        },
+        {
+          "case_id": "case_01473",
+          "role": "product manager",
+          "ground_truth": "reject",
+          "prediction": "select",
+          "correct": false
+        },
+        {
+          "case_id": "case_08765",
+          "role": "data scientist",
+          "ground_truth": "reject",
+          "prediction": "reject",
+          "correct": true
+        },
+        {
+          "case_id": "case_03103",
+          "role": "data architect",
+          "ground_truth": "reject",
+          "prediction": "reject",
+          "correct": true
+        },
+        {
+          "case_id": "case_05931",
+          "role": "data analyst",
+          "ground_truth": "select",
+          "prediction": "reject",
+          "correct": false
+        },
+        {
+          "case_id": "case_00875",
+          "role": "qa engineer",
+          "ground_truth": "reject",
+          "prediction": "reject",
+          "correct": true
+        },
+        {
+          "case_id": "case_04389",
+          "role": "robotics engineer",
+          "ground_truth": "select",
+          "prediction": "select",
+          "correct": true
+        },
+        {
+          "case_id": "case_07977",
+          "role": "human resources specialist",
+          "ground_truth": "reject",
+          "prediction": "reject",
+          "correct": true
+        },
+        {
+          "case_id": "case_00595",
+          "role": "software engineer",
+          "ground_truth": "reject",
+          "prediction": "select",
+          "correct": false
+        },
+        {
+          "case_id": "case_03456",
+          "role": "ai researcher",
+          "ground_truth": "reject",
+          "prediction": "select",
+          "correct": false
+        },
+        {
+          "case_id": "case_03589",
+          "role": "digital marketing specialist",
+          "ground_truth": "select",
+          "prediction": "select",
+          "correct": true
+        },
+        {
+          "case_id": "case_03284",
+          "role": "data scientist",
+          "ground_truth": "select",
+          "prediction": "reject",
+          "correct": false
+        },
+        {
+          "case_id": "case_02956",
+          "role": "ai researcher",
+          "ground_truth": "select",
+          "prediction": "select",
+          "correct": true
+        },
+        {
+          "case_id": "case_09155",
+          "role": "product manager",
+          "ground_truth": "select",
+          "prediction": "select",
+          "correct": true
+        },
+        {
+          "case_id": "case_01206",
+          "role": "software engineer",
+          "ground_truth": "select",
+          "prediction": "reject",
+          "correct": false
+        },
+        {
+          "case_id": "case_03809",
+          "role": "human resources specialist",
+          "ground_truth": "select",
+          "prediction": "select",
+          "correct": true
+        },
+        {
+          "case_id": "case_08243",
+          "role": "data scientist",
+          "ground_truth": "reject",
+          "prediction": "reject",
+          "correct": true
+        },
+        {
+          "case_id": "case_03451",
+          "role": "software engineer",
+          "ground_truth": "select",
+          "prediction": "select",
+          "correct": true
+        },
+        {
+          "case_id": "case_03159",
+          "role": "qa engineer",
+          "ground_truth": "select",
+          "prediction": "select",
+          "correct": true
+        },
+        {
+          "case_id": "case_09508",
+          "role": "product manager",
+          "ground_truth": "reject",
+          "prediction": "select",
+          "correct": false
+        },
+        {
+          "case_id": "case_01056",
+          "role": "data engineer",
+          "ground_truth": "reject",
+          "prediction": "select",
+          "correct": false
+        },
+        {
+          "case_id": "case_01780",
+          "role": "database administrator",
+          "ground_truth": "reject",
+          "prediction": "select",
+          "correct": false
+        },
+        {
+          "case_id": "case_01541",
+          "role": "data engineer",
+          "ground_truth": "reject",
+          "prediction": "reject",
+          "correct": true
+        },
+        {
+          "case_id": "case_03596",
+          "role": "cloud architect",
+          "ground_truth": "select",
+          "prediction": "reject",
+          "correct": false
+        },
+        {
+          "case_id": "case_06072",
+          "role": "data architect",
+          "ground_truth": "select",
+          "prediction": "reject",
+          "correct": false
+        },
+        {
+          "case_id": "case_00299",
+          "role": "mobile app developer",
+          "ground_truth": "reject",
+          "prediction": "select",
+          "correct": false
+        },
+        {
+          "case_id": "case_09087",
+          "role": "data analyst",
+          "ground_truth": "select",
+          "prediction": "select",
+          "correct": true
+        },
+        {
+          "case_id": "case_01727",
+          "role": "devops engineer",
+          "ground_truth": "select",
+          "prediction": "select",
+          "correct": true
+        },
+        {
+          "case_id": "case_05128",
+          "role": "ai researcher",
+          "ground_truth": "reject",
+          "prediction": "select",
+          "correct": false
+        },
+        {
+          "case_id": "case_01919",
+          "role": "data scientist",
+          "ground_truth": "reject",
+          "prediction": "reject",
+          "correct": true
+        },
+        {
+          "case_id": "case_04031",
+          "role": "game developer",
+          "ground_truth": "reject",
+          "prediction": "select",
+          "correct": false
+        },
+        {
+          "case_id": "case_04328",
+          "role": "mobile app developer",
+          "ground_truth": "reject",
+          "prediction": "reject",
+          "correct": true
+        },
+        {
+          "case_id": "case_08359",
+          "role": "product manager",
+          "ground_truth": "select",
+          "prediction": "reject",
+          "correct": false
+        },
+        {
+          "case_id": "case_00774",
+          "role": "data engineer",
+          "ground_truth": "reject",
+          "prediction": "reject",
+          "correct": true
+        },
+        {
+          "case_id": "case_09691",
+          "role": "product manager",
+          "ground_truth": "reject",
+          "prediction": "select",
+          "correct": false
+        },
+        {
+          "case_id": "case_05888",
+          "role": "system administrator",
+          "ground_truth": "select",
+          "prediction": "select",
+          "correct": true
+        },
+        {
+          "case_id": "case_03853",
+          "role": "data engineer",
+          "ground_truth": "reject",
+          "prediction": "select",
+          "correct": false
+        },
+        {
+          "case_id": "case_03653",
+          "role": "product manager",
+          "ground_truth": "select",
+          "prediction": "select",
+          "correct": true
+        },
+        {
+          "case_id": "case_06154",
+          "role": "cloud architect",
+          "ground_truth": "select",
+          "prediction": "select",
+          "correct": true
+        },
+        {
+          "case_id": "case_01280",
+          "role": "ui designer",
+          "ground_truth": "reject",
+          "prediction": "reject",
+          "correct": true
+        },
+        {
+          "case_id": "case_02245",
+          "role": "cloud architect",
+          "ground_truth": "reject",
+          "prediction": "reject",
+          "correct": true
+        },
+        {
+          "case_id": "case_00275",
+          "role": "human resources specialist",
+          "ground_truth": "reject",
+          "prediction": "reject",
+          "correct": true
+        },
+        {
+          "case_id": "case_05783",
+          "role": "ai researcher",
+          "ground_truth": "select",
+          "prediction": "reject",
+          "correct": false
+        },
+        {
+          "case_id": "case_01098",
+          "role": "ui engineer",
+          "ground_truth": "reject",
+          "prediction": "select",
+          "correct": false
+        },
+        {
+          "case_id": "case_07387",
+          "role": "digital marketing specialist",
+          "ground_truth": "select",
+          "prediction": "select",
+          "correct": true
+        },
+        {
+          "case_id": "case_07644",
+          "role": "devops engineer",
+          "ground_truth": "select",
+          "prediction": "reject",
+          "correct": false
+        },
+        {
+          "case_id": "case_09255",
+          "role": "ui designer",
+          "ground_truth": "reject",
+          "prediction": "reject",
+          "correct": true
+        },
+        {
+          "case_id": "case_09609",
+          "role": "data scientist",
+          "ground_truth": "select",
+          "prediction": "select",
+          "correct": true
+        },
+        {
+          "case_id": "case_07071",
+          "role": "game developer",
+          "ground_truth": "select",
+          "prediction": "select",
+          "correct": true
+        },
+        {
+          "case_id": "case_01226",
+          "role": "data analyst",
+          "ground_truth": "reject",
+          "prediction": "reject",
+          "correct": true
+        },
+        {
+          "case_id": "case_04861",
+          "role": "data scientist",
+          "ground_truth": "reject",
+          "prediction": "select",
+          "correct": false
+        },
+        {
+          "case_id": "case_06668",
+          "role": "ai researcher",
+          "ground_truth": "reject",
+          "prediction": "select",
+          "correct": false
+        }
+      ]
+    }
+  }
+}
