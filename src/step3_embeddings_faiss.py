@@ -26,6 +26,7 @@ from tqdm import tqdm
 
 import numpy as np
 import faiss
+import torch
 from sentence_transformers import SentenceTransformer
 
 # -------------------------------
@@ -39,13 +40,18 @@ META_PATH = Path("data/processed/faiss_metadata.json")
 assert INPUT_PATH.exists(), "cases_stage2.jsonl not found. Run Step 1 and Step 2 first."
 
 # -------------------------------
-# Load embedding model (CPU only)
+# Load embedding model
 # -------------------------------
 # all-mpnet-base-v2 provides strong semantic embeddings for
-# resumes, job descriptions, and decision rationales.
+# resumes and job descriptions.
+# Apple Silicon GPU (MPS) when available — roughly 3x faster than CPU here.
+DEVICE = "mps" if torch.backends.mps.is_available() else "cpu"
+BATCH_SIZE = 64 if DEVICE == "mps" else 16
+print(f"Embedding device: {DEVICE} (batch size {BATCH_SIZE})")
+
 model = SentenceTransformer(
     "all-mpnet-base-v2",
-    device="cpu"
+    device=DEVICE
 )
 
 # -------------------------------
@@ -59,16 +65,25 @@ def build_case_text(case):
     - Role
     - Resume content
     - Job description content
-    - Decision rationale
 
     Purpose:
-    "Have we seen a similar CV–JD–Decision case before?"
+    "Have we seen a similar CV–JD case before?"
+
+    NOTE — leakage fix (2026-08-08): `decision_reason` was previously part of
+    this text. That field states the outcome ("Lacked leadership skills...",
+    "Strong technical skills..."), so indexing it meant retrieval was partly
+    matching on the answer. A TF-IDF + logistic regression probe recovers the
+    label from `decision_reason` alone with 91.9% accuracy vs. 58.2% from the
+    resume, so the field is effectively the label in disguise.
+
+    It was also an asymmetry bug: the query-side builders in Step 4 and Step 5
+    never included this line, so indexed vectors and query vectors were built
+    from different templates. Both sides now match exactly.
     """
     return f"""
     Role: {case['role']}
     Resume: {case['cv_text']}
     Job Description: {case['jd_text']}
-    Decision Reason: {case['decision_reason']}
     """
 
 # -------------------------------
@@ -127,7 +142,7 @@ with open(INPUT_PATH, "r", encoding="utf-8") as f:
 print("Encoding case-level texts...")
 case_embeddings = model.encode(
     case_texts,
-    batch_size=8,
+    batch_size=BATCH_SIZE,
     show_progress_bar=True,
     normalize_embeddings=True
 )
@@ -135,7 +150,7 @@ case_embeddings = model.encode(
 print("Encoding skill-alignment texts...")
 skill_embeddings = model.encode(
     skill_texts,
-    batch_size=8,
+    batch_size=BATCH_SIZE,
     show_progress_bar=True,
     normalize_embeddings=True
 )
