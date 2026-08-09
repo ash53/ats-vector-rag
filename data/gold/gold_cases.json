@@ -1,0 +1,926 @@
+{
+  "config": {
+    "n_gold": 150,
+    "n_repeats": 10,
+    "eval_n": 300,
+    "eval_seed": 42,
+    "annotators": [
+      "sadia",
+      "amol"
+    ]
+  },
+  "repeat_case_ids": [
+    "case_07766",
+    "case_09717",
+    "case_00990",
+    "case_01923",
+    "case_04391",
+    "case_00462",
+    "case_02708",
+    "case_00211",
+    "case_01457",
+    "case_00973"
+  ],
+  "cases": [
+    {
+      "case_id": "case_00821",
+      "role": "data scientist",
+      "decision": "select",
+      "decision_reason": "perfectly aligned with data engineering needs."
+    },
+    {
+      "case_id": "case_09238",
+      "role": "data engineer",
+      "decision": "select",
+      "decision_reason": "expected_experience : 6-8 years, domains: logistics, finance, healthcare"
+    },
+    {
+      "case_id": "case_00539",
+      "role": "ui engineer",
+      "decision": "select",
+      "decision_reason": "solid experience in machine learning and ai."
+    },
+    {
+      "case_id": "case_02550",
+      "role": "it support specialist",
+      "decision": "select",
+      "decision_reason": "strong technical skills in ai and ml."
+    },
+    {
+      "case_id": "case_06134",
+      "role": "ui engineer",
+      "decision": "select",
+      "decision_reason": "solid experience in machine learning and ai."
+    },
+    {
+      "case_id": "case_08196",
+      "role": "ui engineer",
+      "decision": "select",
+      "decision_reason": "cultural fit"
+    },
+    {
+      "case_id": "case_00461",
+      "role": "game developer",
+      "decision": "select",
+      "decision_reason": "impressive leadership and communication abilities."
+    },
+    {
+      "case_id": "case_04321",
+      "role": "ui engineer",
+      "decision": "select",
+      "decision_reason": "impressive leadership and communication abilities."
+    },
+    {
+      "case_id": "case_05487",
+      "role": "ar/vr developer",
+      "decision": "select",
+      "decision_reason": "strong technical skills in ai and ml."
+    },
+    {
+      "case_id": "case_09832",
+      "role": "data scientist",
+      "decision": "select",
+      "decision_reason": "relevant skills and experience."
+    },
+    {
+      "case_id": "case_04563",
+      "role": "ar/vr developer",
+      "decision": "select",
+      "decision_reason": "perfectly aligned with data engineering needs."
+    },
+    {
+      "case_id": "case_08685",
+      "role": "data engineer",
+      "decision": "select",
+      "decision_reason": "expected_experience : 6-8 years, domains: logistics, finance, healthcare"
+    },
+    {
+      "case_id": "case_01923",
+      "role": "project manager",
+      "decision": "select",
+      "decision_reason": "excellent communication skills, strong technical knowledge"
+    },
+    {
+      "case_id": "case_00064",
+      "role": "devops engineer",
+      "decision": "select",
+      "decision_reason": "strong technical skills in ai and ml."
+    },
+    {
+      "case_id": "case_00973",
+      "role": "cloud architect",
+      "decision": "select",
+      "decision_reason": "solid experience in machine learning and ai."
+    },
+    {
+      "case_id": "case_09516",
+      "role": "data scientist",
+      "decision": "select",
+      "decision_reason": "technical knowledge"
+    },
+    {
+      "case_id": "case_01878",
+      "role": "project manager",
+      "decision": "select",
+      "decision_reason": "high enthusiasm for the role, adaptability"
+    },
+    {
+      "case_id": "case_04405",
+      "role": "cybersecurity analyst",
+      "decision": "select",
+      "decision_reason": "impressive leadership and communication abilities."
+    },
+    {
+      "case_id": "case_04391",
+      "role": "robotics engineer",
+      "decision": "select",
+      "decision_reason": "excellent full-stack development experience."
+    },
+    {
+      "case_id": "case_03281",
+      "role": "qa engineer",
+      "decision": "select",
+      "decision_reason": "solid experience in machine learning and ai."
+    },
+    {
+      "case_id": "case_02101",
+      "role": "system administrator",
+      "decision": "select",
+      "decision_reason": "impressive leadership and communication abilities."
+    },
+    {
+      "case_id": "case_00763",
+      "role": "qa engineer",
+      "decision": "select",
+      "decision_reason": "excellent full-stack development experience."
+    },
+    {
+      "case_id": "case_01498",
+      "role": "ui designer",
+      "decision": "select",
+      "decision_reason": "the candidate has a solid background in color theory, wireframing, design thinking, and with 8 years of experience, they possess the key capabilities needed for the ui designer role."
+    },
+    {
+      "case_id": "case_03805",
+      "role": "game developer",
+      "decision": "select",
+      "decision_reason": "strong technical skills in ai and ml."
+    },
+    {
+      "case_id": "case_02708",
+      "role": "data engineer",
+      "decision": "select",
+      "decision_reason": "strong technical skills in ai and ml."
+    },
+    {
+      "case_id": "case_06155",
+      "role": "game developer",
+      "decision": "select",
+      "decision_reason": "impressive leadership and communication abilities."
+    },
+    {
+      "case_id": "case_01102",
+      "role": "data scientist",
+      "decision": "select",
+      "decision_reason": "showcased the ability to quickly adapt and learn new concepts, presented clean, efficient, and well-documented code solutions"
+    },
+    {
+      "case_id": "case_03582",
+      "role": "data engineer",
+      "decision": "select",
+      "decision_reason": "impressive leadership and communication abilities."
+    },
+    {
+      "case_id": "case_02662",
+      "role": "cloud architect",
+      "decision": "select",
+      "decision_reason": "solid experience in machine learning and ai."
+    },
+    {
+      "case_id": "case_06959",
+      "role": "machine learning engineer",
+      "decision": "select",
+      "decision_reason": "excellent full-stack development experience."
+    },
+    {
+      "case_id": "case_07487",
+      "role": "ux designer",
+      "decision": "select",
+      "decision_reason": "strong technical skills in ai and ml."
+    },
+    {
+      "case_id": "case_08772",
+      "role": "data scientist",
+      "decision": "select",
+      "decision_reason": "expected_experience : 9+ years, domains: healthcare, finance, retail"
+    },
+    {
+      "case_id": "case_02631",
+      "role": "data engineer",
+      "decision": "select",
+      "decision_reason": "solid experience in machine learning and ai."
+    },
+    {
+      "case_id": "case_06226",
+      "role": "ar/vr developer",
+      "decision": "select",
+      "decision_reason": "impressive leadership and communication abilities."
+    },
+    {
+      "case_id": "case_02688",
+      "role": "devops engineer",
+      "decision": "select",
+      "decision_reason": "solid experience in machine learning and ai."
+    },
+    {
+      "case_id": "case_02339",
+      "role": "cloud engineer",
+      "decision": "select",
+      "decision_reason": "perfectly aligned with data engineering needs."
+    },
+    {
+      "case_id": "case_04021",
+      "role": "data analyst",
+      "decision": "select",
+      "decision_reason": "solid experience in machine learning and ai."
+    },
+    {
+      "case_id": "case_00485",
+      "role": "qa engineer",
+      "decision": "select",
+      "decision_reason": "strong technical skills in ai and ml."
+    },
+    {
+      "case_id": "case_09717",
+      "role": "software engineer",
+      "decision": "select",
+      "decision_reason": "excellent communication and interpersonal skills."
+    },
+    {
+      "case_id": "case_05545",
+      "role": "machine learning engineer",
+      "decision": "select",
+      "decision_reason": "perfectly aligned with data engineering needs."
+    },
+    {
+      "case_id": "case_04356",
+      "role": "cybersecurity analyst",
+      "decision": "select",
+      "decision_reason": "solid experience in machine learning and ai."
+    },
+    {
+      "case_id": "case_08818",
+      "role": "ui designer",
+      "decision": "select",
+      "decision_reason": "expected_experience : 9+ years, domains: gaming, retail, media"
+    },
+    {
+      "case_id": "case_05287",
+      "role": "data architect",
+      "decision": "select",
+      "decision_reason": "impressive leadership and communication abilities."
+    },
+    {
+      "case_id": "case_04133",
+      "role": "database administrator",
+      "decision": "select",
+      "decision_reason": "impressive leadership and communication abilities."
+    },
+    {
+      "case_id": "case_03497",
+      "role": "it support specialist",
+      "decision": "select",
+      "decision_reason": "strong technical skills in ai and ml."
+    },
+    {
+      "case_id": "case_04809",
+      "role": "system administrator",
+      "decision": "select",
+      "decision_reason": "solid experience in machine learning and ai."
+    },
+    {
+      "case_id": "case_08957",
+      "role": "product manager",
+      "decision": "select",
+      "decision_reason": "expected_experience : 0-2 years, domains: technology, retail, finance"
+    },
+    {
+      "case_id": "case_04883",
+      "role": "ai researcher",
+      "decision": "select",
+      "decision_reason": "excellent full-stack development experience."
+    },
+    {
+      "case_id": "case_06855",
+      "role": "cloud engineer",
+      "decision": "select",
+      "decision_reason": "strong technical skills in ai and ml."
+    },
+    {
+      "case_id": "case_02380",
+      "role": "e-commerce specialist",
+      "decision": "select",
+      "decision_reason": "impressive leadership and communication abilities."
+    },
+    {
+      "case_id": "case_00221",
+      "role": "product manager",
+      "decision": "select",
+      "decision_reason": "excellent full-stack development experience."
+    },
+    {
+      "case_id": "case_03743",
+      "role": "qa engineer",
+      "decision": "select",
+      "decision_reason": "excellent full-stack development experience."
+    },
+    {
+      "case_id": "case_06148",
+      "role": "digital marketing specialist",
+      "decision": "select",
+      "decision_reason": "impressive leadership and communication abilities."
+    },
+    {
+      "case_id": "case_04020",
+      "role": "cloud engineer",
+      "decision": "select",
+      "decision_reason": "perfectly aligned with data engineering needs."
+    },
+    {
+      "case_id": "case_08858",
+      "role": "data analyst",
+      "decision": "select",
+      "decision_reason": "expected_experience : 6-8 years, domains: marketing, finance, healthcare"
+    },
+    {
+      "case_id": "case_00799",
+      "role": "human resources specialist",
+      "decision": "select",
+      "decision_reason": "impressive leadership and communication abilities."
+    },
+    {
+      "case_id": "case_01586",
+      "role": "data scientist",
+      "decision": "select",
+      "decision_reason": "the candidate has a solid background in machine learning algorithms, statistical software, deep learning, and with 5 years of experience, they possess the key capabilities needed for the data scientist role."
+    },
+    {
+      "case_id": "case_08323",
+      "role": "ui engineer",
+      "decision": "select",
+      "decision_reason": "business acumen"
+    },
+    {
+      "case_id": "case_05897",
+      "role": "it support specialist",
+      "decision": "select",
+      "decision_reason": "strong technical skills in ai and ml."
+    },
+    {
+      "case_id": "case_02829",
+      "role": "e-commerce specialist",
+      "decision": "select",
+      "decision_reason": "impressive leadership and communication abilities."
+    },
+    {
+      "case_id": "case_06809",
+      "role": "data analyst",
+      "decision": "select",
+      "decision_reason": "strong technical skills in ai and ml."
+    },
+    {
+      "case_id": "case_07476",
+      "role": "it support specialist",
+      "decision": "select",
+      "decision_reason": "solid experience in machine learning and ai."
+    },
+    {
+      "case_id": "case_06499",
+      "role": "it support specialist",
+      "decision": "select",
+      "decision_reason": "solid experience in machine learning and ai."
+    },
+    {
+      "case_id": "case_07305",
+      "role": "data architect",
+      "decision": "select",
+      "decision_reason": "strong technical skills in ai and ml."
+    },
+    {
+      "case_id": "case_08276",
+      "role": "data engineer",
+      "decision": "select",
+      "decision_reason": "experience"
+    },
+    {
+      "case_id": "case_07549",
+      "role": "content writer",
+      "decision": "select",
+      "decision_reason": "solid experience in machine learning and ai."
+    },
+    {
+      "case_id": "case_04557",
+      "role": "cloud architect",
+      "decision": "select",
+      "decision_reason": "perfectly aligned with data engineering needs."
+    },
+    {
+      "case_id": "case_04805",
+      "role": "digital marketing specialist",
+      "decision": "select",
+      "decision_reason": "perfectly aligned with data engineering needs."
+    },
+    {
+      "case_id": "case_08866",
+      "role": "ui designer",
+      "decision": "select",
+      "decision_reason": "expected_experience : 9+ years, domains: gaming, retail, media"
+    },
+    {
+      "case_id": "case_02699",
+      "role": "robotics engineer",
+      "decision": "select",
+      "decision_reason": "strong technical skills in ai and ml."
+    },
+    {
+      "case_id": "case_01355",
+      "role": "data engineer",
+      "decision": "select",
+      "decision_reason": "the candidate demonstrated excellent skills in api integration, real-time data streaming, workflow orchestration tools, with 5 years of experience, which are highly relevant for the data engineer role."
+    },
+    {
+      "case_id": "case_04042",
+      "role": "full stack developer",
+      "decision": "select",
+      "decision_reason": "perfectly aligned with data engineering needs."
+    },
+    {
+      "case_id": "case_01141",
+      "role": "ui engineer",
+      "decision": "select",
+      "decision_reason": "showcased the ability to quickly adapt and learn new concepts, displayed excellent collaboration and teamwork mindset"
+    },
+    {
+      "case_id": "case_01558",
+      "role": "product manager",
+      "decision": "select",
+      "decision_reason": "the candidate's 6 years of experience combined with proficiency in market research, agile methodologies, product strategy positions them well to contribute effectively to the product manager role."
+    },
+    {
+      "case_id": "case_08709",
+      "role": "software engineer",
+      "decision": "select",
+      "decision_reason": "expected_experience : 6-8 years, domains: e-commerce, banking, education"
+    },
+    {
+      "case_id": "case_06998",
+      "role": "machine learning engineer",
+      "decision": "reject",
+      "decision_reason": "insufficient system design expertise for senior role."
+    },
+    {
+      "case_id": "case_07231",
+      "role": "ar/vr developer",
+      "decision": "reject",
+      "decision_reason": "needs improvement in machine learning algorithms."
+    },
+    {
+      "case_id": "case_05048",
+      "role": "cloud engineer",
+      "decision": "reject",
+      "decision_reason": "insufficient system design expertise for senior role."
+    },
+    {
+      "case_id": "case_03874",
+      "role": "game developer",
+      "decision": "reject",
+      "decision_reason": "needs improvement in machine learning algorithms."
+    },
+    {
+      "case_id": "case_06655",
+      "role": "ai researcher",
+      "decision": "reject",
+      "decision_reason": "no experience in back-end development."
+    },
+    {
+      "case_id": "case_02682",
+      "role": "ui engineer",
+      "decision": "reject",
+      "decision_reason": "lacks hands-on experience with cloud platforms."
+    },
+    {
+      "case_id": "case_03560",
+      "role": "robotics engineer",
+      "decision": "reject",
+      "decision_reason": "no experience in back-end development."
+    },
+    {
+      "case_id": "case_07766",
+      "role": "data architect",
+      "decision": "reject",
+      "decision_reason": "lacked leadership skills for a senior position."
+    },
+    {
+      "case_id": "case_01069",
+      "role": "ui engineer",
+      "decision": "reject",
+      "decision_reason": "displayed rigidity in adapting to alternative approaches or feedback, showed lack of preparedness for typical interview challenges"
+    },
+    {
+      "case_id": "case_01741",
+      "role": "game developer",
+      "decision": "reject",
+      "decision_reason": "did not meet the performance expectations during the interview."
+    },
+    {
+      "case_id": "case_03483",
+      "role": "ui engineer",
+      "decision": "reject",
+      "decision_reason": "needs improvement in machine learning algorithms."
+    },
+    {
+      "case_id": "case_01934",
+      "role": "software developer",
+      "decision": "reject",
+      "decision_reason": "lack of relevant experience, unsuitable for the job role"
+    },
+    {
+      "case_id": "case_01049",
+      "role": "data scientist",
+      "decision": "reject",
+      "decision_reason": "displayed rigidity in adapting to alternative approaches or feedback, had difficulty applying theoretical knowledge to practical scenarios"
+    },
+    {
+      "case_id": "case_05993",
+      "role": "qa engineer",
+      "decision": "reject",
+      "decision_reason": "lacked leadership skills for a senior position."
+    },
+    {
+      "case_id": "case_04058",
+      "role": "machine learning engineer",
+      "decision": "reject",
+      "decision_reason": "lacked leadership skills for a senior position."
+    },
+    {
+      "case_id": "case_05842",
+      "role": "mobile app developer",
+      "decision": "reject",
+      "decision_reason": "lacks hands-on experience with cloud platforms."
+    },
+    {
+      "case_id": "case_03104",
+      "role": "database administrator",
+      "decision": "reject",
+      "decision_reason": "lacked leadership skills for a senior position."
+    },
+    {
+      "case_id": "case_07398",
+      "role": "cloud architect",
+      "decision": "reject",
+      "decision_reason": "lacks hands-on experience with cloud platforms."
+    },
+    {
+      "case_id": "case_00211",
+      "role": "data analyst",
+      "decision": "reject",
+      "decision_reason": "no experience in back-end development."
+    },
+    {
+      "case_id": "case_06990",
+      "role": "cloud engineer",
+      "decision": "reject",
+      "decision_reason": "needs improvement in machine learning algorithms."
+    },
+    {
+      "case_id": "case_03124",
+      "role": "database administrator",
+      "decision": "reject",
+      "decision_reason": "lacks hands-on experience with cloud platforms."
+    },
+    {
+      "case_id": "case_09295",
+      "role": "product manager",
+      "decision": "reject",
+      "decision_reason": "expected_experience : 3-5 years, domains: technology, retail, finance"
+    },
+    {
+      "case_id": "case_00872",
+      "role": "product manager",
+      "decision": "reject",
+      "decision_reason": "insufficient system design expertise for senior role."
+    },
+    {
+      "case_id": "case_00934",
+      "role": "cloud engineer",
+      "decision": "reject",
+      "decision_reason": "no experience in back-end development."
+    },
+    {
+      "case_id": "case_04089",
+      "role": "product manager",
+      "decision": "reject",
+      "decision_reason": "needs improvement in machine learning algorithms."
+    },
+    {
+      "case_id": "case_02652",
+      "role": "data analyst",
+      "decision": "reject",
+      "decision_reason": "lacks hands-on experience with cloud platforms."
+    },
+    {
+      "case_id": "case_00990",
+      "role": "game developer",
+      "decision": "reject",
+      "decision_reason": "no experience in back-end development."
+    },
+    {
+      "case_id": "case_06934",
+      "role": "software engineer",
+      "decision": "reject",
+      "decision_reason": "needs improvement in machine learning algorithms."
+    },
+    {
+      "case_id": "case_00927",
+      "role": "blockchain developer",
+      "decision": "reject",
+      "decision_reason": "lacked leadership skills for a senior position."
+    },
+    {
+      "case_id": "case_08623",
+      "role": "product manager",
+      "decision": "reject",
+      "decision_reason": "expected_experience : 0-2 years, domains: technology, retail, finance"
+    },
+    {
+      "case_id": "case_06473",
+      "role": "business analyst",
+      "decision": "reject",
+      "decision_reason": "lacked leadership skills for a senior position."
+    },
+    {
+      "case_id": "case_08684",
+      "role": "data analyst",
+      "decision": "reject",
+      "decision_reason": "expected_experience : 6-8 years, domains: marketing, finance, healthcare"
+    },
+    {
+      "case_id": "case_00899",
+      "role": "qa engineer",
+      "decision": "reject",
+      "decision_reason": "needs improvement in machine learning algorithms."
+    },
+    {
+      "case_id": "case_03695",
+      "role": "ux designer",
+      "decision": "reject",
+      "decision_reason": "no experience in back-end development."
+    },
+    {
+      "case_id": "case_08980",
+      "role": "software engineer",
+      "decision": "reject",
+      "decision_reason": "expected_experience : 3-5 years, domains: e-commerce, banking, education"
+    },
+    {
+      "case_id": "case_07436",
+      "role": "cloud engineer",
+      "decision": "reject",
+      "decision_reason": "lacks hands-on experience with cloud platforms."
+    },
+    {
+      "case_id": "case_09881",
+      "role": "data scientist",
+      "decision": "reject",
+      "decision_reason": "poor cultural fit."
+    },
+    {
+      "case_id": "case_08013",
+      "role": "data scientist",
+      "decision": "reject",
+      "decision_reason": "technical knowledge"
+    },
+    {
+      "case_id": "case_09316",
+      "role": "product manager",
+      "decision": "reject",
+      "decision_reason": "expected_experience : 0-2 years, domains: technology, retail, finance"
+    },
+    {
+      "case_id": "case_05587",
+      "role": "ui engineer",
+      "decision": "reject",
+      "decision_reason": "insufficient system design expertise for senior role."
+    },
+    {
+      "case_id": "case_01171",
+      "role": "ui engineer",
+      "decision": "reject",
+      "decision_reason": "had difficulty applying theoretical knowledge to practical scenarios, displayed rigidity in adapting to alternative approaches or feedback"
+    },
+    {
+      "case_id": "case_07116",
+      "role": "data architect",
+      "decision": "reject",
+      "decision_reason": "insufficient system design expertise for senior role."
+    },
+    {
+      "case_id": "case_09595",
+      "role": "data engineer",
+      "decision": "reject",
+      "decision_reason": "cultural fit"
+    },
+    {
+      "case_id": "case_09384",
+      "role": "data scientist",
+      "decision": "reject",
+      "decision_reason": "expected_experience : 9+ years, domains: healthcare, finance, retail"
+    },
+    {
+      "case_id": "case_01101",
+      "role": "data engineer",
+      "decision": "reject",
+      "decision_reason": "failed to address performance and scalability concerns in solutions, displayed rigidity in adapting to alternative approaches or feedback"
+    },
+    {
+      "case_id": "case_05335",
+      "role": "ux designer",
+      "decision": "reject",
+      "decision_reason": "lacked leadership skills for a senior position."
+    },
+    {
+      "case_id": "case_09513",
+      "role": "data scientist",
+      "decision": "reject",
+      "decision_reason": "business acumen"
+    },
+    {
+      "case_id": "case_09082",
+      "role": "data scientist",
+      "decision": "reject",
+      "decision_reason": "expected_experience : 6-8 years, domains: healthcare, finance, retail"
+    },
+    {
+      "case_id": "case_03897",
+      "role": "digital marketing specialist",
+      "decision": "reject",
+      "decision_reason": "lacks hands-on experience with cloud platforms."
+    },
+    {
+      "case_id": "case_00833",
+      "role": "digital marketing specialist",
+      "decision": "reject",
+      "decision_reason": "insufficient system design expertise for senior role."
+    },
+    {
+      "case_id": "case_09428",
+      "role": "product manager",
+      "decision": "reject",
+      "decision_reason": "expected_experience : 9+ years, domains: technology, retail, finance"
+    },
+    {
+      "case_id": "case_06628",
+      "role": "product manager",
+      "decision": "reject",
+      "decision_reason": "lacks hands-on experience with cloud platforms."
+    },
+    {
+      "case_id": "case_09435",
+      "role": "software engineer",
+      "decision": "reject",
+      "decision_reason": "expected_experience : 6-8 years, domains: e-commerce, banking, education"
+    },
+    {
+      "case_id": "case_03496",
+      "role": "software engineer",
+      "decision": "reject",
+      "decision_reason": "lacks hands-on experience with cloud platforms."
+    },
+    {
+      "case_id": "case_05436",
+      "role": "it support specialist",
+      "decision": "reject",
+      "decision_reason": "insufficient system design expertise for senior role."
+    },
+    {
+      "case_id": "case_03022",
+      "role": "data engineer",
+      "decision": "reject",
+      "decision_reason": "needs improvement in machine learning algorithms."
+    },
+    {
+      "case_id": "case_02107",
+      "role": "cybersecurity analyst",
+      "decision": "reject",
+      "decision_reason": "lacked leadership skills for a senior position."
+    },
+    {
+      "case_id": "case_00778",
+      "role": "qa engineer",
+      "decision": "reject",
+      "decision_reason": "needs improvement in machine learning algorithms."
+    },
+    {
+      "case_id": "case_01516",
+      "role": "data engineer",
+      "decision": "reject",
+      "decision_reason": "insufficient mastery of sql optimization, cloud data tools, data storage solutions made it challenging to consider this candidate for the data engineer position."
+    },
+    {
+      "case_id": "case_07598",
+      "role": "product manager",
+      "decision": "reject",
+      "decision_reason": "lacked leadership skills for a senior position."
+    },
+    {
+      "case_id": "case_03272",
+      "role": "qa engineer",
+      "decision": "reject",
+      "decision_reason": "needs improvement in machine learning algorithms."
+    },
+    {
+      "case_id": "case_00102",
+      "role": "business analyst",
+      "decision": "reject",
+      "decision_reason": "lacks hands-on experience with cloud platforms."
+    },
+    {
+      "case_id": "case_00462",
+      "role": "game developer",
+      "decision": "reject",
+      "decision_reason": "needs improvement in machine learning algorithms."
+    },
+    {
+      "case_id": "case_04676",
+      "role": "blockchain developer",
+      "decision": "reject",
+      "decision_reason": "insufficient system design expertise for senior role."
+    },
+    {
+      "case_id": "case_00896",
+      "role": "devops engineer",
+      "decision": "reject",
+      "decision_reason": "lacks hands-on experience with cloud platforms."
+    },
+    {
+      "case_id": "case_03945",
+      "role": "devops engineer",
+      "decision": "reject",
+      "decision_reason": "insufficient system design expertise for senior role."
+    },
+    {
+      "case_id": "case_08707",
+      "role": "product manager",
+      "decision": "reject",
+      "decision_reason": "expected_experience : 0-2 years, domains: technology, retail, finance"
+    },
+    {
+      "case_id": "case_06721",
+      "role": "machine learning engineer",
+      "decision": "reject",
+      "decision_reason": "no experience in back-end development."
+    },
+    {
+      "case_id": "case_08832",
+      "role": "data scientist",
+      "decision": "reject",
+      "decision_reason": "expected_experience : 0-2 years, domains: healthcare, finance, retail"
+    },
+    {
+      "case_id": "case_09683",
+      "role": "data scientist",
+      "decision": "reject",
+      "decision_reason": "lack of relevant skills or experience."
+    },
+    {
+      "case_id": "case_10093",
+      "role": "software engineer",
+      "decision": "reject",
+      "decision_reason": "inadequate communication or interpersonal skills."
+    },
+    {
+      "case_id": "case_08991",
+      "role": "data engineer",
+      "decision": "reject",
+      "decision_reason": "expected_experience : 0-2 years, domains: logistics, finance, healthcare"
+    },
+    {
+      "case_id": "case_01530",
+      "role": "software engineer",
+      "decision": "reject",
+      "decision_reason": "the candidate lacks sufficient expertise in crucial skills such as javascript, react, system architecture, which are essential for the software engineer role."
+    },
+    {
+      "case_id": "case_03924",
+      "role": "human resources specialist",
+      "decision": "reject",
+      "decision_reason": "lacks hands-on experience with cloud platforms."
+    },
+    {
+      "case_id": "case_01457",
+      "role": "ui designer",
+      "decision": "reject",
+      "decision_reason": "with only 8 years of experience and gaps in wireframing, figma, this candidate is not yet ready for the ui designer."
+    }
+  ]
+}
