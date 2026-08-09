@@ -1,20 +1,38 @@
 """
-EXPERIMENT — Prompt variants for the decision layer
+EXPERIMENT — what actually drives the decision: the prompt, or the evidence?
 
-The n=40 baseline run (eval_results_n40.json) predicted SELECT on 85% of cases
-and scored 45.0% accuracy / 59.3% F1 — worse than a classifier that answers
-"select" unconditionally (50.0% / 66.7%) on the same balanced sample. Amol's
-GraphRAG pipeline shows the same failure with an identical 80.0% recall, so the
-problem is in the decision layer, not in either retrieval implementation.
+Two families of experiment share this harness. Both run on the same cases as
+Step 6 (stratified_sample(n, seed)), so every comparison is paired, and all
+conditions reuse identical evidence built once per case — only the thing under
+test changes.
 
-This script isolates the prompt. Retrieval runs ONCE per case and every variant
-sees exactly the same evidence, so any difference in the numbers is caused by
-the prompt alone. All variants run on the same cases as the baseline
-(stratified_sample(n=40, seed=42)), which makes the comparison paired.
+  v0-v3      hold the EVIDENCE fixed, vary the PROMPT.
+  c_*        hold the PROMPT fixed, vary the EVIDENCE (retrieved / random
+             same-role / random any-role / none). These are the controls that
+             isolate whether retrieval contributes anything at all — see the
+             CONTROLS section below.
+
+What is known so far (all seed 42, leak-free index, llama3.1:8b):
+
+  RAG at n=300      55.3% accuracy, 82.7% select rate. Beats always-select
+                    (50.0%) on a paired McNemar test, p=0.037, and is
+                    indistinguishable from TF-IDF + logistic regression
+                    (53.7%, p=0.75).
+  Prompt variants   ran at n=40 BEFORE temperature was pinned, so their
+                    ranking is not trustworthy: the identical prompt on the
+                    identical cases scored 45.0% and then 50.0%. What survived
+                    replication is that the select rate is movable (90% -> 47%)
+                    without accuracy improving, that the model contradicted its
+                    own stated aggregation rule on 30% of cases, and that its
+                    confidence is uncorrelated with being right.
+
+Runs are greedy and seeded (step5.TEMPERATURE = 0), so results reproduce.
 
 Usage:
-    python src/exp_prompt_variants.py                     # all variants, 40 cases
-    python src/exp_prompt_variants.py --n 20 --variants v2,v3
+    python src/exp_prompt_variants.py --n 300 --variants v0,v3 --out data/processed/eval_prompts_n300.json
+    python src/exp_prompt_variants.py --n 300 \\
+        --variants c_retrieved,c_random_role,c_random_corpus,c_zeroshot \\
+        --out data/processed/eval_controls_n300.json
 """
 
 import os
@@ -24,6 +42,7 @@ os.environ["MKL_NUM_THREADS"] = "1"
 
 import json
 import time
+import random
 import argparse
 from pathlib import Path
 
@@ -194,49 +213,141 @@ Respond in this exact JSON format only - no extra text:
 JSON Response:"""
 
 
+# ---------------------------------------------------------------------------
+# CONTROLS — does the retrieval contribute anything?
+# ---------------------------------------------------------------------------
+# Every number measured so far compares RAG variants against non-RAG baselines.
+# Nothing has isolated the R in RAG. These controls hold the prompt fixed (the
+# v0 wording) and change only what evidence goes into it:
+#
+#   c_retrieved     top-20 by similarity, stratified 5/5    (the real system)
+#   c_random_role   10 random cases from the same role      (is the RANKING
+#                                                            worth anything, or
+#                                                            is role-matching
+#                                                            the whole effect?)
+#   c_random_corpus 10 random cases from anywhere           (does retrieval
+#                                                            matter at all?)
+#   c_zeroshot      no exemplars at all                     (does RAG beat just
+#                                                            asking the model?)
+#
+# Retrieval on this index returns 20/20 same-role exemplars spanning 0.064 of
+# similarity, so the ranking may be carrying no information. These four numbers
+# settle it.
+def c_zeroshot(role, cv_text, jd_text, skills_cv, skills_jd, evidence):
+    """Identical to v0 minus the historical cases section."""
+    return f"""You are an expert HR analyst making data-driven hiring decisions.
+Evaluate the candidate's CV against the job description.
+
+{_profile(role, cv_text, jd_text, skills_cv, skills_jd)}
+
+## YOUR TASK
+Using the job description and candidate profile:
+
+1. DECISION: Should this candidate be SELECTED or REJECTED?
+2. CONFIDENCE: Rate your confidence (HIGH / MEDIUM / LOW)
+3. KEY STRENGTHS: 2-3 strengths supporting selection
+4. KEY GAPS: 2-3 gaps or concerns
+5. REASONING: 2-3 sentences on how the candidate fits the role
+
+Respond in this exact JSON format only - no extra text:
+{JSON_CONTRACT}
+
+JSON Response:"""
+
+
+# key -> (label, prompt builder, evidence mode)
 VARIANTS = {
-    "v0": ("baseline (current prompt)", v0_baseline),
-    "v1": ("reason before deciding", v1_reason_first),
-    "v2": ("base rate + no default", v2_base_rate),
-    "v3": ("requirement checklist", v3_checklist),
+    "v0": ("baseline (current prompt)", v0_baseline, "retrieved"),
+    "v1": ("reason before deciding", v1_reason_first, "retrieved"),
+    "v2": ("base rate + no default", v2_base_rate, "retrieved"),
+    "v3": ("requirement checklist", v3_checklist, "retrieved"),
+    "c_retrieved":     ("CONTROL retrieved exemplars", v0_baseline, "retrieved"),
+    "c_random_role":   ("CONTROL random, same role", v0_baseline, "random_role"),
+    "c_random_corpus": ("CONTROL random, any role", v0_baseline, "random_corpus"),
+    "c_zeroshot":      ("CONTROL no exemplars", c_zeroshot, "none"),
 }
 
 
-def main(n=40, seed=42, variant_keys=None):
+def _random_evidence(index, metadata, cases_by_id, pos_by_id, query_vec,
+                     query_case, rng, same_role, max_per_class=5):
+    """10 random cases (5 select / 5 reject) instead of the retrieved ones.
+
+    The similarity scores printed in the prompt are the REAL cosine similarities
+    of the sampled cases to the query, reconstructed from the index — so the
+    only thing that differs from the retrieved condition is which cases were
+    chosen, not how they are described.
+    """
+    pool = [m for m in metadata if m["case_id"] != query_case["case_id"]]
+    if same_role:
+        pool = [m for m in pool if m["role"] == query_case["role"]] or pool
+
+    picked = []
+    for decision in ["select", "reject"]:
+        bucket = [m for m in pool if m["decision"] == decision]
+        picked += rng.sample(bucket, min(max_per_class, len(bucket)))
+
+    q = query_vec[0]
+    out = []
+    for m in picked:
+        vec = index.reconstruct(pos_by_id[m["case_id"]])
+        out.append({"case_id": m["case_id"], "decision": m["decision"],
+                    "similarity_score": float(vec @ q), "role": m["role"],
+                    **{k: cases_by_id[m["case_id"]]["entities"][k]
+                       for k in ["skills_cv", "skills_jd", "degrees", "certifications"]},
+                    "decision_reason": cases_by_id[m["case_id"]]["decision_reason"]})
+    return out
+
+
+def main(n=40, seed=42, variant_keys=None, out=RESULTS_PATH):
+    out = Path(out)
     variant_keys = variant_keys or list(VARIANTS)
+    modes = {VARIANTS[k][2] for k in variant_keys}
 
     index, metadata, cases_by_id = s5._load_artifacts()
     model = s5._load_model()
+    pos_by_id = {m["case_id"]: i for i, m in enumerate(metadata)}
 
     all_cases = load_cases(CASES_PATH)
     test_cases = stratified_sample(all_cases, n, seed)
-    print(f"{len(test_cases)} cases (seed={seed}), variants: {', '.join(variant_keys)}\n")
+    print(f"{len(test_cases)} cases (seed={seed}) | temperature={s5.TEMPERATURE} "
+          f"| variants: {', '.join(variant_keys)}\n")
 
-    # Retrieve once per case; every variant reuses the identical evidence.
-    print("Retrieving evidence...", end=" ", flush=True)
+    # Built once per case; every variant reuses the identical evidence, so the
+    # only thing that differs between two runs is the thing being tested.
+    print("Building evidence...", end=" ", flush=True)
     t0 = time.time()
-    evidence_by_case = {}
+    rng = random.Random(seed)
+    evidence = {m: {} for m in modes}
     for c in test_cases:
         qv = s5.embed_query(model, c["role"], c["cv_text"], c["jd_text"],
                             c["entities"]["skills_cv"], c["entities"]["skills_jd"])
-        retrieved = s5.retrieve_similar_cases(index, metadata, cases_by_id, qv,
-                                              k=20, exclude_case_id=c["case_id"])
-        evidence_by_case[c["case_id"]] = s5.build_evidence_chunks(
-            s5.stratify_results(retrieved, max_per_class=5))
+        if "retrieved" in modes:
+            retrieved = s5.retrieve_similar_cases(index, metadata, cases_by_id, qv,
+                                                  k=20, exclude_case_id=c["case_id"])
+            evidence["retrieved"][c["case_id"]] = s5.build_evidence_chunks(
+                s5.stratify_results(retrieved, max_per_class=5))
+        for mode, same_role in [("random_role", True), ("random_corpus", False)]:
+            if mode in modes:
+                evidence[mode][c["case_id"]] = _random_evidence(
+                    index, metadata, cases_by_id, pos_by_id, qv, c, rng, same_role)
+        if "none" in modes:
+            evidence["none"][c["case_id"]] = []
     print(f"{time.time()-t0:.0f}s\n")
+
+    evidence_by_case = evidence.get("retrieved", {})
 
     all_results = {}
 
     for key in variant_keys:
-        label, builder = VARIANTS[key]
-        print(f"=== {key}: {label} ===")
+        label, builder, mode = VARIANTS[key]
+        print(f"=== {key}: {label} [{mode}] ===")
         rows = []
 
         for i, c in enumerate(test_cases, 1):
             truth = c["decision"].lower()
             prompt = builder(c["role"], c["cv_text"], c["jd_text"],
                              c["entities"]["skills_cv"], c["entities"]["skills_jd"],
-                             evidence_by_case[c["case_id"]])
+                             evidence[mode][c["case_id"]])
             t0 = time.time()
             out = s5.parse_decision(s5.call_llm(prompt))
             elapsed = round(time.time() - t0, 1)
@@ -272,7 +383,7 @@ def main(n=40, seed=42, variant_keys=None):
               f"select-rate {m['pred_select_rate']:.1%} | "
               f"parse-fails {m['n_parse_errors']}\n", flush=True)
 
-        with open(RESULTS_PATH, "w", encoding="utf-8") as f:
+        with open(out, "w", encoding="utf-8") as f:
             json.dump({"config": {"n": n, "seed": seed, "model": s5.MODEL_NAME},
                        "variants": all_results}, f, indent=2)
 
@@ -314,7 +425,7 @@ def main(n=40, seed=42, variant_keys=None):
               f"R {m['recall']:.1%} | F1 {m['f1']:.1%} | "
               f"select-rate {m['pred_select_rate']:.1%}\n")
 
-        with open(RESULTS_PATH, "w", encoding="utf-8") as f:
+        with open(out, "w", encoding="utf-8") as f:
             json.dump({"config": {"n": n, "seed": seed, "model": s5.MODEL_NAME},
                        "variants": all_results}, f, indent=2)
 
@@ -334,7 +445,7 @@ def main(n=40, seed=42, variant_keys=None):
               f"{m['precision']:>7.1%} {m['recall']:>7.1%} {m['f1']:>7.1%} "
               f"{m['pred_select_rate']:>9.1%}")
     print("=" * 78)
-    print(f"\nSaved to {RESULTS_PATH}")
+    print(f"\nSaved to {out}")
 
 
 if __name__ == "__main__":
@@ -343,6 +454,9 @@ if __name__ == "__main__":
     p.add_argument("--seed", type=int, default=42)
     p.add_argument("--variants", type=str, default=None,
                    help="comma-separated subset, e.g. v1,v2")
+    p.add_argument("--out", type=str, default=str(RESULTS_PATH),
+                   help="results path — use a distinct one per run so earlier "
+                        "results are not overwritten")
     a = p.parse_args()
     keys = a.variants.split(",") if a.variants else None
-    main(n=a.n, seed=a.seed, variant_keys=keys)
+    main(n=a.n, seed=a.seed, variant_keys=keys, out=Path(a.out))

@@ -53,6 +53,14 @@ OLLAMA_URL  = "http://localhost:11434/api/generate"
 MODEL_NAME  = "llama3.1:8b"
 TIMEOUT_S   = 180
 
+# Ollama defaults to temperature 0.8. Re-running the identical prompt on the
+# identical 40 cases produced 45.0% and then 50.0% accuracy, so no comparison
+# between prompts or retrieval strategies was reproducible. Evaluation runs are
+# greedy and seeded; pass temperature explicitly when sampling is the point
+# (e.g. self-consistency, where the variance is what is being measured).
+TEMPERATURE = 0.0
+SEED        = 0
+
 # -------------------------------
 # Load index, metadata, cases
 # -------------------------------
@@ -240,11 +248,13 @@ JSON Response:"""
 # -------------------------------
 # LLM call
 # -------------------------------
-def call_llm(prompt: str, url: str = OLLAMA_URL, model: str = MODEL_NAME) -> str:
+def call_llm(prompt: str, url: str = OLLAMA_URL, model: str = MODEL_NAME,
+             temperature: float = TEMPERATURE, seed: int = SEED) -> str:
     try:
         response = requests.post(
             url,
-            json={"model": model, "prompt": prompt, "stream": False},
+            json={"model": model, "prompt": prompt, "stream": False,
+                  "options": {"temperature": temperature, "seed": seed}},
             timeout=TIMEOUT_S,
         )
         response.raise_for_status()
