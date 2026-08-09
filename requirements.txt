@@ -2,3 +2,6 @@ pandas
 numpy
 spacy
 tqdm
+sentence-transformers
+faiss-cpu
+requests
