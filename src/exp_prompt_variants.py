@@ -298,6 +298,22 @@ def _random_evidence(index, metadata, cases_by_id, pos_by_id, query_vec,
     return out
 
 
+def _save(path, n, seed, all_results):
+    """Checkpoint after every condition, atomically, and never let a write
+    failure kill the run — each condition costs an hour of LLM time."""
+    try:
+        path = Path(path)
+        path.parent.mkdir(parents=True, exist_ok=True)
+        tmp = path.with_suffix(path.suffix + ".tmp")
+        with open(tmp, "w", encoding="utf-8") as f:
+            json.dump({"config": {"n": n, "seed": seed, "model": s5.MODEL_NAME,
+                                  "temperature": s5.TEMPERATURE},
+                       "variants": all_results}, f, indent=2)
+        tmp.replace(path)
+    except Exception as e:
+        print(f"  [WARNING] could not save results to {path}: {e!r}", flush=True)
+
+
 def main(n=40, seed=42, variant_keys=None, out=RESULTS_PATH):
     out = Path(out)
     variant_keys = variant_keys or list(VARIANTS)
@@ -349,25 +365,28 @@ def main(n=40, seed=42, variant_keys=None, out=RESULTS_PATH):
                              c["entities"]["skills_cv"], c["entities"]["skills_jd"],
                              evidence[mode][c["case_id"]])
             t0 = time.time()
-            out = s5.parse_decision(s5.call_llm(prompt))
+            # NOT `out` — that is the results path, and shadowing it here cost a
+            # completed 300-case condition: the run reached the save at the end
+            # of the first variant, called open() on a decision dict and died.
+            decision = s5.parse_decision(s5.call_llm(prompt))
             elapsed = round(time.time() - t0, 1)
-            pred = str(out.get("decision", "unknown")).lower()
+            pred = str(decision.get("decision", "unknown")).lower()
 
             rows.append({
                 "case_id": c["case_id"],
                 "role": c["role"],
                 "ground_truth": truth,
                 "prediction": pred,
-                "confidence": out.get("confidence", "unknown"),
+                "confidence": decision.get("confidence", "unknown"),
                 "correct": pred == truth,
                 "elapsed_s": elapsed,
-                "key_strengths": out.get("key_strengths", []),
-                "key_gaps": out.get("key_gaps", []),
-                "reasoning": out.get("reasoning", ""),
-                "requirements": out.get("requirements", []),
-                "n_met": out.get("n_met"),
-                "n_total": out.get("n_total"),
-                "parse_error": out.get("parse_error", False),
+                "key_strengths": decision.get("key_strengths", []),
+                "key_gaps": decision.get("key_gaps", []),
+                "reasoning": decision.get("reasoning", ""),
+                "requirements": decision.get("requirements", []),
+                "n_met": decision.get("n_met"),
+                "n_total": decision.get("n_total"),
+                "parse_error": decision.get("parse_error", False),
             })
             print(f"  [{i}/{len(test_cases)}] {truth[:3]}->{pred[:3]} "
                   f"{'ok' if pred == truth else 'X'} {elapsed}s", flush=True)
@@ -383,9 +402,7 @@ def main(n=40, seed=42, variant_keys=None, out=RESULTS_PATH):
               f"select-rate {m['pred_select_rate']:.1%} | "
               f"parse-fails {m['n_parse_errors']}\n", flush=True)
 
-        with open(out, "w", encoding="utf-8") as f:
-            json.dump({"config": {"n": n, "seed": seed, "model": s5.MODEL_NAME},
-                       "variants": all_results}, f, indent=2)
+        _save(out, n, seed, all_results)
 
     # v3-rule — derived, no extra LLM calls.
     # In the v3 smoke test the model returned n_met 1 of 2 and still answered
@@ -425,9 +442,7 @@ def main(n=40, seed=42, variant_keys=None, out=RESULTS_PATH):
               f"R {m['recall']:.1%} | F1 {m['f1']:.1%} | "
               f"select-rate {m['pred_select_rate']:.1%}\n")
 
-        with open(out, "w", encoding="utf-8") as f:
-            json.dump({"config": {"n": n, "seed": seed, "model": s5.MODEL_NAME},
-                       "variants": all_results}, f, indent=2)
+        _save(out, n, seed, all_results)
 
     # Degenerate reference lines on the same sample
     n_sel = sum(1 for c in test_cases if c["decision"].lower() == "select")

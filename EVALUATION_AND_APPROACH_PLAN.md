@@ -1,6 +1,6 @@
 # Evaluation Strategy & Next Approaches
 
-*Written 2026-08-08, updated 2026-08-09 with measured results. Responds to Amol's question: "accuracy ain't good — there should be something other than accuracy to test outputs of an LLM."*
+*Written 2026-08-08, updated 2026-08-17 with measured results including the retrieval controls. Responds to Amol's question: "accuracy ain't good — there should be something other than accuracy to test outputs of an LLM."*
 
 ---
 
@@ -61,6 +61,8 @@ The JD is essentially the role title plus marketing copy. Confirmed downstream: 
 Stop optimising decision accuracy against this label. The research question is:
 
 > **"How do you evaluate an LLM hiring system when the ground-truth labels are unreliable — and which approach produces the most faithful, stable, and fair decisions?"**
+
+And, established in §1.6: **on this task retrieval-augmented generation performs no better than zero-shot prompting**, which is itself the strongest single result the project has.
 
 ---
 
@@ -128,27 +130,35 @@ Flat, at n=300. Confidence-based abstention — "escalate the uncertain ones to 
 
 For a typical query the top-20 retrieved cases are **20/20 the same role**, spanning a similarity range of **1.853–1.917 out of a maximum 2.0** — a 0.064 spread. Every candidate within a role looks nearly identical to the retriever, so which 10 exemplars reach the LLM is close to arbitrary. This predicts that exemplar-count and stratification-ratio ablations will move nothing.
 
-### 1.6 Controls: does retrieval contribute anything? — IN PROGRESS
+### 1.6 Controls: does retrieval contribute anything? — **No.**
 
-Prompt held fixed (v0), evidence varied, n=300, temperature 0:
+Prompt held fixed (the v0 wording), evidence varied, n=300, temperature 0, same cases throughout.
 
-| Condition | Evidence | Result |
-|---|---|---|
-| `c_retrieved` | top-20 by similarity, stratified 5/5 | pending |
-| `c_random_role` | 10 random cases, same role | pending |
-| `c_random_corpus` | 10 random cases, any role | pending |
-| `c_zeroshot` | none — CV + JD only | pending |
+| Condition | Evidence | Accuracy | 95% CI | Precision | Recall | F1 | Select rate |
+|---|---|---|---|---|---|---|---|
+| `c_retrieved` | top-20 by similarity, stratified 5/5 | 54.3% | 48.5–60.1% | 52.6% | 88.7% | 66.0% | 84.3% |
+| `c_random_role` | 10 random cases, same role | 55.0% | 49.2–60.7% | 53.0% | 87.3% | 66.0% | 82.3% |
+| `c_random_corpus` | 10 random cases, any role | 55.0% | 49.2–60.7% | 53.0% | 87.3% | 66.0% | 82.3% |
+| `c_zeroshot` | **none** — CV + JD only | **55.7%** | 49.8–61.4% | 53.3% | 92.7% | 67.6% | 87.0% |
 
-Verified that the conditions genuinely differ: retrieved spans similarity 1.726–1.891 across 1 role; random-same-role 1.512–1.647 across 1 role; random-any-role 1.165–1.347 across 8 roles; zero case overlap between conditions. Random exemplars carry their real cosine similarities so the prompt structure is identical.
+Every paired McNemar test between conditions: **p ≥ 0.50** (retrieved vs zero-shot p=0.503; retrieved vs random-same-role p=0.824; retrieved vs random-any-role p=0.832; random-role vs random-corpus p=1.000).
 
-How to read it:
+**The entire retrieval apparatus contributes nothing measurable.** Feeding the model ten randomly chosen cases works as well as the ten most similar ones. Feeding it no cases at all works marginally *better* than either — zero-shot is nominally the highest-scoring condition. The FAISS index, the two-view embedding, `all-mpnet-base-v2`, the stratified 5/5 selection and 12 seconds of retrieval per case buy nothing over pasting the CV and JD into a prompt.
 
-- `c_zeroshot` ≈ `c_retrieved` → the FAISS index, two-view embedding and stratified retrieval contribute nothing measurable.
-- `c_random_corpus` ≈ `c_retrieved` → exemplars help as *format*; which ones you pick is irrelevant.
-- `c_random_role` ≈ `c_retrieved` → role matching is the whole effect; similarity ranking within a role adds nothing.
-- `c_retrieved` clearly ahead → retrieval genuinely works.
+Checks that this is a real null and not a plumbing bug:
 
-Given §1.5, the third outcome is the most likely. Any of them is a publishable result and determines what the write-up is about.
+- The conditions genuinely differ. Retrieved exemplars span similarity 1.726–1.891 across 1 role; random-same-role 1.512–1.647 across 1 role; random-any-role 1.165–1.347 across 8 roles, with **zero case overlap** between conditions. Random exemplars carry their real cosine similarities, so the prompt structure is identical and only the case selection changes.
+- The model is reading them. Predictions differ on 10–22 of 300 cases between conditions, and the generated reasoning text is different on essentially every case (1/300 identical at most). The exemplars change what the model *says* — they just don't change what it *decides*.
+- `c_random_role` and `c_random_corpus` returning identical aggregate metrics is a coincidence, not duplicated data: they disagree on 10 of 300 predictions and the errors cancel in the confusion matrix.
+
+Honest limits: this is a null result on *this* dataset, where the ceiling is ~55–58% and the labels are largely ungrounded (§0.2). With so little headroom the experiment has limited power to detect a small genuine benefit. What it does establish is that no condition is distinguishable from any other, and that the zero-exemplar condition is not worse — which is the practical claim that matters.
+
+**Consequences for the project:**
+
+1. The write-up's central result is now measured, not speculated: *retrieval-augmented generation provides no benefit over zero-shot prompting on this task, and we can say precisely why* — 53-word job descriptions with no requirements to match on (§0.3), decision labels uncorrelated with candidate data (§0.2), and a retriever whose top-20 are all the same role within 0.064 of similarity (§1.5).
+2. All remaining retrieval work is pointless on this dataset: cross-encoder reranking, hybrid BM25+dense, fine-tuned embeddings. There is nothing for a better ranking to improve.
+3. Anything still worth doing lives in the decision layer, in evaluation methodology, or in fairness — not in retrieval.
+4. Efficiency finding worth stating in the report: the zero-shot condition is ~40% faster per case and needs no index at all.
 
 ---
 
@@ -212,7 +222,7 @@ Done: KG + weighted Jaccard (Amol) · MiniLM + ChromaDB + MMR (Amol) · resume v
 | **P0** | Keyword + supervised baselines | context for every other number | **done, §1.1** |
 | **P0** | Run Step 6 with the leak removed | first real number | **done — 55.3%** |
 | **P0** | Pin temperature | nothing was reproducible | **done** |
-| **P0** | Retrieval controls (zero-shot / random) | does RAG contribute at all? | **running, §1.6** |
+| **P0** | Retrieval controls (zero-shot / random) | does RAG contribute at all? | **done — no, §1.6** |
 | **P1** | **Gold set labelling** | the only trustworthy correctness signal left | **tooling ready — needs 2–3 h from each annotator** |
 | **P1** | **Counterfactual + name-swap harness** | objective correctness without labels, plus the fairness deliverable | next to build |
 | **P1** | Two-view vs single-view ablation | Sadia's key design choice, never validated. Test at Layer 1 only — fast, and the noisy label can't obscure it | next |
@@ -220,7 +230,7 @@ Done: KG + weighted Jaccard (Amol) · MiniLM + ChromaDB + MMR (Amol) · resume v
 | **P2** | Self-consistency + abstention | needs §1.4 revisited once prompts change | not started |
 | **P2** | Rejection feedback generator | cheapest remaining proposal deliverable; builds on `key_gaps` | not started |
 | **P3** | Controlled sanity benchmark | ~500 cases where the label *is* a known function of skill coverage. Any working pipeline should score >90%. Separates "our system is broken" from "the labels are noise" | not started |
-| **P3** | Cross-encoder reranking · hybrid BM25+dense · finish the fine-tune | Amol's track. **Deprioritised**: with a mid-50s ceiling and a near-random within-role ranking, better retrieval has nothing to bite on — and §1.6 may show retrieval contributes nothing at all | Amol |
+| ~~P3~~ | ~~Cross-encoder reranking · hybrid BM25+dense · finish the fine-tune~~ | **Drop on this dataset.** §1.6 settles it: zero-shot matches retrieved (p=0.503) and random exemplars match retrieved (p≥0.82). There is nothing for a better ranking to improve. Worth keeping only as a documented negative result | Amol |
 | **P3** | LLM-as-judge, validated against the gold set | rubric-scored reasoning quality; worthless until validated | not started |
 | **P4** | Explainability (SHAP/LIME) | proposal deliverable, complex, low information given the above | not started |
 

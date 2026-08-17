@@ -1,5 +1,5 @@
 # Group Project — Progress Overview
-*Last updated: 2026-08-09 (previous: 2026-05-11)*
+*Last updated: 2026-08-17 (previous: 2026-05-11)*
 
 Cross-repo status. For evaluation strategy, measured results in full, and the
 ranked plan, see `EVALUATION_AND_APPROACH_PLAN.md` — that document is
@@ -78,9 +78,22 @@ Paired McNemar: beats always-select (p=0.037), **indistinguishable from bag-of-w
 - **The model breaks its own stated rules on 30% of cases** — given an explicit aggregation rule and its own counts, it decided otherwise 12 times in 40. Moving the arithmetic into code recovered 5 points.
 - **Retrieval is role-matching and little else** — the top-20 are 20/20 the same role, spanning 0.064 of similarity out of a 2.0 maximum.
 
-### Running now
+### Retrieval contributes nothing — measured
 
-Four controls at n=300 isolating whether retrieval contributes anything: retrieved vs. random-same-role vs. random-any-role vs. zero-shot, prompt held fixed. **This is the experiment the write-up hinges on.**
+Four controls at n=300, temperature 0, prompt held fixed, only the evidence varied:
+
+| Condition | Accuracy | F1 | Select rate |
+|---|---|---|---|
+| Retrieved (top-20 by similarity, stratified 5/5) | 54.3% | 66.0% | 84.3% |
+| 10 random cases, same role | 55.0% | 66.0% | 82.3% |
+| 10 random cases, any role | 55.0% | 66.0% | 82.3% |
+| **No exemplars at all (zero-shot)** | **55.7%** | 67.6% | 87.0% |
+
+Every paired McNemar test between conditions: **p ≥ 0.50**. Random exemplars work as well as the most similar ones; no exemplars works marginally better than either. The FAISS index, the two-view embedding, mpnet and the stratified selection buy nothing over pasting the CV and JD into a prompt — and zero-shot is ~40% faster per case.
+
+Verified not to be a plumbing bug: the conditions share zero exemplar cases, and the model's generated reasoning differs on essentially every case (1/300 identical at most). It reads the exemplars; they just don't change its decision.
+
+**This is the project's strongest single result.**
 
 ### Built, awaiting use
 
