@@ -1,3 +1,13 @@
+> **Superseded.** This file describes the Phase 1 four-step pipeline as of
+> 2026-05-11. The pipeline now has seven steps, the two-view embedding it
+> describes has been removed as unjustified, and the project's findings have
+> changed substantially. Kept as a record of where the work started.
+>
+> Current documents: [`README.md`](README.md) for how to run it,
+> [`RESULTS.md`](RESULTS.md) for the numbers,
+> [`EVALUATION_AND_APPROACH_PLAN.md`](EVALUATION_AND_APPROACH_PLAN.md) for
+> interpretation and next steps.
+
 # ATS Vector RAG — Roadmap & Approach Comparison Plan
 
 ## Goal
@@ -73,7 +83,13 @@ For every approach, record:
 
 ---
 
-## Results Table (fill in as experiments run)
+## Results Table — moved
+
+Results live in [`RESULTS.md`](RESULTS.md), generated from the raw result files.
+The empty table below was never filled in and is kept only to show what was
+planned versus what was actually measured.
+
+## Results Table (original plan, never filled)
 
 | Approach | Accuracy | Precision | Recall | F1 | Notes |
 |---|---|---|---|---|---|

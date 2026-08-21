@@ -1,7 +1,18 @@
 pandas
 numpy
-spacy
 tqdm
-sentence-transformers
-faiss-cpu
 requests
+
+# Embeddings and vector index (steps 3-5)
+sentence-transformers
+torch
+faiss-cpu
+
+# Baselines, reference models and metrics (baselines.py, sanity_benchmark.py)
+scikit-learn
+
+# Significance testing (binomial CIs, paired McNemar, paired t-tests)
+scipy
+
+# NOTE: spacy was listed here but never imported anywhere in src/ — removed
+# 2026-08-21. Entity extraction in step2 is vocabulary matching plus regex.
