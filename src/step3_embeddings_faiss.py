@@ -87,45 +87,41 @@ def build_case_text(case):
     """
 
 # -------------------------------
-# Helper: Build skill-alignment embedding text
+# Skill-alignment view — REMOVED 2026-08-21
 # -------------------------------
-def build_skill_text(case):
-    """
-    Constructs a skill-focused representation highlighting:
-    - Candidate skills
-    - Job-required skills
-    - Explicit skill gaps
-
-    This mimics graph traversal over Skill nodes in GraphRAG.
-    """
-    skills_cv = ", ".join(case["entities"]["skills_cv"])
-    skills_jd = ", ".join(case["entities"]["skills_jd"])
-
-    missing_skills = sorted(
-        set(case["entities"]["skills_jd"]) - set(case["entities"]["skills_cv"])
-    )
-    missing_text = ", ".join(missing_skills)
-
-    return f"""
-    Candidate skills: {skills_cv}
-    Job required skills: {skills_jd}
-    Missing skills: {missing_text}
-    """
+# The index used to be [case view || skill view], 1536-d. The skill view listed
+# candidate skills, required skills and explicit gaps, and was meant to mimic
+# graph traversal over Skill nodes in GraphRAG.
+#
+# It was measured (src/exp_retrieval_views.py, 300 queries leave-one-out, k=10)
+# and it does not pay for itself:
+#
+#   case only (768-d)     same-decision@10  56.6%
+#   skill only (768-d)                      52.7%
+#   two-view (1536-d)                       56.0%
+#
+# Paired t-test, two-view minus case-only: -0.6pp, p=0.50 — indistinguishable,
+# while doubling the vector dimension, the index size (62 MB -> 31 MB) and the
+# search cost. The skill view alone is significantly worse than the case view
+# (p=0.007).
+#
+# The two-view index is preserved as data/processed/faiss_index_twoview.bin so
+# that results produced before this change remain reproducible. Everything
+# committed up to 0f75e4c used it; note the similarity scale also changes, since
+# one normalised view scores in [0, 1] rather than [0, 2].
 
 # -------------------------------
 # Load cases and prepare embedding texts
 # -------------------------------
 case_texts = []
-skill_texts = []
 metadata = []
 
 with open(INPUT_PATH, "r", encoding="utf-8") as f:
     for line in tqdm(f, desc="Preparing embedding texts"):
         case = json.loads(line)
 
-        # Build embedding inputs
+        # Build embedding input
         case_texts.append(build_case_text(case))
-        skill_texts.append(build_skill_text(case))
 
         # Lightweight metadata for retrieved cases
         metadata.append({
@@ -147,21 +143,13 @@ case_embeddings = model.encode(
     normalize_embeddings=True
 )
 
-print("Encoding skill-alignment texts...")
-skill_embeddings = model.encode(
-    skill_texts,
-    batch_size=BATCH_SIZE,
-    show_progress_bar=True,
-    normalize_embeddings=True
-)
-
 # -------------------------------
-# Combine embeddings
+# Single case-level view
 # -------------------------------
-# Concatenation preserves two complementary semantic views:
-# 1. Global CV–JD–Decision similarity
-# 2. Explicit skill overlap and gaps
-embeddings = np.hstack([case_embeddings, skill_embeddings]).astype("float32")
+# Previously hstacked with a skill-alignment view; see the note above for why
+# that was dropped. Vectors are already L2-normalised by the encoder, so inner
+# product is cosine similarity.
+embeddings = np.asarray(case_embeddings, dtype="float32")
 
 # -------------------------------
 # Build FAISS index

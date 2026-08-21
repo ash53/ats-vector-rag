@@ -180,6 +180,14 @@ Paired t-tests across the 300 queries:
 | two-view − skill-only | +3.3pp | 0.012 |
 | case-only − skill-only | +3.9pp | 0.007 |
 
+> **Status: applied 2026-08-21.** Step 3 now builds the case view only; Steps 4
+> and 5 build matching single-view query vectors. The index is 768-d / 31 MB
+> (was 1536-d / 62 MB) and reproduces 56.6% same-decision@10 exactly, as
+> predicted. The two-view build is preserved at
+> `data/processed/faiss_index_twoview.bin` so every result committed up to
+> `0f75e4c` stays reproducible. Note the similarity scale changed with it: one
+> normalised view scores in [0, 1], not [0, 2].
+
 **Drop the skill-alignment view.** Concatenating it is indistinguishable from
 the case view alone (p=0.50) while doubling the vector dimension — 62 MB of
 index instead of 31 MB, and a correspondingly slower search. On its own the

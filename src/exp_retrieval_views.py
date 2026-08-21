@@ -54,15 +54,31 @@ import faiss
 from step6_evaluate import load_cases, stratified_sample
 
 INDEX_PATH = Path("data/processed/faiss_index.bin")
+TWO_VIEW_PATH = Path("data/processed/faiss_index_twoview.bin")
 META_PATH = Path("data/processed/faiss_metadata.json")
 CASES_PATH = Path("data/processed/cases_stage2.jsonl")
 RESULTS_PATH = Path("data/processed/eval_retrieval_views.json")
 
 
-def load_views():
-    """Recover the case-only and skill-only matrices from the stored index."""
-    index = faiss.read_index(str(INDEX_PATH))
+def load_views(index_path=None):
+    """Recover the case-only and skill-only matrices from a TWO-VIEW index.
+
+    This only makes sense on the 1536-d [case || skill] index. The live index
+    became single-view (768-d) on 2026-08-21, so the two-view build is kept at
+    data/processed/faiss_index_twoview.bin and used by default here — splitting
+    a 768-d index in half would silently produce two meaningless 384-d halves.
+    """
+    index_path = Path(index_path or TWO_VIEW_PATH)
+    if not index_path.exists():
+        raise SystemExit(
+            f"{index_path} not found. This experiment needs the two-view index; "
+            f"rebuild it by restoring the pre-2026-08-21 Step 3, or pass "
+            f"--index with a 1536-d index.")
+    index = faiss.read_index(str(index_path))
     n, d = index.ntotal, index.d
+    if d % 2 or d < 512:
+        raise SystemExit(f"{index_path} has dimension {d}; expected a two-view "
+                         f"index (1536-d). Refusing to split it.")
     full = index.reconstruct_n(0, n).astype("float32")
     half = d // 2
     case_v, skill_v = full[:, :half].copy(), full[:, half:].copy()
@@ -127,9 +143,9 @@ def evaluate_view(vectors, metadata, cases_by_id, test_cases, k=10):
     }
 
 
-def main(n=300, seed=42, k=10, out=RESULTS_PATH):
+def main(n=300, seed=42, k=10, out=RESULTS_PATH, index_path=None):
     print("Loading and splitting the index...")
-    views, metadata = load_views()
+    views, metadata = load_views(index_path)
 
     cases = load_cases(CASES_PATH)
     cases_by_id = {c["case_id"]: c for c in cases}
@@ -172,5 +188,7 @@ if __name__ == "__main__":
     p.add_argument("--seed", type=int, default=42)
     p.add_argument("--k", type=int, default=10)
     p.add_argument("--out", type=str, default=str(RESULTS_PATH))
+    p.add_argument("--index", type=str, default=None,
+                   help="two-view index to split (default: faiss_index_twoview.bin)")
     a = p.parse_args()
-    main(n=a.n, seed=a.seed, k=a.k, out=Path(a.out))
+    main(n=a.n, seed=a.seed, k=a.k, out=Path(a.out), index_path=a.index)

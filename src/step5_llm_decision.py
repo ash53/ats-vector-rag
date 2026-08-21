@@ -112,18 +112,19 @@ def _build_case_text(role, cv_text, jd_text):
     Job Description: {jd_text}
     """
 
-def _build_skill_text(skills_cv, skills_jd):
-    missing = sorted(set(skills_jd) - set(skills_cv))
-    return f"""
-    Candidate skills: {", ".join(skills_cv)}
-    Job required skills: {", ".join(skills_jd)}
-    Missing skills: {", ".join(missing)}
-    """
-
 def embed_query(model, role, cv_text, jd_text, skills_cv, skills_jd):
-    case_emb  = model.encode([_build_case_text(role, cv_text, jd_text)],  normalize_embeddings=True)
-    skill_emb = model.encode([_build_skill_text(skills_cv, skills_jd)], normalize_embeddings=True)
-    return np.hstack([case_emb, skill_emb]).astype("float32")
+    """Single case-level view, matching Step 3.
+
+    The skill-alignment view was dropped on 2026-08-21 after measurement showed
+    the concatenation indistinguishable from the case view alone (p=0.50) at
+    double the dimension — see src/exp_retrieval_views.py and Step 3's note.
+    skills_cv / skills_jd are kept in the signature because callers still pass
+    them and the prompt builders still use them; they no longer affect the
+    query vector.
+    """
+    case_emb = model.encode([_build_case_text(role, cv_text, jd_text)],
+                            normalize_embeddings=True)
+    return np.asarray(case_emb, dtype="float32")
 
 # -------------------------------
 # Retrieval (mirrors step4)

@@ -84,39 +84,21 @@ def build_case_text(role, cv_text, jd_text):
     Job Description: {jd_text}
     """
 
-def build_skill_text(skills_cv, skills_jd):
-    """
-    Builds the skill-alignment representation for the query.
-    """
-    missing = sorted(set(skills_jd) - set(skills_cv))
-    return f"""
-    Candidate skills: {", ".join(skills_cv)}
-    Job required skills: {", ".join(skills_jd)}
-    Missing skills: {", ".join(missing)}
-    """
-
 # -------------------------------
 # Embed query (CV + JD)
 # -------------------------------
 def embed_query(role, cv_text, jd_text, skills_cv, skills_jd):
     """
-    Encodes a new CV–JD pair into a single query vector,
-    using the same multi-view embedding strategy as Step 3.
+    Encodes a new CV–JD pair into a query vector, using the same single
+    case-level view as Step 3. The skill-alignment view was dropped on
+    2026-08-21 — measured indistinguishable from the case view alone
+    (p=0.50) at double the dimension. See src/exp_retrieval_views.py.
     """
-    case_text = build_case_text(role, cv_text, jd_text)
-    skill_text = build_skill_text(skills_cv, skills_jd)
-
     case_emb = model.encode(
-        [case_text],
+        [build_case_text(role, cv_text, jd_text)],
         normalize_embeddings=True
     )
-
-    skill_emb = model.encode(
-        [skill_text],
-        normalize_embeddings=True
-    )
-
-    return np.hstack([case_emb, skill_emb]).astype("float32")
+    return np.asarray(case_emb, dtype="float32")
 
 # -------------------------------
 # Retrieve top-k similar cases
