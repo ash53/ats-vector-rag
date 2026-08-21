@@ -14,5 +14,8 @@ scikit-learn
 # Significance testing (binomial CIs, paired McNemar, paired t-tests)
 scipy
 
+# Figures (make_figures.py)
+matplotlib
+
 # NOTE: spacy was listed here but never imported anywhere in src/ — removed
 # 2026-08-21. Entity extraction in step2 is vocabulary matching plus regex.

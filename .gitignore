@@ -24,3 +24,8 @@ data/processed/*
 
 # Logs
 *.log
+
+# Figures are generated from data/processed/eval_*.json by make_figures.py.
+# The PNGs are tracked so the write-up and reviewers can see them without a
+# local run; the PDFs are rebuilt on demand.
+figures/*.pdf
