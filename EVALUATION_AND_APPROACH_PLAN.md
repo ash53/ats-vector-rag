@@ -160,6 +160,56 @@ Honest limits: this is a null result on *this* dataset, where the ceiling is ~55
 3. Anything still worth doing lives in the decision layer, in evaluation methodology, or in fairness — not in retrieval.
 4. Efficiency finding worth stating in the report: the zero-shot condition is ~40% faster per case and needs no index at all.
 
+### 1.7 The two-view embedding is not justified — and retrieval's ceiling, measured
+
+Layer 1 only, no LLM, 300 queries leave-one-out, k=10. The stored vectors are
+[case ‖ skill] with each half L2-normalised, so the single-view indices are
+recovered by slicing the existing index — no re-encoding.
+
+| View | same-decision@10 | same-role@10 | skill Jaccard | similarity spread | exemplar diversity |
+|---|---|---|---|---|---|
+| case only (768-d) | **56.6%** | 99.6% | 0.479 | 0.0210 | 0.930 |
+| skill only (768-d) | 52.7% | 67.0% | 0.687 | 0.0095 | 0.987 |
+| two-view (1536-d, current) | 56.0% | 98.5% | 0.618 | 0.0380 | 0.943 |
+
+Paired t-tests across the 300 queries:
+
+| Comparison | Difference | p |
+|---|---|---|
+| two-view − case-only | −0.6pp | **0.50** |
+| two-view − skill-only | +3.3pp | 0.012 |
+| case-only − skill-only | +3.9pp | 0.007 |
+
+**Drop the skill-alignment view.** Concatenating it is indistinguishable from
+the case view alone (p=0.50) while doubling the vector dimension — 62 MB of
+index instead of 31 MB, and a correspondingly slower search. On its own the
+skill view is significantly worse than the case view (p=0.007). The two-view
+concatenation was the pipeline's distinctive design choice; measured, it does
+not earn its cost. That is a clean, reportable negative result about a decision
+we made ourselves.
+
+**And here is why RAG cannot help on this task, mechanically.** The pipeline
+shows the LLM ten historical cases *and their outcomes*, as evidence. That only
+works if retrieved cases tend to share the query's outcome. The best view
+manages 56.6% — statistically above the 50% no-information line (p=6e-7), so
+retrieval is not doing nothing, but only 6.6 points of signal is available in
+the evidence *before* the LLM ever sees it. That is the ceiling on what any
+retrieval strategy could contribute here, and it explains §1.6's null directly
+rather than merely observing it. Reranking, hybrid search and fine-tuned
+embeddings all compete for those 6.6 points.
+
+Two supporting numbers:
+
+- **Retrieved exemplars are near-duplicates of each other.** Mean pairwise
+  cosine among the ten returned is 0.93 (case view) to 0.99 (skill view). The
+  LLM is shown ten variations of the same candidate. This is the argument for
+  MMR — though given §1.6, diversifying evidence that changes nothing would
+  change nothing.
+- **The index barely separates its own neighbours.** Similarity spread across
+  the top 10 is 0.021–0.038. Ranks 1 and 10 are all but indistinguishable.
+
+---
+
 ---
 
 ## 2. The evaluation framework — four layers

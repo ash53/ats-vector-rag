@@ -1,0 +1,33 @@
+{
+  "config": {
+    "n": 300,
+    "seed": 42,
+    "k": 10
+  },
+  "views": {
+    "case_only": {
+      "same_decision_at_k": 0.5663,
+      "same_role_at_k": 0.9963,
+      "skill_jaccard": 0.4794,
+      "similarity_spread": 0.021,
+      "exemplar_diversity": 0.93,
+      "n_queries": 300
+    },
+    "skill_only": {
+      "same_decision_at_k": 0.527,
+      "same_role_at_k": 0.6703,
+      "skill_jaccard": 0.687,
+      "similarity_spread": 0.0095,
+      "exemplar_diversity": 0.9865,
+      "n_queries": 300
+    },
+    "two_view": {
+      "same_decision_at_k": 0.56,
+      "same_role_at_k": 0.9853,
+      "skill_jaccard": 0.618,
+      "similarity_spread": 0.038,
+      "exemplar_diversity": 0.943,
+      "n_queries": 300
+    }
+  }
+}
