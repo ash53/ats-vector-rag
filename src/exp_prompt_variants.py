@@ -255,16 +255,61 @@ Respond in this exact JSON format only - no extra text:
 JSON Response:"""
 
 
-# key -> (label, prompt builder, evidence mode)
+# ---------------------------------------------------------------------------
+# INPUT ABLATIONS — does the model read the candidate's CV at all?
+# ---------------------------------------------------------------------------
+# The controls showed every evidence condition landing at 54-56% with an 82-87%
+# select rate, whether the model is given the ten most similar historical cases,
+# ten random ones, or none. That raises the obvious next question: does the
+# CANDIDATE'S OWN CV move the decision either?
+#
+# These run zero-shot (no exemplars), because retrieval was shown to contribute
+# nothing and zero-shot is ~40% faster. The comparison point is c_zeroshot on
+# the same 300 cases: 55.7% accuracy, 87.0% select rate.
+#
+#   a_cv_swapped    the JD and the label stay, but the CV belongs to a
+#                   DIFFERENT, randomly chosen candidate. If accuracy and select
+#                   rate hold, the output does not depend on the candidate.
+#   a_cv_empty      no CV at all — JD and role only.
+#   a_cv_truncated  first 200 characters of the CV, extracted skills kept. Tests
+#                   whether the CV prose adds anything beyond the skill list.
+#
+# A null here means the system is close to a constant function: it answers
+# "select" at a fixed rate regardless of input, and its 55% is a bias meeting a
+# 50/50 split rather than a judgement.
+def _t_identity(case, donor):
+    return (case["role"], case["cv_text"], case["jd_text"],
+            case["entities"]["skills_cv"], case["entities"]["skills_jd"])
+
+
+def _t_cv_swapped(case, donor):
+    """Someone else's CV and skills, against this case's role, JD and label."""
+    return (case["role"], donor["cv_text"], case["jd_text"],
+            donor["entities"]["skills_cv"], case["entities"]["skills_jd"])
+
+
+def _t_cv_empty(case, donor):
+    return (case["role"], "", case["jd_text"], [], case["entities"]["skills_jd"])
+
+
+def _t_cv_truncated(case, donor):
+    return (case["role"], case["cv_text"][:200], case["jd_text"],
+            case["entities"]["skills_cv"], case["entities"]["skills_jd"])
+
+
+# key -> (label, prompt builder, evidence mode, input transform)
 VARIANTS = {
-    "v0": ("baseline (current prompt)", v0_baseline, "retrieved"),
-    "v1": ("reason before deciding", v1_reason_first, "retrieved"),
-    "v2": ("base rate + no default", v2_base_rate, "retrieved"),
-    "v3": ("requirement checklist", v3_checklist, "retrieved"),
-    "c_retrieved":     ("CONTROL retrieved exemplars", v0_baseline, "retrieved"),
-    "c_random_role":   ("CONTROL random, same role", v0_baseline, "random_role"),
-    "c_random_corpus": ("CONTROL random, any role", v0_baseline, "random_corpus"),
-    "c_zeroshot":      ("CONTROL no exemplars", c_zeroshot, "none"),
+    "v0": ("baseline (current prompt)", v0_baseline, "retrieved", _t_identity),
+    "v1": ("reason before deciding", v1_reason_first, "retrieved", _t_identity),
+    "v2": ("base rate + no default", v2_base_rate, "retrieved", _t_identity),
+    "v3": ("requirement checklist", v3_checklist, "retrieved", _t_identity),
+    "c_retrieved":     ("CONTROL retrieved exemplars", v0_baseline, "retrieved", _t_identity),
+    "c_random_role":   ("CONTROL random, same role", v0_baseline, "random_role", _t_identity),
+    "c_random_corpus": ("CONTROL random, any role", v0_baseline, "random_corpus", _t_identity),
+    "c_zeroshot":      ("CONTROL no exemplars", c_zeroshot, "none", _t_identity),
+    "a_cv_swapped":    ("ABLATION someone else's CV", c_zeroshot, "none", _t_cv_swapped),
+    "a_cv_empty":      ("ABLATION no CV at all", c_zeroshot, "none", _t_cv_empty),
+    "a_cv_truncated":  ("ABLATION CV first 200 chars", c_zeroshot, "none", _t_cv_truncated),
 }
 
 
@@ -314,6 +359,21 @@ def _save(path, n, seed, all_results):
         print(f"  [WARNING] could not save results to {path}: {e!r}", flush=True)
 
 
+def _donors(test_cases, seed):
+    """A derangement: every case is paired with a different case's CV.
+
+    Rotating the shuffled order by one guarantees no case is its own donor,
+    which a plain random pairing does not.
+    """
+    order = list(range(len(test_cases)))
+    random.Random(seed + 1).shuffle(order)
+    rotated = order[1:] + order[:1]
+    donors = {test_cases[i]["case_id"]: test_cases[j]
+              for i, j in zip(order, rotated)}
+    assert all(donors[c["case_id"]]["case_id"] != c["case_id"] for c in test_cases)
+    return donors
+
+
 def main(n=40, seed=42, variant_keys=None, out=RESULTS_PATH):
     out = Path(out)
     variant_keys = variant_keys or list(VARIANTS)
@@ -328,13 +388,22 @@ def main(n=40, seed=42, variant_keys=None, out=RESULTS_PATH):
     print(f"{len(test_cases)} cases (seed={seed}) | temperature={s5.TEMPERATURE} "
           f"| variants: {', '.join(variant_keys)}\n")
 
+    donors = _donors(test_cases, seed)
+
     # Built once per case; every variant reuses the identical evidence, so the
     # only thing that differs between two runs is the thing being tested.
-    print("Building evidence...", end=" ", flush=True)
+    # Skipped entirely when no selected condition needs retrieval — the input
+    # ablations run zero-shot, and embedding 300 CVs for nothing is pure cost.
+    needs_embedding = bool(modes - {"none"})
+    print(f"Building evidence{'' if needs_embedding else ' (none needed)'}...",
+          end=" ", flush=True)
     t0 = time.time()
     rng = random.Random(seed)
     evidence = {m: {} for m in modes}
     for c in test_cases:
+        if not needs_embedding:
+            evidence["none"][c["case_id"]] = []
+            continue
         qv = s5.embed_query(model, c["role"], c["cv_text"], c["jd_text"],
                             c["entities"]["skills_cv"], c["entities"]["skills_jd"])
         if "retrieved" in modes:
@@ -355,14 +424,18 @@ def main(n=40, seed=42, variant_keys=None, out=RESULTS_PATH):
     all_results = {}
 
     for key in variant_keys:
-        label, builder, mode = VARIANTS[key]
+        label, builder, mode, transform = VARIANTS[key]
         print(f"=== {key}: {label} [{mode}] ===")
         rows = []
 
         for i, c in enumerate(test_cases, 1):
             truth = c["decision"].lower()
-            prompt = builder(c["role"], c["cv_text"], c["jd_text"],
-                             c["entities"]["skills_cv"], c["entities"]["skills_jd"],
+            # The transform decides WHAT the model is shown about the candidate;
+            # the mode decides what historical evidence comes with it. The label
+            # always stays with the original case.
+            role, cv_text, jd_text, skills_cv, skills_jd = transform(
+                c, donors[c["case_id"]])
+            prompt = builder(role, cv_text, jd_text, skills_cv, skills_jd,
                              evidence[mode][c["case_id"]])
             t0 = time.time()
             # NOT `out` — that is the results path, and shadowing it here cost a
