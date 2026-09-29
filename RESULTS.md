@@ -37,7 +37,13 @@ Prompt held fixed, evidence varied, same 300 cases, temperature 0.0.
 
 ## 3. Does the model read the CV? (input ablations)
 
-_Pending — run `exp_prompt_variants.py --variants a_*`._
+Zero-shot throughout; only the candidate information changes. Compare against `c_zeroshot` in section 2.
+
+| Condition | Accuracy | Precision | Recall | F1 | Select rate | n |
+|---|---|---|---|---|---|---|
+| `a_cv_swapped` — ABLATION someone else's CV | 48.7% | 48.0% | 32.0% | 38.4% | 33.3% | 300 |
+| `a_cv_empty` — ABLATION no CV at all | 49.0% | 41.2% | 4.7% | 8.4% | 5.7% | 300 |
+| `a_cv_truncated` — ABLATION CV first 200 chars | 52.7% | 51.5% | 91.3% | 65.9% | 88.7% | 300 |
 
 ---
 
@@ -73,18 +79,59 @@ same-decision@k at 50% would mean the retrieved outcomes carry no information ab
 
 ## 6. Counterfactual sensitivity
 
-_Pending — run `exp_counterfactual.py --mode counterfactual`._
+Does the decision move the way the evidence demands?
+
+| Arm | Unchanged | Expected | Contradictory | Directionally right |
+|---|---|---|---|---|
+| inject (n=100) | 90 | 10 | 0 | 100% |
+| remove (n=100) | 97 | 3 | 0 | 100% |
+
+'Directionally right' counts only the decisions that moved; 50% there is a coin flip.
 
 ---
 
 ## 7. Fairness — matched-pair name swap
 
-_Pending — run `exp_counterfactual.py --mode fairness`._
+Identical CVs; only the candidate's name differs (Bertrand & Mullainathan 2004 design).
+
+| Group | Select rate | n |
+|---|---|---|
+| anglo_female | 90.7% | 150 |
+| anglo_male | 89.3% | 150 |
+| black_female | 90.0% | 150 |
+| black_male | 88.0% | 150 |
+
+Largest gap: **anglo_female 90.7% vs black_male 88.0%** = 2.7% points. Impact ratio 0.97 — passes the four-fifths rule.
+
+Decisions that changed on the name alone: **7/150 = 4.7%**
 
 ---
 
 ## 8. Rejection feedback — automatic checks
 
 _Pending — run `step7_feedback.py --n 20`._
+
+---
+
+## 9. Sanity benchmark — a task whose answer is knowable
+
+Generated cases: select ⟺ the CV evidences ≥70% of the skills the JD requires. Explicit requirements, zero label noise.
+
+| System | Accuracy |
+|---|---|
+| Oracle (skill-overlap count) | 100.0% |
+| Bag of words (TF-IDF+LogReg) | 78.0% |
+| **LLM zero-shot** | **51.0%** |
+
+LLM select rate: **99.0%**
+
+| Required skills the CV evidences | Correct answer | Accuracy | Said select |
+|---|---|---|---|
+| 0/5 | reject | 10% | 90% (n=10) |
+| 1/5 | reject | 0% | 100% (n=20) |
+| 2/5 | reject | 0% | 100% (n=9) |
+| 3/5 | reject | 0% | 100% (n=11) |
+| 4/5 | select | 100% | 100% (n=33) |
+| 5/5 | select | 100% | 100% (n=17) |
 
 ---

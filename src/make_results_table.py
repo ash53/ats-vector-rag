@@ -222,6 +222,38 @@ def section_feedback(lines):
     lines.append("")
 
 
+def section_sanity(lines):
+    d = load("eval_sanity.json")
+    lines.append("## 9. Sanity benchmark — a task whose answer is knowable\n")
+    if not d:
+        lines.append("_Pending — run `sanity_benchmark.py --build --eval`._\n")
+        return
+    ref = d.get("reference", {})
+    m = d["metrics"]
+    lines.append("Generated cases: select ⟺ the CV evidences ≥70% of the skills "
+                 "the JD requires. Explicit requirements, zero label noise.\n")
+    lines.append("| System | Accuracy |")
+    lines.append("|---|---|")
+    lines.append(f"| Oracle (skill-overlap count) | {pct(ref.get('oracle'))} |")
+    lines.append(f"| Bag of words (TF-IDF+LogReg) | {pct(ref.get('bag_of_words'))} |")
+    lines.append(f"| **LLM zero-shot** | **{pct(m['accuracy'])}** |")
+    lines.append("")
+    lines.append(f"LLM select rate: **{pct(m['pred_select_rate'])}**\n")
+    lines.append("| Required skills the CV evidences | Correct answer | Accuracy | Said select |")
+    lines.append("|---|---|---|---|")
+    import collections
+    by = collections.defaultdict(list)
+    for r in d["results"]:
+        by[r["n_covered"]].append(r)
+    for k in sorted(by):
+        g = by[k]
+        acc = sum(r["correct"] for r in g) / len(g)
+        sel = sum(1 for r in g if r["prediction"] == "select") / len(g)
+        truth = "select" if k / 5 >= 0.7 else "reject"
+        lines.append(f"| {k}/5 | {truth} | {acc:.0%} | {sel:.0%} (n={len(g)}) |")
+    lines.append("")
+
+
 def main(to_stdout=False):
     lines = ["# Results",
              "",
@@ -235,7 +267,7 @@ def main(to_stdout=False):
              ""]
     for fn in [section_decision, section_controls, section_ablations,
                section_prompts, section_retrieval, section_counterfactual,
-               section_fairness, section_feedback]:
+               section_fairness, section_feedback, section_sanity]:
         fn(lines)
         lines.append("---\n")
 
